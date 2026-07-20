@@ -1,20 +1,65 @@
-from flask import Flask
-from config.database_config import db
+from flask import Flask, jsonify
+from config.extensions.database_config import db, migrate
+from config.extensions.jwt_config import jwt
 import os
 import logging
 from routes.auth_routes import auth
 from flasgger import Swagger
 from dotenv import load_dotenv
-from config.database_config import migrate
-
+from config.logs.logs import setup_logging
 
 load_dotenv()
 
 def create_app():
     app = Flask(__name__)
-
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
+
+    setup_logging()
+    logging.info("Starting Horus Backend Application")
+
+    db.init_app(app)
+    migrate.init_app(app, db)
+    jwt.init_app(app)
+    @jwt.expired_token_loader
+
+    def expired_token(jwt_header, jwt_payload):
+
+        logging.warning(
+            "Expired JWT token used"
+        )
+
+        return jsonify({
+            "message": "Token expired"
+        }),401
+
+
+
+    @jwt.invalid_token_loader
+    def invalid_token(error):
+
+        logging.warning(
+            f"Invalid JWT token: {error}"
+        )
+
+        return jsonify({
+            "message": "Invalid token"
+        }),401
+
+
+
+    @jwt.unauthorized_loader
+    def missing_token(error):
+
+        logging.warning(
+            f"Missing JWT token: {error}"
+        )
+
+        return jsonify({
+            "message": "Authorization token required"
+        }),401
+        logging.info("Database and JWT initialized")
 
     swagger_config = {
         "headers": [],
@@ -31,15 +76,17 @@ def create_app():
         "specs_route": "/apidocs/"
     }
 
-    swagger = Swagger(app, config=swagger_config)
-
+    Swagger(app, config=swagger_config)
     app.register_blueprint(auth)
-
-    db.init_app(app)
-    migrate.init_app(app, db)
+    logging.info("Routes registered successfully")
     return app
 
 app = create_app()
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    logging.info("Running development server")
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )

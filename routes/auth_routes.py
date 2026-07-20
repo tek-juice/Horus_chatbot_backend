@@ -2,9 +2,11 @@ import logging
 from flask import Blueprint, request, jsonify
 from flasgger import swag_from
 from werkzeug.security import generate_password_hash
-from config.database_config import db
+from config.extensions.database_config import db
 from models.users import User, UserRole, UserStatus
-from config.validators import validate_email, validate_name,validate_password
+from flask_jwt_extended import create_access_token
+from config.helpers.validators import validate_email, validate_name,validate_password
+from config.helpers.helpers import role_required, admin_or_super_admin_required, admin_required, super_admin_required
 
 auth =  Blueprint("auth", __name__, url_prefix="/auth")
 
@@ -324,4 +326,509 @@ def register_super_admin():
         )
         return jsonify({
             "error": "Internal server error"
+        }), 500
+    
+
+# SUPER ADMIN 
+@auth.post("/super-admin/login")
+@swag_from({
+    "tags": ["Auth"],
+    "summary": "Super admin login",
+    "description": "Authenticates a super admin user and returns a JWT access token.",
+    "parameters": [
+        {
+            "name": "body",
+            "in": "body",
+            "required": True,
+            "schema": {
+                "type": "object",
+                "required": ["email", "password"],
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "example": "superadmin@example.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "format": "password",
+                        "example": "SuperAdmin@123"
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Login successful",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": True
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Login successful."
+                    },
+                    "access_token": {
+                        "type": "string",
+                        "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                    },
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "example": 1
+                            },
+                            "name": {
+                                "type": "string",
+                                "example": "Super Admin"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email",
+                                "example": "superadmin@example.com"
+                            },
+                            "role": {
+                                "type": "string",
+                                "example": "super_admin"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        400: {
+            "description": "Missing request body, missing credentials, or invalid email",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Email and password are required."
+                    }
+                }
+            }
+        },
+        401: {
+            "description": "Incorrect email or password",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Email or password is incorrect."
+                    }
+                }
+            }
+        },
+        403: {
+            "description": "Super admin account is inactive",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Account is inactive."
+                    }
+                }
+            }
+        },
+        404: {
+            "description": "Super admin account not found",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Super Admin account not found."
+                    }
+                }
+            }
+        },
+        500: {
+            "description": "Unexpected server error",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "An unexpected error occurred."
+                    }
+                }
+            }
+        }
+    }
+})
+def super_admin_login():
+    try:
+        data = request.get_json()
+        if not data:
+            logging.warning("Super Admin login attempted without request body.")
+            return jsonify({
+                "success": False,
+                "message": "Request body is required."
+            }), 400
+
+        email = data.get("email", "").strip().lower()
+        password = data.get("password", "")
+
+        if not email or not password:
+
+            logging.warning("Super Admin login missing email or password.")
+
+            return jsonify({
+                "success": False,
+                "message": "Email and password are required."
+            }), 400
+
+        if not validate_email(email):
+
+            logging.warning(f"Invalid Super Admin email: {email}")
+
+            return jsonify({
+                "success": False,
+                "message": "Please enter a valid email address."
+            }), 400
+
+        user = User.query.filter_by(
+            email=email,
+            role=UserRole.SUPER_ADMIN
+        ).first()
+
+        if not user:
+            logging.warning(
+                f"Super Admin account not found: {email}"
+            )
+            return jsonify({
+                "success": False,
+                "message": "Super Admin account not found."
+            }), 404
+
+        if user.status != UserStatus.ACTIVE:
+
+            logging.warning(
+                f"Inactive Super Admin login attempt: {email}"
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Account is inactive."
+            }), 403
+
+        if not user.check_password(password):
+
+            logging.warning(
+                f"Incorrect password for Super Admin: {email}"
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Email or password is incorrect."
+            }), 401
+
+        token = create_access_token(
+            identity=str(user.id),
+            additional_claims={
+                "role": user.role.value,
+                "email": user.email,
+                "name": user.name
+            }
+        )
+        logging.info(
+            f"Super Admin '{user.email}' logged in successfully."
+        )
+        return jsonify({
+            "success": True,
+            "message": "Login successful.",
+            "access_token": token,
+            "user": {
+                "id": user.id,
+                "name": user.name,
+                "email": user.email,
+                "role": user.role.value
+            }
+        }), 200
+
+    except Exception as e:
+        logging.exception(
+            f"Super Admin login error: {e}"
+        )
+        return jsonify({
+            "success": False,
+            "error": str(e)
+            # "message": "An unexpected error occurred."
+        }), 500
+    
+
+# ADMIN LOGIN 
+@auth.post("/admin/login")
+@swag_from({
+    "tags": ["Auth"],
+    "summary": "Admin login",
+    "description": "Authenticates an admin user and returns a JWT access token.",
+    "parameters": [
+        {
+            "name": "body",
+            "in": "body",
+            "required": True,
+            "schema": {
+                "type": "object",
+                "required": ["email", "password"],
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "example": "admin@example.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "format": "password",
+                        "example": "Admin@123"
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Login successful",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": True
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Login successful."
+                    },
+                    "access_token": {
+                        "type": "string",
+                        "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                    },
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "example": 1
+                            },
+                            "name": {
+                                "type": "string",
+                                "example": "Admin User"
+                            },
+                            "email": {
+                                "type": "string",
+                                "format": "email",
+                                "example": "admin@example.com"
+                            },
+                            "role": {
+                                "type": "string",
+                                "example": "admin"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        400: {
+            "description": "Missing request body, missing credentials, or invalid email",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Email and password are required."
+                    }
+                }
+            }
+        },
+        401: {
+            "description": "Incorrect email or password",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Email or password is incorrect."
+                    }
+                }
+            }
+        },
+        403: {
+            "description": "Admin account is inactive",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Account is inactive."
+                    }
+                }
+            }
+        },
+        404: {
+            "description": "Admin account not found",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Admin account not found."
+                    }
+                }
+            }
+        },
+        500: {
+            "description": "Unexpected server error",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "An unexpected error occurred."
+                    }
+                }
+            }
+        }
+    }
+})
+def admin_login():
+    try:
+        data = request.get_json()
+        if not data:
+            logging.warning("Admin login attempted without request body.")
+            return jsonify({
+                "success": False,
+                "message": "Request body is required."
+            }), 400
+
+        email = data.get("email", "").strip().lower()
+        password = data.get("password", "")
+
+        if not email or not password:
+
+            logging.warning("Admin login missing email or password.")
+
+            return jsonify({
+                "success": False,
+                "message": "Email and password are required."
+            }), 400
+
+        if not validate_email(email):
+            logging.warning(f"Invalid Admin email: {email}")
+            return jsonify({
+                "success": False,
+                "message": "Please enter a valid email address."
+            }), 400
+        user = User.query.filter_by(
+            email=email,
+            role=UserRole.ADMIN
+        ).first()
+
+        if not user:
+            logging.warning(
+                f"Admin account not found: {email}"
+            )
+            return jsonify({
+                "success": False,
+                "message": "Admin account not found."
+            }), 404
+
+        if user.status != UserStatus.ACTIVE:
+            logging.warning(
+                f"Inactive Admin login attempt: {email}"
+            )
+            return jsonify({
+                "success": False,
+                "message": "Account is inactive."
+            }), 403
+
+        if not user.check_password(password):
+            logging.warning(
+                f"Incorrect password for Admin: {email}"
+            )
+            return jsonify({
+                "success": False,
+                "message": "Email or password is incorrect."
+            }), 401
+
+        token = create_access_token(
+            identity=str(user.id),
+            additional_claims={
+                "role": user.role.value,
+                "email": user.email,
+                "name": user.name
+            }
+        )
+
+        logging.info(
+            f"Admin '{user.email}' logged in successfully."
+        )
+
+        return jsonify({
+            "success": True,
+            "message": "Login successful.",
+            "access_token": token,
+            "user": {
+                "id": user.id,
+                "name": user.name,
+                "email": user.email,
+                "role": user.role.value
+            }
+        }), 200
+
+    except Exception as e:
+        logging.exception(
+            f"Admin login error: {e}"
+        )
+        return jsonify({
+            "success": False,
+            "error": str(e)
+            # "message": "An unexpected error occurred."
         }), 500

@@ -11,6 +11,7 @@ flasgger = "*"
 psycopg2 = "*"
 python-dotenv = "*"
 flask-migrate = "*"
+flask-jwt-extended = "*"
 
 [dev-packages]
 
