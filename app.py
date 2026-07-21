@@ -7,6 +7,8 @@ from routes.auth_routes import auth
 from flasgger import Swagger
 from dotenv import load_dotenv
 from config.logs.logs import setup_logging
+from config.helpers.email import mail
+
 
 load_dotenv()
 
@@ -16,12 +18,22 @@ def create_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 
+    # email 
+    app.config["MAIL_SERVER"] = "smtp.gmail.com"
+    app.config["MAIL_PORT"] = 587
+    app.config["MAIL_USE_TLS"] = True
+    app.config["MAIL_USE_SSL"] = False
+    app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")
+    app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")
+    app.config["MAIL_DEFAULT_SENDER"] = os.getenv("MAIL_USERNAME")
+
     setup_logging()
     logging.info("Starting Horus Backend Application")
 
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
+    mail.init_app(app)
     @jwt.expired_token_loader
 
     def expired_token(jwt_header, jwt_payload):

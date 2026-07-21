@@ -1,12 +1,14 @@
 import logging
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, current_app
 from flasgger import swag_from
 from werkzeug.security import generate_password_hash
 from config.extensions.database_config import db
 from models.users import User, UserRole, UserStatus
 from flask_jwt_extended import create_access_token
-from config.helpers.validators import validate_email, validate_name,validate_password
-from config.helpers.helpers import role_required, admin_or_super_admin_required, admin_required, super_admin_required
+from config.helpers.validators import validate_email, validate_name, validate_password
+from itsdangerous import URLSafeTimedSerializer
+from config.helpers.email import send_password_reset_email
+from itsdangerous import (URLSafeTimedSerializer, SignatureExpired, BadSignature)
 
 auth =  Blueprint("auth", __name__, url_prefix="/auth")
 
@@ -831,4 +833,398 @@ def admin_login():
             "success": False,
             "error": str(e)
             # "message": "An unexpected error occurred."
+        }), 500
+
+
+# SEND LIINK TO SUPER ADMIN FORGOT PASSWORD 
+@auth.post("/super-admin/forgot-password")
+@swag_from({
+    "tags": ["Super Admin Auth"],
+    "summary": "Send Super Admin forgot password link",
+    "description": "Send a password reset link to a Super Admin email address.",
+    "parameters": [
+        {
+            "name": "body",
+            "in": "body",
+            "required": True,
+            "schema": {
+                "type": "object",
+                "required": ["email"],
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "example": "superadmin@example.com",
+                        "description": "Registered Super Admin email address."
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Password reset link sent successfully.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": True},
+                    "message": {
+                        "type": "string",
+                        "example": "Password reset link has been sent to your email."
+                    }
+                }
+            }
+        },
+        400: {
+            "description": "Missing request body, missing email, or invalid email.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": False},
+                    "message": {
+                        "type": "string",
+                        "example": "Please enter a valid email address."
+                    }
+                }
+            }
+        },
+        404: {
+            "description": "Super Admin email does not exist.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": False},
+                    "message": {
+                        "type": "string",
+                        "example": "Email does not exist."
+                    }
+                }
+            }
+        },
+        500: {
+            "description": "Unexpected server error.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": False},
+                    "message": {
+                        "type": "string",
+                        "example": "An unexpected error occurred."
+                    }
+                }
+            }
+        }
+    }
+})
+def super_admin_forgot_password():
+
+    try:
+
+        data = request.get_json()
+
+        if not data:
+            logging.warning("Forgot password called without request body.")
+            return jsonify({
+                "success": False,
+                "message": "Request body is required."
+            }), 400
+
+        email = data.get("email", "").strip().lower()
+
+        if not email:
+
+            logging.warning("Forgot password missing email.")
+
+            return jsonify({
+                "success": False,
+                "message": "Email is required."
+            }), 400
+
+        if not validate_email(email):
+
+            logging.warning(f"Invalid email supplied: {email}")
+
+            return jsonify({
+                "success": False,
+                "message": "Please enter a valid email address."
+            }), 400
+
+        user = User.query.filter_by(
+            email=email,
+            role=UserRole.SUPER_ADMIN
+        ).first()
+
+        if not user:
+
+            logging.warning(
+                f"Password reset requested for unknown email: {email}"
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Email does not exist."
+            }), 404
+
+        serializer = URLSafeTimedSerializer(
+            current_app.config["JWT_SECRET_KEY"]
+        )
+
+        token = serializer.dumps(
+            user.email,
+            salt="password-reset-salt"
+        )
+
+        reset_url = (
+            f"http://localhost:3000/reset-password/{token}"
+        )
+
+        send_password_reset_email(
+            user.name,
+            user.email,
+            reset_url
+        )
+
+        logging.info(
+            f"Password reset email sent to {email}"
+        )
+
+        return jsonify({
+            "success": True,
+            "message": "Password reset link has been sent to your email."
+        }), 200
+
+    except Exception as e:
+
+        logging.exception(
+            f"Forgot password error: {e}"
+        )
+
+        return jsonify({
+            "success": False,
+            "error": str(e)
+            # "message": "An unexpected error occurred."
+        }), 500
+    
+
+# CHANGE PASSWORD FOR FORGOT PASSWORD FOR SUPER ADMIN 
+@auth.post("/super-admin/reset-password/<token>")
+@swag_from({
+    "tags": ["Super Admin Auth"],
+    "summary": "Reset Super Admin password",
+    "description": "Reset a Super Admin password using a valid forgot-password reset token.",
+    "parameters": [
+        {
+            "name": "token",
+            "in": "path",
+            "type": "string",
+            "required": True,
+            "description": "Password reset token sent to the Super Admin email."
+        },
+        {
+            "name": "body",
+            "in": "body",
+            "required": True,
+            "schema": {
+                "type": "object",
+                "required": ["password", "confirm_password"],
+                "properties": {
+                    "password": {
+                        "type": "string",
+                        "example": "NewPassword123",
+                        "description": "New password. Must be at least 8 characters."
+                    },
+                    "confirm_password": {
+                        "type": "string",
+                        "example": "NewPassword123",
+                        "description": "Confirmation of the new password."
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Password changed successfully.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": True},
+                    "message": {
+                        "type": "string",
+                        "example": "Password changed successfully."
+                    }
+                }
+            }
+        },
+        400: {
+            "description": "Bad request, invalid token, expired token, or validation error.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": False},
+                    "message": {
+                        "type": "string",
+                        "example": "Passwords do not match."
+                    }
+                }
+            }
+        },
+        404: {
+            "description": "Super Admin user not found.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": False},
+                    "message": {
+                        "type": "string",
+                        "example": "User not found."
+                    }
+                }
+            }
+        },
+        500: {
+            "description": "Unexpected server error.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": False},
+                    "message": {
+                        "type": "string",
+                        "example": "An unexpected error occurred."
+                    }
+                }
+            }
+        }
+    }
+})
+def reset_super_admin_password(token):
+
+    try:
+
+        data = request.get_json()
+
+        if not data:
+
+            logging.warning(
+                "Reset password called without body."
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Request body is required."
+            }), 400
+
+        password = data.get("password", "")
+        confirm_password = data.get(
+            "confirm_password",
+            ""
+        )
+
+        if not password or not confirm_password:
+
+            logging.warning(
+                "Password reset missing fields."
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Password and confirm password are required."
+            }), 400
+
+        if password != confirm_password:
+
+            logging.warning(
+                "Password confirmation mismatch."
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Passwords do not match."
+            }), 400
+
+        if len(password) < 8:
+
+            logging.warning(
+                "Password too short."
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Password must be at least 8 characters."
+            }), 400
+
+        serializer = URLSafeTimedSerializer(
+            current_app.config["JWT_SECRET_KEY"]
+        )
+
+        try:
+
+            email = serializer.loads(
+                token,
+                salt="password-reset-salt",
+                max_age=300
+            )
+
+        except SignatureExpired:
+
+            logging.warning(
+                "Expired password reset token."
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Password reset link has expired."
+            }), 400
+
+        except BadSignature:
+
+            logging.warning(
+                "Invalid password reset token."
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Invalid password reset link."
+            }), 400
+
+        user = User.query.filter_by(
+            email=email,
+            role=UserRole.SUPER_ADMIN
+        ).first()
+
+        if not user:
+
+            logging.warning(
+                f"Reset password user not found: {email}"
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "User not found."
+            }), 404
+
+        user.set_password(password)
+
+        db.session.commit()
+
+        logging.info(
+            f"Super Admin password reset successfully for {email}"
+        )
+
+        return jsonify({
+            "success": True,
+            "message": "Password changed successfully."
+        }), 200
+
+    except Exception as e:
+
+        db.session.rollback()
+
+        logging.exception(
+            f"Password reset error: {e}"
+        )
+
+        return jsonify({
+            "success": False,
+            "message": "An unexpected error occurred."
         }), 500
