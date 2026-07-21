@@ -88,7 +88,32 @@ def create_app():
         "specs_route": "/apidocs/"
     }
 
-    Swagger(app, config=swagger_config)
+    swagger_template = {
+    "swagger": "2.0",
+    "info": {
+        "title": "Horus API",
+        "description": "Horus Chatbot Backend API",
+        "version": "1.0.0"
+    },
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": (
+                "JWT Authorization header using the Bearer scheme.\n\n"
+                "Example:\n"
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+            )
+        }
+    }
+}
+
+    Swagger(
+        app,
+        config=swagger_config,
+        template=swagger_template
+    )
     app.register_blueprint(auth)
     logging.info("Routes registered successfully")
     return app
