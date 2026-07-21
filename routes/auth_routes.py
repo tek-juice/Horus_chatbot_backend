@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 # REGISTER ADMIN 
 @auth.route("/register-admin", methods=["POST"])
 @swag_from({
-    "tags": ["Auth"],
+    "tags": ["Super Admin Auth"],
     "summary": "Register admin",
     "description": "Creates a new admin user account.",
     "parameters": [
@@ -183,7 +183,7 @@ def register_admin():
 # REGISTER SUPER ADMIN
 @auth.route("/register-super-admin", methods=["POST"])
 @swag_from({
-    "tags": ["Auth"],
+    "tags": ["Super Admin Auth"],
     "summary": "Register super admin",
     "description": "Creates a new super admin user account.",
     "parameters": [
@@ -334,7 +334,7 @@ def register_super_admin():
 # SUPER ADMIN 
 @auth.post("/super-admin/login")
 @swag_from({
-    "tags": ["Auth"],
+    "tags": ["Super Admin Auth"],
     "summary": "Super admin login",
     "description": "Authenticates a super admin user and returns a JWT access token.",
     "parameters": [
@@ -589,7 +589,7 @@ def super_admin_login():
 # ADMIN LOGIN 
 @auth.post("/admin/login")
 @swag_from({
-    "tags": ["Auth"],
+    "tags": ["Admin auth"],
     "summary": "Admin login",
     "description": "Authenticates an admin user and returns a JWT access token.",
     "parameters": [
@@ -1142,15 +1142,18 @@ def reset_super_admin_password(token):
                 "message": "Passwords do not match."
             }), 400
 
-        if len(password) < 8:
+        if not validate_password(password):
 
             logging.warning(
-                "Password too short."
+                "Password does not meet security requirements."
             )
 
             return jsonify({
                 "success": False,
-                "message": "Password must be at least 8 characters."
+                "message": (
+                    "Password must be at least 8 characters long and contain "
+                    "at least one letter, one number, and one special character."
+                )
             }), 400
 
         serializer = URLSafeTimedSerializer(
