@@ -1,5 +1,7 @@
 import logging
 from flask import Blueprint, request, jsonify, current_app
+from flask_jwt_extended import get_jwt_identity
+from sqlalchemy.exc import SQLAlchemyError
 from flasgger import swag_from
 from werkzeug.security import generate_password_hash
 from config.extensions.database_config import db
@@ -1620,4 +1622,671 @@ def reset_admin_password(token):
         return jsonify({
             "success": False,
             "message": "An unexpected error occurred."
+        }), 500
+
+
+# SUPER ADMIN FORGOT PASSWORD 
+@auth.post("/super-admin-change-password")
+@super_admin_required
+@swag_from({
+    "tags": ["Super Admin Auth"],
+    "summary": "Change user password",
+    "description": "Changes the authenticated user's password.",
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "parameters": [
+        {
+            "name": "body",
+            "in": "body",
+            "required": True,
+            "schema": {
+                "type": "object",
+                "required": ["current_password", "new_password", "confirm_password"],
+                "properties": {
+                    "current_password": {"type": "string", "example": "OldPass123!"},
+                    "new_password": {"type": "string", "example": "NewPass123!"},
+                    "confirm_password": {"type": "string", "example": "NewPass123!"}
+                }
+            }
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Password changed successfully.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": True},
+                    "message": {"type": "string", "example": "Password changed successfully."}
+                }
+            }
+        },
+        400: {
+            "description": "Invalid password input.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": False},
+                    "message": {"type": "string", "example": "Current password is incorrect."}
+                }
+            }
+        },
+        500: {
+            "description": "Database or unexpected server error.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {"type": "boolean", "example": False},
+                    "message": {"type": "string", "example": "A database error occurred."}
+                }
+            }
+        }
+    }
+})
+def super_admin_change_password():
+    try:
+        user_id = get_jwt_identity()
+        logger.info(f"Password change requested. User ID: {user_id}")
+        user = User.query.get(user_id)
+
+        if not user:
+            logger.warning(f"User not found. ID: {user_id}")
+            return jsonify({
+                "success": False,
+                "message": "User not found."
+            }), 404
+
+        data = request.get_json() or {}
+        current_password = data.get("current_password")
+        new_password = data.get("new_password")
+        confirm_password = data.get("confirm_password")
+
+        if not all([current_password, new_password, confirm_password]):
+            logger.warning(f"Missing password fields. User ID: {user.id}")
+            return jsonify({
+                "success": False,
+                "message": "Current password, new password and confirmation are required."
+            }), 400
+
+        if not user.check_password(current_password):
+            logger.warning(f"Incorrect current password. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": "Current password is incorrect."
+            }), 400
+
+        if new_password != confirm_password:
+            logger.warning(f"Password confirmation mismatch. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": "Passwords do not match."
+            }), 400
+
+        if not validate_password(new_password):
+            logger.warning(f"Password validation failed. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": (
+                    "Password must be at least 8 characters long and contain "
+                    "an uppercase letter, lowercase letter, number, and special character."
+                )
+            }), 400
+
+        if user.check_password(new_password):
+            logger.warning(f"New password is the same as current password. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": "New password must be different from the current password."
+            }), 400
+
+        user.set_password(new_password)
+
+        db.session.commit()
+
+        logger.info(f"Password changed successfully. User ID: {user.id}")
+
+        return jsonify({
+            "success": True,
+            "message": "Password changed successfully."
+        }), 200
+
+    except SQLAlchemyError as e:
+        db.session.rollback()
+
+        logger.exception(f"Database error changing password: {str(e)}")
+
+        return jsonify({
+            "success": False,
+            "message": "A database error occurred."
+        }), 500
+
+    except Exception as e:
+        db.session.rollback()
+
+        logger.exception(f"Unexpected error changing password: {str(e)}")
+
+        return jsonify({
+            "success": False,
+            "message": "An unexpected error occurred."
+        }), 500
+    
+
+# ADMIN CHANGE PASSWORD 
+@auth.post("/admin-change-password")
+@swag_from({
+    "tags": ["Admin Auth"],
+    "summary": "Change admin password",
+    "description": "Allows an authenticated admin to change their own password.",
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "parameters": [
+        {
+            "name": "body",
+            "in": "body",
+            "required": True,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "current_password",
+                    "new_password",
+                    "confirm_password"
+                ],
+                "properties": {
+                    "current_password": {
+                        "type": "string",
+                        "example": "OldPass123!"
+                    },
+                    "new_password": {
+                        "type": "string",
+                        "example": "NewPass123!"
+                    },
+                    "confirm_password": {
+                        "type": "string",
+                        "example": "NewPass123!"
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Password changed successfully.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": True
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Password changed successfully."
+                    }
+                }
+            }
+        },
+        400: {
+            "description": "Invalid password data.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Current password, new password and confirmation are required."
+                    }
+                }
+            }
+        },
+        404: {
+            "description": "Admin user not found.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "User not found."
+                    }
+                }
+            }
+        },
+        500: {
+            "description": "Database or unexpected server error.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "A database error occurred."
+                    }
+                }
+            }
+        }
+    }
+})
+@admin_required
+def admin_change_password():
+    try:
+        user_id = get_jwt_identity()
+
+        logger.info(f"Admin password change requested. User ID: {user_id}")
+
+        user = User.query.get(user_id)
+
+        if not user:
+            logger.warning(f"Admin not found. ID: {user_id}")
+
+            return jsonify({
+                "success": False,
+                "message": "User not found."
+            }), 404
+
+        data = request.get_json() or {}
+
+        current_password = data.get("current_password")
+        new_password = data.get("new_password")
+        confirm_password = data.get("confirm_password")
+
+        if not all([current_password, new_password, confirm_password]):
+            logger.warning(f"Missing password fields. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": "Current password, new password and confirmation are required."
+            }), 400
+
+        if not user.check_password(current_password):
+            logger.warning(f"Incorrect current password. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": "Current password is incorrect."
+            }), 400
+
+        if new_password != confirm_password:
+            logger.warning(f"Password confirmation mismatch. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": "Passwords do not match."
+            }), 400
+
+        if not validate_password(new_password):
+            logger.warning(f"Password validation failed. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": (
+                    "Password must be at least 8 characters long and contain "
+                    "an uppercase letter, lowercase letter, number, and special character."
+                )
+            }), 400
+
+        if user.check_password(new_password):
+            logger.warning(f"New password is the same as current password. User ID: {user.id}")
+
+            return jsonify({
+                "success": False,
+                "message": "New password must be different from the current password."
+            }), 400
+
+        user.set_password(new_password)
+
+        db.session.commit()
+
+        logger.info(f"Password changed successfully. User ID: {user.id}")
+
+        return jsonify({
+            "success": True,
+            "message": "Password changed successfully."
+        }), 200
+
+    except SQLAlchemyError as e:
+        db.session.rollback()
+
+        logger.exception(f"Database error changing admin password: {str(e)}")
+
+        return jsonify({
+            "success": False,
+            "message": "A database error occurred."
+        }), 500
+
+    except Exception as e:
+        db.session.rollback()
+
+        logger.exception(f"Unexpected error changing admin password: {str(e)}")
+
+        return jsonify({
+            "success": False,
+            "message": "An unexpected error occurred."
+        }), 500
+    
+
+@auth.get("/admins")
+@super_admin_required
+@swag_from({
+    "tags": ["Super Admin Auth"],
+    "summary": "Get all admins",
+    "description": "Returns a list of all admin users. Requires super admin authentication.",
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Admins retrieved successfully.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": True
+                    },
+                    "count": {
+                        "type": "integer",
+                        "example": 2
+                    },
+                    "admins": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Admin User"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "admin@example.com"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "example": "active"
+                                },
+                                "role": {
+                                    "type": "string",
+                                    "example": "admin"
+                                },
+                                "created_at": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2026-07-23T10:30:00"
+                                },
+                                "updated_at": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2026-07-23T10:30:00"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        401: {
+            "description": "Missing or invalid authentication token.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Missing or invalid token."
+                    }
+                }
+            }
+        },
+        403: {
+            "description": "Super admin access required.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Super admin access required."
+                    }
+                }
+            }
+        }
+    }
+})
+def get_admins():
+    try:
+        admins = (
+            User.query
+            .filter(User.role == UserRole.ADMIN)
+            .order_by(User.created_at.desc())
+            .all()
+        )
+
+        logger.info(
+            f"Retrieved {len(admins)} admin account(s)."
+        )
+
+        return jsonify({
+            "success": True,
+            "count": len(admins),
+            "admins": [
+                {
+                    "id": admin.id,
+                    "name": admin.name,
+                    "email": admin.email,
+                    "status": admin.status.value,
+                    "role": admin.role.value,
+                    "created_at": admin.created_at.isoformat(),
+                    "updated_at": admin.updated_at.isoformat(),
+                }
+                for admin in admins
+            ]
+        }), 200
+
+    except Exception as e:
+        logger.exception(
+            f"Error retrieving admin accounts: {str(e)}"
+        )
+
+        return jsonify({
+            "success": False,
+            "message": "An unexpected error occurred while retrieving admins."
+        }), 500
+    
+@auth.delete("/admins/<int:admin_id>")
+@super_admin_required
+@swag_from({
+    "tags": ["Super Admin Auth"],
+    "summary": "Delete admin",
+    "description": "Deletes an admin account by ID. Requires super admin authentication.",
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "parameters": [
+        {
+            "name": "admin_id",
+            "in": "path",
+            "required": True,
+            "type": "integer",
+            "description": "ID of the admin account to delete.",
+            "example": 1
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Admin deleted successfully.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": True
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Admin deleted successfully."
+                    }
+                }
+            }
+        },
+        400: {
+            "description": "The selected user is not an admin account.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Only admin accounts can be deleted."
+                    }
+                }
+            }
+        },
+        401: {
+            "description": "Missing or invalid authentication token.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Missing or invalid token."
+                    }
+                }
+            }
+        },
+        403: {
+            "description": "Super admin access required.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Super admin access required."
+                    }
+                }
+            }
+        },
+        404: {
+            "description": "Admin not found.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Admin not found."
+                    }
+                }
+            }
+        },
+        500: {
+            "description": "Unexpected server error.",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "An unexpected error occurred while deleting the admin."
+                    }
+                }
+            }
+        }
+    }
+})
+def delete_admin(admin_id):
+    try:
+        admin = User.query.get(admin_id)
+
+        if not admin:
+            logger.warning(
+                f"Admin with ID {admin_id} not found."
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Admin not found."
+            }), 404
+
+        if admin.role != UserRole.ADMIN:
+            logger.warning(
+                f"Attempt to delete non-admin user (ID: {admin_id})."
+            )
+
+            return jsonify({
+                "success": False,
+                "message": "Only admin accounts can be deleted."
+            }), 400
+
+        db.session.delete(admin)
+        db.session.commit()
+
+        logger.info(
+            f"Admin '{admin.email}' (ID: {admin.id}) deleted successfully."
+        )
+
+        return jsonify({
+            "success": True,
+            "message": "Admin deleted successfully."
+        }), 200
+
+    except Exception as e:
+        db.session.rollback()
+
+        logger.exception(
+            f"Error deleting admin {admin_id}: {str(e)}"
+        )
+
+        return jsonify({
+            "success": False,
+            "message": "An unexpected error occurred while deleting the admin."
         }), 500
