@@ -13,6 +13,7 @@ python-dotenv = "*"
 flask-migrate = "*"
 flask-jwt-extended = "*"
 flask-mail = "*"
+pgvector = "*"
 
 [dev-packages]
 

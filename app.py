@@ -4,6 +4,7 @@ from config.extensions.jwt_config import jwt
 import os
 import logging
 from routes.auth_routes import auth
+from routes.documents import document
 from flasgger import Swagger
 from dotenv import load_dotenv
 from config.logs.logs import setup_logging
@@ -115,6 +116,7 @@ def create_app():
         template=swagger_template
     )
     app.register_blueprint(auth)
+    app.register_blueprint(document)
     logging.info("Routes registered successfully")
     return app
 

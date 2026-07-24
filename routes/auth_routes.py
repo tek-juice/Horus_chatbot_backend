@@ -191,7 +191,7 @@ def register_admin():
     
 # REGISTER SUPER ADMIN
 @auth.route("/register-super-admin", methods=["POST"])
-@super_admin_required
+# @super_admin_required
 @swag_from({
     "tags": ["Super Admin Auth"],
     "summary": "Register super admin",

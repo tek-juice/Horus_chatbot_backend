@@ -2,6 +2,8 @@ services:
   backend:
     build: .
     container_name: horus_backend
+    volumes:
+      - .:/app
     ports:
       - "5000:5000"
     env_file:
