@@ -1,37 +1,23 @@
-# import logging
+import logging
+
+logger = logging.getLogger(__name__)
 
 
-# logger = logging.getLogger(__name__)
+def create_chunks(text: str, chunk_size: int = 500, chunk_overlap: int = 100):
+    if not text:
+        return []
 
-# def create_chunks(text, chunk_size=500):
-#     try:
-#         logger.info(
-#             "Creating document chunks"
-#         )
+    chunks = []
+    start = 0
+    text_length = len(text)
 
-#         words = text.split()
-#         chunks=[]
-#         for i in range(0, len(words), chunk_size):
+    while start < text_length:
+        end = start + chunk_size
+        chunks.append(text[start:end])
+        start += chunk_size - chunk_overlap
 
-#             chunk = " ".join(
-#                 words[i:i+chunk_size]
-#             )
+    logger.info(
+        f"Created {len(chunks)} chunks."
+    )
 
-#             chunks.append(chunk)
-
-
-#         logger.info(
-#             f"Created {len(chunks)} chunks"
-#         )
-
-
-#         return chunks
-
-
-#     except Exception as e:
-
-#         logger.exception(
-#             f"Chunk creation failed: {e}"
-#         )
-
-#         raise
+    return chunks
