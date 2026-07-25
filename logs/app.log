@@ -1,43 +1,4 @@
-2026-07-23 15:44:38,450 INFO root: Running development server
-2026-07-23 15:44:38,480 WARNING werkzeug:  * Debugger is active!
-2026-07-23 15:44:38,481 INFO werkzeug:  * Debugger PIN: 182-933-645
-2026-07-23 15:44:56,508 INFO werkzeug:  * Detected change in '/app/config/document_services/ingest_document.py', reloading
-2026-07-23 15:44:57,422 INFO root: Starting Horus Backend Application
-2026-07-23 15:44:57,437 INFO root: Routes registered successfully
-2026-07-23 15:44:57,438 INFO root: Running development server
-2026-07-23 15:44:57,450 WARNING werkzeug:  * Debugger is active!
-2026-07-23 15:44:57,451 INFO werkzeug:  * Debugger PIN: 182-933-645
-2026-07-23 15:45:18,449 INFO root: Starting Horus Backend Application
-2026-07-23 15:45:18,465 INFO root: Routes registered successfully
-2026-07-23 15:45:18,466 INFO root: Running development server
-2026-07-23 15:45:18,518 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-07-23 15:45:18,519 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-07-23 15:45:18,520 INFO werkzeug:  * Restarting with stat
-2026-07-23 15:45:19,243 INFO root: Starting Horus Backend Application
-2026-07-23 15:45:19,263 INFO root: Routes registered successfully
-2026-07-23 15:45:19,264 INFO root: Running development server
-2026-07-23 15:45:19,281 WARNING werkzeug:  * Debugger is active!
-2026-07-23 15:45:19,282 INFO werkzeug:  * Debugger PIN: 816-212-900
-2026-07-23 15:46:18,351 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "GET /apidocs/ HTTP/1.1" 200 -
-2026-07-23 15:46:18,377 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
-2026-07-23 15:46:18,379 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
-2026-07-23 15:46:18,380 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
-2026-07-23 15:46:18,382 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
-2026-07-23 15:46:18,580 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "GET /apispec.json HTTP/1.1" 200 -
-2026-07-23 15:46:18,711 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
-2026-07-23 15:46:35,593 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-07-23 15:46:35,595 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:35] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-07-23 15:47:02,362 INFO routes.documents: Document upload request received.
-2026-07-23 15:47:02,432 INFO config.document_services.allowed_files: File extension validation successful for 'Inbox - Ishmael Ayebazibwe - Outlook.pdf'.
-2026-07-23 15:47:02,433 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
-2026-07-23 15:47:02,434 INFO config.document_services.ingest_document: Starting document ingestion: Inbox - Ishmael Ayebazibwe - Outlook.pdf
-2026-07-23 15:47:02,442 INFO config.document_services.ingest_document: Created upload directory: uploads/documents
-2026-07-23 15:47:02,473 INFO config.document_services.ingest_document: Document saved successfully: uploads/documents/Inbox_-_Ishmael_Ayebazibwe_-_Outlook.pdf
-2026-07-23 15:47:02,512 INFO config.document_services.save_document: Document saved: 1
-2026-07-23 15:47:02,512 INFO config.document_services.ingest_document: Document record created with ID: 1
-2026-07-23 15:47:02,513 INFO config.document_services.ingest_document: Document ingestion completed successfully: Inbox_-_Ishmael_Ayebazibwe_-_Outlook.pdf
-2026-07-23 15:47:02,513 INFO routes.documents: Document 'Inbox - Ishmael Ayebazibwe - Outlook.pdf' ingested successfully.
-2026-07-23 15:47:02,515 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:47:02] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 201 -
+2026-07-25 17:28:50,566 INFO root: Routes registered successfully
+2026-07-25 17:28:50,588 INFO root: Running development server
+2026-07-25 17:28:50,600 WARNING werkzeug:  * Debugger is active!
+2026-07-25 17:28:50,601 INFO werkzeug:  * Debugger PIN: 129-571-473
