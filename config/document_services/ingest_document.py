@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 
 UPLOAD_FOLDER = "uploads/documents"
 
-
 def ingest_document(file, admin_id):
     try:
         logger.info(f"Starting document ingestion: {file.filename}")

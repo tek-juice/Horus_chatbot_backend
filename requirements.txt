@@ -12,3 +12,4 @@ pgvector==0.5.0
 fastembed==0.7.3
 PyMuPDF
 python-docx
+openai

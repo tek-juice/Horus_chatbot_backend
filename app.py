@@ -5,6 +5,7 @@ import os
 import logging
 from routes.auth_routes import auth
 from routes.documents import document
+from routes.chat import chat_bp
 from flasgger import Swagger
 from dotenv import load_dotenv
 from config.logs.logs import setup_logging
@@ -117,6 +118,7 @@ def create_app():
     )
     app.register_blueprint(auth)
     app.register_blueprint(document)
+    app.register_blueprint(chat_bp)
     logging.info("Routes registered successfully")
     return app
 

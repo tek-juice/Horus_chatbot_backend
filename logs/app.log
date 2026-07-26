@@ -1,4 +1,1 @@
-2026-07-25 17:28:50,566 INFO root: Routes registered successfully
-2026-07-25 17:28:50,588 INFO root: Running development server
-2026-07-25 17:28:50,600 WARNING werkzeug:  * Debugger is active!
-2026-07-25 17:28:50,601 INFO werkzeug:  * Debugger PIN: 129-571-473
+2026-07-26 10:37:46,042 INFO werkzeug: 172.18.0.1 - - [26/Jul/2026 10:37:46] "POST /chat HTTP/1.1" 200 -

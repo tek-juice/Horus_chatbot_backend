@@ -17,6 +17,7 @@ pgvector = "*"
 pymupdf = "*"
 python-docx = "*"
 fastembed = "*"
+openai = "*"
 
 [dev-packages]
 

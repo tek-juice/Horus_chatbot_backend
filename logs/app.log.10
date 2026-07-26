@@ -1,0 +1,109 @@
+2026-07-23 15:44:38,450 INFO root: Running development server
+2026-07-23 15:44:38,480 WARNING werkzeug:  * Debugger is active!
+2026-07-23 15:44:38,481 INFO werkzeug:  * Debugger PIN: 182-933-645
+2026-07-23 15:44:56,508 INFO werkzeug:  * Detected change in '/app/config/document_services/ingest_document.py', reloading
+2026-07-23 15:44:57,422 INFO root: Starting Horus Backend Application
+2026-07-23 15:44:57,437 INFO root: Routes registered successfully
+2026-07-23 15:44:57,438 INFO root: Running development server
+2026-07-23 15:44:57,450 WARNING werkzeug:  * Debugger is active!
+2026-07-23 15:44:57,451 INFO werkzeug:  * Debugger PIN: 182-933-645
+2026-07-23 15:45:18,449 INFO root: Starting Horus Backend Application
+2026-07-23 15:45:18,465 INFO root: Routes registered successfully
+2026-07-23 15:45:18,466 INFO root: Running development server
+2026-07-23 15:45:18,518 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-23 15:45:18,519 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-23 15:45:18,520 INFO werkzeug:  * Restarting with stat
+2026-07-23 15:45:19,243 INFO root: Starting Horus Backend Application
+2026-07-23 15:45:19,263 INFO root: Routes registered successfully
+2026-07-23 15:45:19,264 INFO root: Running development server
+2026-07-23 15:45:19,281 WARNING werkzeug:  * Debugger is active!
+2026-07-23 15:45:19,282 INFO werkzeug:  * Debugger PIN: 816-212-900
+2026-07-23 15:46:18,351 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-23 15:46:18,377 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-07-23 15:46:18,379 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-07-23 15:46:18,380 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-07-23 15:46:18,382 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-07-23 15:46:18,580 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "GET /apispec.json HTTP/1.1" 200 -
+2026-07-23 15:46:18,711 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:18] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
+2026-07-23 15:46:35,593 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-07-23 15:46:35,595 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:46:35] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-07-23 15:47:02,362 INFO routes.documents: Document upload request received.
+2026-07-23 15:47:02,432 INFO config.document_services.allowed_files: File extension validation successful for 'Inbox - Ishmael Ayebazibwe - Outlook.pdf'.
+2026-07-23 15:47:02,433 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
+2026-07-23 15:47:02,434 INFO config.document_services.ingest_document: Starting document ingestion: Inbox - Ishmael Ayebazibwe - Outlook.pdf
+2026-07-23 15:47:02,442 INFO config.document_services.ingest_document: Created upload directory: uploads/documents
+2026-07-23 15:47:02,473 INFO config.document_services.ingest_document: Document saved successfully: uploads/documents/Inbox_-_Ishmael_Ayebazibwe_-_Outlook.pdf
+2026-07-23 15:47:02,512 INFO config.document_services.save_document: Document saved: 1
+2026-07-23 15:47:02,512 INFO config.document_services.ingest_document: Document record created with ID: 1
+2026-07-23 15:47:02,513 INFO config.document_services.ingest_document: Document ingestion completed successfully: Inbox_-_Ishmael_Ayebazibwe_-_Outlook.pdf
+2026-07-23 15:47:02,513 INFO routes.documents: Document 'Inbox - Ishmael Ayebazibwe - Outlook.pdf' ingested successfully.
+2026-07-23 15:47:02,515 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:47:02] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 201 -
+2026-07-24 13:44:16,264 INFO root: Starting Horus Backend Application
+2026-07-24 13:44:16,328 INFO root: Routes registered successfully
+2026-07-24 13:44:16,329 INFO root: Running development server
+2026-07-24 13:44:16,370 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-24 13:44:16,372 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-24 13:44:16,376 INFO werkzeug:  * Restarting with stat
+2026-07-24 13:44:22,240 INFO root: Starting Horus Backend Application
+2026-07-24 13:44:22,295 INFO root: Routes registered successfully
+2026-07-24 13:44:22,296 INFO root: Running development server
+2026-07-24 13:44:22,314 WARNING werkzeug:  * Debugger is active!
+2026-07-24 13:44:22,321 INFO werkzeug:  * Debugger PIN: 673-841-314
+2026-07-24 13:44:22,670 INFO werkzeug: 172.18.0.1 - - [24/Jul/2026 13:44:22] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-24 13:44:22,706 INFO werkzeug: 172.18.0.1 - - [24/Jul/2026 13:44:22] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
+2026-07-24 13:44:22,707 INFO werkzeug: 172.18.0.1 - - [24/Jul/2026 13:44:22] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2026-07-24 13:44:22,708 INFO werkzeug: 172.18.0.1 - - [24/Jul/2026 13:44:22] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2026-07-24 13:44:22,709 INFO werkzeug: 172.18.0.1 - - [24/Jul/2026 13:44:22] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
+2026-07-24 13:44:23,717 INFO werkzeug: 172.18.0.1 - - [24/Jul/2026 13:44:23] "GET /apispec.json HTTP/1.1" 200 -
+2026-07-24 13:44:42,158 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-07-24 13:44:42,160 INFO werkzeug: 172.18.0.1 - - [24/Jul/2026 13:44:42] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-07-24 13:45:12,832 INFO routes.documents: Document upload request received.
+2026-07-24 13:45:12,835 INFO config.document_services.allowed_files: File extension validation successful for 'About Horus.pdf'.
+2026-07-24 13:45:12,836 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
+2026-07-24 13:45:12,836 INFO config.document_services.ingest_document: Starting document ingestion: About Horus.pdf
+2026-07-24 13:45:12,851 INFO config.document_services.ingest_document: Document saved successfully: uploads/documents/About_Horus.pdf
+2026-07-24 13:45:12,879 INFO config.document_services.save_document: Document saved: 2
+2026-07-24 13:45:12,880 INFO config.document_services.ingest_document: Document record created with ID: 2
+2026-07-24 13:45:12,880 INFO config.document_services.ingest_document: Extracting text from document 2.
+2026-07-24 13:45:12,881 INFO config.document_services.code_extractor.pdf_extractor: Extracting text from PDF: uploads/documents/About_Horus.pdf
+2026-07-24 13:45:12,968 INFO config.document_services.code_extractor.pdf_extractor: PDF text extraction completed.
+2026-07-24 13:45:12,969 INFO config.document_services.ingest_document: Text extraction completed.
+2026-07-24 13:45:12,970 INFO config.document_services.ingest_document: Creating document chunks.
+2026-07-24 13:45:12,970 INFO config.document_services.create_chunks: Created 5 chunks.
+2026-07-24 13:45:12,971 INFO config.document_services.ingest_document: 5 chunks created.
+2026-07-24 13:45:12,971 INFO config.document_services.ingest_document: Generating embeddings.
+2026-07-24 13:45:12,972 INFO config.document_services.embedding_services: Generating embeddings for 5 chunks.
+2026-07-24 13:45:13,227 INFO config.document_services.embedding_services: Successfully generated 5 embeddings.
+2026-07-24 13:45:13,228 INFO config.document_services.ingest_document: 5 embeddings generated.
+2026-07-24 13:45:13,228 INFO config.document_services.ingest_document: Saving document chunks.
+2026-07-24 13:45:13,229 INFO config.document_services.save_chunks: Saving 5 chunks for document 2.
+2026-07-24 13:45:13,250 INFO config.document_services.save_chunks: Successfully saved 5 chunks for document 2.
+2026-07-24 13:45:13,250 INFO config.document_services.ingest_document: Document chunks saved successfully.
+2026-07-24 13:45:13,251 INFO config.document_services.ingest_document: Document ingestion completed successfully: About_Horus.pdf
+2026-07-24 13:45:13,252 INFO routes.documents: Document 'About Horus.pdf' ingested successfully.
+2026-07-24 13:45:13,254 INFO werkzeug: 172.18.0.1 - - [24/Jul/2026 13:45:13] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 201 -
+2026-07-25 16:56:22,206 INFO root: Starting Horus Backend Application
+2026-07-25 16:56:22,266 INFO root: Routes registered successfully
+2026-07-25 16:56:22,266 INFO root: Running development server
+2026-07-25 16:56:22,285 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-25 16:56:22,286 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-25 16:56:22,288 INFO werkzeug:  * Restarting with stat
+2026-07-25 16:56:25,963 INFO root: Starting Horus Backend Application
+2026-07-25 16:56:25,979 INFO root: Routes registered successfully
+2026-07-25 16:56:25,979 INFO root: Running development server
+2026-07-25 16:56:25,991 WARNING werkzeug:  * Debugger is active!
+2026-07-25 16:56:25,994 INFO werkzeug:  * Debugger PIN: 408-464-647
+2026-07-25 16:56:32,924 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 16:56:32] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-25 16:56:32,961 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 16:56:32] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
+2026-07-25 16:56:32,961 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 16:56:32] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2026-07-25 16:56:32,973 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 16:56:32] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2026-07-25 17:03:49,970 INFO werkzeug:  * Restarting with stat

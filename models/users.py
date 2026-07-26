@@ -35,13 +35,10 @@ class User(db.Model):
     is_registered = db.Column(db.Boolean, nullable=False, default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
-    sessions = db.relationship("ChatSession", back_populates="user", cascade="all, delete-orphan"
-    )
+    sessions = db.relationship("ChatSession", back_populates="user", cascade="all, delete-orphan")
 
     def set_password(self, password):
-        self.password_hash = generate_password_hash(
-            password
-        )
+        self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
         return check_password_hash(

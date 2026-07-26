@@ -1,113 +1,18 @@
-2026-07-23 15:20:01,274 WARNING root: Missing JWT token: Missing 'Bearer' type in 'Authorization' header. Expected 'Authorization: Bearer <JWT>'
-2026-07-23 15:20:01,286 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:01] "[31m[1mPOST /auth/admin-change-password HTTP/1.1[0m" 401 -
-2026-07-23 15:20:16,865 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:16] "GET /apidocs/ HTTP/1.1" 200 -
-2026-07-23 15:20:16,880 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:16] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
-2026-07-23 15:20:16,883 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:16] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
-2026-07-23 15:20:16,883 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:16] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
-2026-07-23 15:20:16,886 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:16] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
-2026-07-23 15:20:16,975 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:16] "GET /apispec.json HTTP/1.1" 200 -
-2026-07-23 15:20:17,038 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:17] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
-2026-07-23 15:20:31,096 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-07-23 15:20:31,097 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:20:31] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-07-23 15:21:01,851 INFO routes.documents: Document upload request received.
-2026-07-23 15:21:01,859 INFO config.document_services.allowed_files: File extension validation successful for 'Inbox - Ishmael Ayebazibwe - Outlook.pdf'.
-2026-07-23 15:21:01,860 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
-2026-07-23 15:21:01,861 ERROR routes.documents: Unexpected error while ingesting document 'Inbox - Ishmael Ayebazibwe - Outlook.pdf': 'module' object is not callable
-Traceback (most recent call last):
-  File "/app/routes/documents.py", line 79, in upload_document
-    result = ingest_document(file)
-             ^^^^^^^^^^^^^^^^^^^^^
-TypeError: 'module' object is not callable
-2026-07-23 15:21:01,868 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:21:01] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 500 -
-2026-07-23 15:22:03,547 INFO werkzeug:  * Detected change in '/app/routes/documents.py', reloading
-2026-07-23 15:22:12,983 INFO root: Starting Horus Backend Application
-2026-07-23 15:22:13,010 INFO root: Routes registered successfully
-2026-07-23 15:22:13,011 INFO root: Running development server
-2026-07-23 15:22:13,103 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-07-23 15:22:13,103 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-07-23 15:22:13,105 INFO werkzeug:  * Restarting with stat
-2026-07-23 15:22:13,817 INFO root: Starting Horus Backend Application
-2026-07-23 15:22:13,839 INFO root: Routes registered successfully
-2026-07-23 15:22:13,839 INFO root: Running development server
-2026-07-23 15:22:13,857 WARNING werkzeug:  * Debugger is active!
-2026-07-23 15:22:13,858 INFO werkzeug:  * Debugger PIN: 951-537-955
-2026-07-23 15:22:16,206 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:16] "GET /apidocs/ HTTP/1.1" 200 -
-2026-07-23 15:22:16,224 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:16] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
-2026-07-23 15:22:16,224 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:16] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
-2026-07-23 15:22:16,225 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:16] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
-2026-07-23 15:22:16,225 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:16] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
-2026-07-23 15:22:16,294 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:16] "GET /apispec.json HTTP/1.1" 200 -
-2026-07-23 15:22:16,361 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:16] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
-2026-07-23 15:22:26,222 WARNING root: Missing JWT token: Missing Authorization Header
-2026-07-23 15:22:26,223 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:26] "[31m[1mPOST /document/ingest HTTP/1.1[0m" 401 -
-2026-07-23 15:22:42,671 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-07-23 15:22:42,673 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:22:42] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-07-23 15:23:05,357 INFO routes.documents: Document upload request received.
-2026-07-23 15:23:05,366 INFO config.document_services.allowed_files: File extension validation successful for 'Inbox - Ishmael Ayebazibwe - Outlook.pdf'.
-2026-07-23 15:23:05,367 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
-2026-07-23 15:23:05,367 ERROR routes.documents: Unexpected error while ingesting document 'Inbox - Ishmael Ayebazibwe - Outlook.pdf': 'module' object is not callable
-Traceback (most recent call last):
-  File "/app/routes/documents.py", line 79, in upload_document
-    result = ingest_document(file)
-             ^^^^^^^^^^^^^^^^^^^^^
-TypeError: 'module' object is not callable
-2026-07-23 15:23:05,374 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:23:05] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 500 -
-2026-07-23 15:28:28,522 INFO werkzeug:  * Detected change in '/app/routes/documents.py', reloading
-2026-07-23 15:28:28,659 INFO werkzeug:  * Restarting with stat
-2026-07-23 15:28:40,321 INFO root: Starting Horus Backend Application
-2026-07-23 15:28:40,352 INFO root: Routes registered successfully
-2026-07-23 15:28:40,353 INFO root: Running development server
-2026-07-23 15:28:40,409 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-07-23 15:28:40,410 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-07-23 15:28:40,413 INFO werkzeug:  * Restarting with stat
-2026-07-23 15:28:41,115 INFO root: Starting Horus Backend Application
-2026-07-23 15:28:41,130 INFO root: Routes registered successfully
-2026-07-23 15:28:41,130 INFO root: Running development server
-2026-07-23 15:28:41,146 WARNING werkzeug:  * Debugger is active!
-2026-07-23 15:28:41,146 INFO werkzeug:  * Debugger PIN: 182-933-645
-2026-07-23 15:28:50,565 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:28:50] "GET /apidocs/ HTTP/1.1" 200 -
-2026-07-23 15:28:50,578 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:28:50] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
-2026-07-23 15:28:50,581 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:28:50] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
-2026-07-23 15:28:50,582 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:28:50] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
-2026-07-23 15:28:50,582 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:28:50] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
-2026-07-23 15:28:50,684 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:28:50] "GET /apispec.json HTTP/1.1" 200 -
-2026-07-23 15:28:50,761 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:28:50] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
-2026-07-23 15:29:20,012 WARNING root: Admin account not found: ishmo255super@gmail.com
-2026-07-23 15:29:20,013 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:29:20] "[33mPOST /auth/admin/login HTTP/1.1[0m" 404 -
-2026-07-23 15:29:42,184 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-07-23 15:29:42,186 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:29:42] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-07-23 15:30:17,421 INFO routes.documents: Document upload request received.
-2026-07-23 15:30:17,438 INFO config.document_services.allowed_files: File extension validation successful for 'Inbox - Ishmael Ayebazibwe - Outlook.pdf'.
-2026-07-23 15:30:17,439 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
-2026-07-23 15:30:17,439 ERROR routes.documents: Unexpected error while ingesting document 'Inbox - Ishmael Ayebazibwe - Outlook.pdf': ingest_document() missing 1 required positional argument: 'admin_id'
-Traceback (most recent call last):
-  File "/app/routes/documents.py", line 79, in upload_document
-    result = ingest_document(file)
-             ^^^^^^^^^^^^^^^^^^^^^
-TypeError: ingest_document() missing 1 required positional argument: 'admin_id'
-2026-07-23 15:30:17,443 INFO werkzeug: 172.18.0.1 - - [23/Jul/2026 15:30:17] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 500 -
-2026-07-23 15:43:01,898 INFO werkzeug:  * Detected change in '/app/routes/documents.py', reloading
-2026-07-23 15:43:02,051 INFO werkzeug:  * Restarting with stat
-2026-07-23 15:43:03,429 INFO root: Starting Horus Backend Application
-2026-07-23 15:43:03,461 INFO root: Routes registered successfully
-2026-07-23 15:43:03,462 INFO root: Running development server
-2026-07-23 15:43:03,492 WARNING werkzeug:  * Debugger is active!
-2026-07-23 15:43:03,494 INFO werkzeug:  * Debugger PIN: 182-933-645
-2026-07-23 15:43:45,786 INFO werkzeug:  * Detected change in '/app/routes/documents.py', reloading
-2026-07-23 15:43:45,910 INFO werkzeug:  * Restarting with stat
-2026-07-23 15:43:46,721 INFO root: Starting Horus Backend Application
-2026-07-23 15:43:46,737 INFO root: Routes registered successfully
-2026-07-23 15:43:46,738 INFO root: Running development server
-2026-07-23 15:43:46,752 WARNING werkzeug:  * Debugger is active!
-2026-07-23 15:43:46,752 INFO werkzeug:  * Debugger PIN: 182-933-645
-2026-07-23 15:44:37,458 INFO werkzeug:  * Detected change in '/app/routes/documents.py', reloading
-2026-07-23 15:44:37,663 INFO werkzeug:  * Restarting with stat
-2026-07-23 15:44:38,433 INFO root: Starting Horus Backend Application
-2026-07-23 15:44:38,449 INFO root: Routes registered successfully
-2026-07-23 15:44:56,684 INFO werkzeug:  * Restarting with stat
+2026-07-25 22:11:25,808 INFO config.document_services.embedding_services: Generating query embedding.
+2026-07-25 22:11:25,847 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-07-25 22:11:25,848 INFO config.model_engine.vector_search: Executing vector search. top_k=3
+2026-07-25 22:11:25,923 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
+2026-07-25 22:11:25,924 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-07-25 22:11:25,924 INFO config.model_engine.model_streamer: Context created. Length=417 characters.
+2026-07-25 22:11:25,925 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-07-25 22:11:27,394 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-25 22:11:27,394 INFO config.model_engine.model_streamer: LLM stream started.
+2026-07-25 22:11:27,399 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 22:11:27] "POST /chat HTTP/1.1" 200 -
+2026-07-25 22:11:28,692 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-07-25 22:13:06,877 INFO werkzeug:  * Detected change in '/app/config/document_services/ingest_document.py', reloading
+2026-07-25 22:13:11,710 INFO root: Starting Horus Backend Application
+2026-07-25 22:13:11,727 INFO root: Routes registered successfully
+2026-07-25 22:13:11,728 INFO root: Running development server
+2026-07-25 22:13:11,739 WARNING werkzeug:  * Debugger is active!
+2026-07-25 22:13:11,740 INFO werkzeug:  * Debugger PIN: 669-993-548
+2026-07-25 22:23:35,416 INFO werkzeug:  * Detected change in '/app/models/users.py', reloading
