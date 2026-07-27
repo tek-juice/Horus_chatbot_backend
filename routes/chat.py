@@ -8,6 +8,7 @@ from models.users import MessageRole
 from config.chat_services.create_user import create_user
 from config.chat_services.get_user_by_email import get_user_by_email
 import logging
+from models.users import ChatMessage, ChatSession
 
 logger = logging.getLogger(__name__)
 
@@ -223,3 +224,109 @@ def chat():
             "X-Accel-Buffering": "no",
         },
     )
+
+@chat_bp.route("/messages/<string:chat_id>", methods=["GET"])
+@swag_from({
+    "tags": ["Chatbot"],
+    "summary": "Fetch chat messages for a session",
+    "description": "Retrieves all chat messages belonging to a chat session ordered chronologically.",
+    "parameters": [
+        {
+            "name": "session_uuid",
+            "in": "path",
+            "type": "string",
+            "required": True,
+            "description": "Unique session UUID"
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Messages retrieved successfully",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": True
+                    },
+                    "messages": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "role": {
+                                    "type": "string",
+                                    "example": "USER"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Hello"
+                                },
+                                "created_at": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2026-07-27T10:15:20Z"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        404: {
+            "description": "Session not found"
+        },
+        500: {
+            "description": "Internal server error"
+        }
+    }
+})
+def get_session_messages(chat_id):
+    logger.info("Fetching chat messages for chat_id=%s", chat_id)
+
+    try:
+        session = ChatSession.query.filter_by(chat_id=chat_id).first()
+
+        if not session:
+            logger.warning("Chat session not found. chat_id=%s", chat_id)
+            return jsonify({
+                "success": False,
+                "error": "Chat session not found."
+            }), 404
+
+        messages = session.messages
+        logger.info(
+            "Retrieved %d messages for chat_id=%s",
+            len(messages),
+            chat_id
+        )
+
+        return jsonify({
+            "success": True,
+            "messages": [
+                {
+                    "id": message.id,
+                    "role": message.role.value,
+                    "message": message.message,
+                    "created_at": message.created_at.isoformat() + "Z"
+                }
+                for message in messages
+            ]
+        }), 200
+
+    except Exception as e:
+        logger.exception(
+            "Error fetching chat messages for chat_id=%s",
+            chat_id
+        )
+
+        return jsonify({
+            "success": False,
+            "error": "An unexpected error occurred while fetching chat messages."
+        }), 500
+
+    

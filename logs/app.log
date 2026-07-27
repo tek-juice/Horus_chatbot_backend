@@ -1,1 +1,94 @@
-2026-07-26 10:37:46,042 INFO werkzeug: 172.18.0.1 - - [26/Jul/2026 10:37:46] "POST /chat HTTP/1.1" 200 -
+2026-07-27 14:54:34,676 ERROR routes.chat: Error fetching chat messages for session_uuid=ac5c2b2f-2b20-4cd6-9f68-ba470294aef9: Entity namespace for "chat_sessions" has no property "session_uuid"
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/base.py", line 2288, in _entity_namespace_key
+    return getattr(ns, key)  # type: ignore
+           ^^^^^^^^^^^^^^^^
+AttributeError: type object 'ChatSession' has no attribute 'session_uuid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/routes/chat.py", line 292, in get_session_messages
+    session = ChatSession.query.filter_by(session_uuid=session_uuid).first()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 1993, in filter_by
+    _entity_namespace_key(from_entity, key) == value
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/base.py", line 2290, in _entity_namespace_key
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "chat_sessions" has no property "session_uuid"
+2026-07-27 14:54:34,779 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:54:34] "[35m[1mGET /messages/ac5c2b2f-2b20-4cd6-9f68-ba470294aef9 HTTP/1.1[0m" 500 -
+2026-07-27 14:56:21,329 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
+2026-07-27 14:56:28,013 INFO root: Starting Horus Backend Application
+2026-07-27 14:56:28,040 INFO root: Routes registered successfully
+2026-07-27 14:56:28,040 INFO root: Running development server
+2026-07-27 14:56:28,053 WARNING werkzeug:  * Debugger is active!
+2026-07-27 14:56:28,054 INFO werkzeug:  * Debugger PIN: 518-886-706
+2026-07-27 14:57:49,598 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
+2026-07-27 14:58:33,467 INFO root: Starting Horus Backend Application
+2026-07-27 14:58:33,512 INFO root: Routes registered successfully
+2026-07-27 14:58:33,513 INFO root: Running development server
+2026-07-27 14:58:33,546 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-27 14:58:33,548 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-27 14:58:33,551 INFO werkzeug:  * Restarting with stat
+2026-07-27 14:58:38,818 INFO root: Starting Horus Backend Application
+2026-07-27 14:58:38,868 INFO root: Routes registered successfully
+2026-07-27 14:58:38,869 INFO root: Running development server
+2026-07-27 14:58:38,891 WARNING werkzeug:  * Debugger is active!
+2026-07-27 14:58:38,893 INFO werkzeug:  * Debugger PIN: 276-955-249
+2026-07-27 14:59:16,390 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:59:16] "GET /apidocs/ HTTP/1.1" 200 -
+2026-07-27 14:59:16,408 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:59:16] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-07-27 14:59:16,416 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:59:16] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-07-27 14:59:16,419 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:59:16] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-07-27 14:59:16,420 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:59:16] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-07-27 14:59:16,574 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:59:16] "GET /apispec.json HTTP/1.1" 200 -
+2026-07-27 14:59:16,583 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:59:16] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
+2026-07-27 14:59:31,198 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 14:59:31] "[35m[1mGET /messages/ac5c2b2f-2b20-4cd6-9f68-ba470294aef9 HTTP/1.1[0m" 500 -
+2026-07-27 15:01:50,391 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
+2026-07-27 15:02:35,894 INFO root: Starting Horus Backend Application
+2026-07-27 15:02:35,930 INFO root: Routes registered successfully
+2026-07-27 15:02:35,931 INFO root: Running development server
+2026-07-27 15:02:35,960 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-27 15:02:35,961 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-27 15:02:35,964 INFO werkzeug:  * Restarting with stat
+2026-07-27 15:02:41,922 INFO root: Starting Horus Backend Application
+2026-07-27 15:02:41,958 INFO root: Routes registered successfully
+2026-07-27 15:02:41,959 INFO root: Running development server
+2026-07-27 15:02:41,973 WARNING werkzeug:  * Debugger is active!
+2026-07-27 15:02:41,974 INFO werkzeug:  * Debugger PIN: 946-062-205
+2026-07-27 15:09:03,064 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 15:09:03] "[35m[1mGET /messages/ac5c2b2f-2b20-4cd6-9f68-ba470294aef9 HTTP/1.1[0m" 500 -
+2026-07-27 15:09:43,783 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
+2026-07-27 15:09:44,181 INFO werkzeug:  * Restarting with stat
+2026-07-27 15:09:49,622 INFO root: Starting Horus Backend Application
+2026-07-27 15:09:49,662 INFO root: Routes registered successfully
+2026-07-27 15:09:49,663 INFO root: Running development server
+2026-07-27 15:09:49,677 WARNING werkzeug:  * Debugger is active!
+2026-07-27 15:09:49,678 INFO werkzeug:  * Debugger PIN: 946-062-205
+2026-07-27 15:11:51,058 INFO root: Starting Horus Backend Application
+2026-07-27 15:11:51,084 INFO root: Routes registered successfully
+2026-07-27 15:11:51,085 INFO root: Running development server
+2026-07-27 15:11:51,118 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-27 15:11:51,119 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-27 15:11:51,121 INFO werkzeug:  * Restarting with stat
+2026-07-27 15:11:56,392 INFO root: Starting Horus Backend Application
+2026-07-27 15:11:56,456 INFO root: Routes registered successfully
+2026-07-27 15:11:56,457 INFO root: Running development server
+2026-07-27 15:11:56,482 WARNING werkzeug:  * Debugger is active!
+2026-07-27 15:11:56,483 INFO werkzeug:  * Debugger PIN: 207-562-957
+2026-07-27 15:11:59,718 INFO routes.chat: Fetching chat messages for session_uuid=ac5c2b2f-2b20-4cd6-9f68-ba470294aef9
+2026-07-27 15:12:00,153 ERROR routes.chat: Error fetching chat messages for session_uuid=ac5c2b2f-2b20-4cd6-9f68-ba470294aef9: 'function' object has no attribute 'id'
+Traceback (most recent call last):
+  File "/app/routes/chat.py", line 304, in get_session_messages
+    .filter_by(chat_id=chat.id)
+                       ^^^^^^^
+AttributeError: 'function' object has no attribute 'id'
+2026-07-27 15:12:00,165 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 15:12:00] "[35m[1mGET /messages/ac5c2b2f-2b20-4cd6-9f68-ba470294aef9 HTTP/1.1[0m" 500 -
