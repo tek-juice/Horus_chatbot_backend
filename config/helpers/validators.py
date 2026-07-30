@@ -5,7 +5,7 @@ def validate_name(name):
     if not name:
         return False
 
-    if len(name.strip()) < 4:
+    if len(name.strip()) < 3:
         return False
 
     return True

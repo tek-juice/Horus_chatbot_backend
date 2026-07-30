@@ -10,6 +10,7 @@ from flasgger import Swagger
 from dotenv import load_dotenv
 from config.logs.logs import setup_logging
 from config.helpers.email import mail
+from flask_cors import CORS
 
 
 load_dotenv()
@@ -36,8 +37,18 @@ def create_app():
     migrate.init_app(app, db)
     jwt.init_app(app)
     mail.init_app(app)
-    @jwt.expired_token_loader
+    # CORS(app, origins=["http://localhost:5173", "http://localhost:5173"])
+    CORS(
+        app,
+        resources={
+            r"/*": {
+                "origins": "http://localhost:5173"
+            }
+        },
+        supports_credentials=True,
+    )
 
+    @jwt.expired_token_loader
     def expired_token(jwt_header, jwt_payload):
 
         logging.warning(

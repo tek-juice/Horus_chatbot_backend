@@ -1,14 +1,121 @@
-2026-07-25 16:56:32,988 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 16:56:32] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
-2026-07-25 16:56:34,152 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 16:56:34] "GET /apispec.json HTTP/1.1" 200 -
-2026-07-25 16:57:00,345 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-07-25 16:57:00,348 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 16:57:00] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-07-25 16:57:28,436 INFO routes.documents: Fetching document metadata.
-2026-07-25 16:57:28,445 INFO routes.documents: Retrieved 2 documents.
-2026-07-25 16:57:28,446 INFO werkzeug: 172.18.0.1 - - [25/Jul/2026 16:57:28] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-07-25 17:03:49,629 INFO werkzeug:  * Detected change in '/app/routes/documents.py', reloading
-2026-07-25 17:03:54,253 INFO root: Starting Horus Backend Application
-2026-07-25 17:03:54,289 INFO root: Routes registered successfully
-2026-07-25 17:03:54,289 INFO root: Running development server
-2026-07-25 17:03:54,303 WARNING werkzeug:  * Debugger is active!
-2026-07-25 17:03:54,305 INFO werkzeug:  * Debugger PIN: 408-464-647
-2026-07-25 17:04:20,290 INFO werkzeug:  * Detected change in '/app/routes/documents.py', reloading
+2026-07-27 19:36:53,530 WARNING werkzeug:  * Debugger is active!
+2026-07-27 19:36:53,581 INFO werkzeug:  * Debugger PIN: 984-884-624
+2026-07-27 19:37:14,299 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 19:37:14] "OPTIONS /chat HTTP/1.1" 200 -
+2026-07-27 19:37:14,305 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 19:37:14] "[31m[1mPOST /chat HTTP/1.1[0m" 400 -
+2026-07-27 21:04:31,664 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:04:31] "OPTIONS /chat HTTP/1.1" 200 -
+2026-07-27 21:04:31,677 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:04:31] "[31m[1mPOST /chat HTTP/1.1[0m" 400 -
+2026-07-27 21:05:25,386 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:05:25] "OPTIONS /chat HTTP/1.1" 200 -
+2026-07-27 21:05:25,398 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:05:25] "[31m[1mPOST /chat HTTP/1.1[0m" 400 -
+2026-07-27 21:06:02,629 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:06:02] "OPTIONS /chat HTTP/1.1" 200 -
+2026-07-27 21:06:02,643 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:06:02] "[31m[1mPOST /chat HTTP/1.1[0m" 400 -
+2026-07-27 21:09:39,629 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:09:39] "[33mOPTIONS /chat/chat HTTP/1.1[0m" 404 -
+2026-07-27 21:09:59,669 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:09:59] "[33mOPTIONS /chat/chat HTTP/1.1[0m" 404 -
+2026-07-27 21:10:13,048 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:10:13] "[33mOPTIONS /chat/chat HTTP/1.1[0m" 404 -
+2026-07-27 21:11:21,865 INFO root: Starting Horus Backend Application
+2026-07-27 21:11:21,911 INFO root: Routes registered successfully
+2026-07-27 21:11:21,912 INFO root: Running development server
+2026-07-27 21:11:21,944 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-27 21:11:21,945 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-27 21:11:21,947 INFO werkzeug:  * Restarting with stat
+2026-07-27 21:11:27,171 INFO root: Starting Horus Backend Application
+2026-07-27 21:11:27,215 INFO root: Routes registered successfully
+2026-07-27 21:11:27,216 INFO root: Running development server
+2026-07-27 21:11:27,231 WARNING werkzeug:  * Debugger is active!
+2026-07-27 21:11:27,232 INFO werkzeug:  * Debugger PIN: 131-589-118
+2026-07-27 21:11:53,440 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:11:53] "[33mGET /chat/chat HTTP/1.1[0m" 404 -
+2026-07-27 21:11:53,584 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:11:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-07-27 21:12:53,789 INFO root: Starting Horus Backend Application
+2026-07-27 21:12:53,817 INFO root: Routes registered successfully
+2026-07-27 21:12:53,818 INFO root: Running development server
+2026-07-27 21:12:53,840 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-27 21:12:53,841 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-27 21:12:53,843 INFO werkzeug:  * Restarting with stat
+2026-07-27 21:12:59,805 INFO root: Starting Horus Backend Application
+2026-07-27 21:12:59,856 INFO root: Routes registered successfully
+2026-07-27 21:12:59,857 INFO root: Running development server
+2026-07-27 21:12:59,875 WARNING werkzeug:  * Debugger is active!
+2026-07-27 21:12:59,876 INFO werkzeug:  * Debugger PIN: 300-207-629
+2026-07-27 21:13:56,318 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:13:56] "[33mOPTIONS /chat/chat HTTP/1.1[0m" 404 -
+2026-07-27 21:15:01,797 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:15:01] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:15:01,809 INFO routes.chat: Starting new chat session.
+2026-07-27 21:15:01,811 INFO routes.chat: Looking up user with email: ish@gmail.com
+2026-07-27 21:15:01,964 INFO routes.chat: User not found. Creating new user: ish@gmail.com
+2026-07-27 21:15:01,980 INFO routes.chat: Creating chat session for user ID: 4
+2026-07-27 21:15:01,992 INFO routes.chat: Chat session created successfully. Session ID: b2da60c8-c532-496b-918b-77843b9b85f8
+2026-07-27 21:15:01,995 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:15:01] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
+2026-07-27 21:15:42,284 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:15:42] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:15:42,292 INFO routes.chat: Starting new chat session.
+2026-07-27 21:15:42,294 INFO routes.chat: Looking up user with email: john
+2026-07-27 21:15:42,300 INFO routes.chat: User not found. Creating new user: john
+2026-07-27 21:15:42,311 INFO routes.chat: Creating chat session for user ID: 5
+2026-07-27 21:15:42,316 INFO routes.chat: Chat session created successfully. Session ID: e3d55cb3-fddd-4924-84da-c7b55bc697cd
+2026-07-27 21:15:42,319 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:15:42] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
+2026-07-27 21:19:40,635 INFO werkzeug:  * Detected change in '/app/config/helpers/validators.py', reloading
+2026-07-27 21:19:41,459 INFO werkzeug:  * Restarting with stat
+2026-07-27 21:19:47,839 INFO root: Starting Horus Backend Application
+2026-07-27 21:19:47,871 INFO root: Routes registered successfully
+2026-07-27 21:19:47,872 INFO root: Running development server
+2026-07-27 21:19:47,888 WARNING werkzeug:  * Debugger is active!
+2026-07-27 21:19:47,890 INFO werkzeug:  * Debugger PIN: 300-207-629
+2026-07-27 21:24:17,959 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
+2026-07-27 21:24:18,542 INFO werkzeug:  * Restarting with stat
+2026-07-27 21:25:33,227 INFO root: Starting Horus Backend Application
+2026-07-27 21:25:33,277 INFO root: Routes registered successfully
+2026-07-27 21:25:33,277 INFO root: Running development server
+2026-07-27 21:25:33,312 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-07-27 21:25:33,313 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-07-27 21:25:33,316 INFO werkzeug:  * Restarting with stat
+2026-07-27 21:25:39,474 INFO root: Starting Horus Backend Application
+2026-07-27 21:25:39,513 INFO root: Routes registered successfully
+2026-07-27 21:25:39,514 INFO root: Running development server
+2026-07-27 21:25:39,532 WARNING werkzeug:  * Debugger is active!
+2026-07-27 21:25:39,533 INFO werkzeug:  * Debugger PIN: 128-756-223
+2026-07-27 21:26:26,552 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:26:26] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:26:26,559 INFO routes.chat: Starting new chat session.
+2026-07-27 21:26:26,561 WARNING routes.chat: Chat start failed: Invalid email.
+2026-07-27 21:26:26,562 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:26:26] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
+2026-07-27 21:32:56,655 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:32:56] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:32:56,682 INFO routes.chat: Starting new chat session.
+2026-07-27 21:32:56,687 WARNING routes.chat: Chat start failed: Invalid email.
+2026-07-27 21:32:56,690 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:32:56] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
+2026-07-27 21:34:37,284 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:37] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:34:37,298 INFO routes.chat: Starting new chat session.
+2026-07-27 21:34:37,300 WARNING routes.chat: Chat start failed: Invalid email.
+2026-07-27 21:34:37,301 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:37] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
+2026-07-27 21:34:42,635 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:42] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:34:42,680 INFO routes.chat: Starting new chat session.
+2026-07-27 21:34:42,681 WARNING routes.chat: Chat start failed: Invalid email.
+2026-07-27 21:34:42,682 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:42] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
+2026-07-27 21:34:53,728 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:53] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:34:53,736 INFO routes.chat: Starting new chat session.
+2026-07-27 21:34:53,737 WARNING routes.chat: Chat start failed: Invalid email.
+2026-07-27 21:34:53,738 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:53] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
+2026-07-27 21:36:32,910 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:36:32] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:36:32,920 INFO routes.chat: Starting new chat session.
+2026-07-27 21:36:32,922 INFO routes.chat: Looking up user with email: dsds@gmail.com
+2026-07-27 21:36:33,038 INFO routes.chat: User not found. Creating new user: dsds@gmail.com
+2026-07-27 21:36:33,055 INFO routes.chat: Creating chat session for user ID: 6
+2026-07-27 21:36:33,066 INFO routes.chat: Chat session created successfully. Session ID: 3db583cc-d1a9-4179-b2dc-8cc45ce4b535
+2026-07-27 21:36:33,070 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:36:33] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
+2026-07-27 21:37:04,651 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:37:04] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:37:04,663 INFO routes.chat: Starting new chat session.
+2026-07-27 21:37:04,665 WARNING routes.chat: Chat start failed: Invalid name.
+2026-07-27 21:37:04,667 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:37:04] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
+2026-07-27 21:37:33,706 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
+2026-07-27 21:37:34,369 INFO werkzeug:  * Restarting with stat
+2026-07-27 21:37:41,452 INFO root: Starting Horus Backend Application
+2026-07-27 21:37:41,493 INFO root: Routes registered successfully
+2026-07-27 21:37:41,494 INFO root: Running development server
+2026-07-27 21:37:41,509 WARNING werkzeug:  * Debugger is active!
+2026-07-27 21:37:41,510 INFO werkzeug:  * Debugger PIN: 128-756-223
+2026-07-27 21:37:41,756 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:37:41] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-07-27 21:38:08,702 INFO werkzeug:  * Restarting with stat

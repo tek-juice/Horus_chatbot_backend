@@ -8,7 +8,8 @@ from models.users import MessageRole
 from config.chat_services.create_user import create_user
 from config.chat_services.get_user_by_email import get_user_by_email
 import logging
-from models.users import ChatMessage, ChatSession
+from models.users import ChatSession
+from config.helpers.validators import validate_email, validate_name
 
 logger = logging.getLogger(__name__)
 
@@ -65,34 +66,33 @@ def start_chat():
         name = data.get("name", "").strip()
         email = data.get("email", "").strip().lower()
 
-        if not name:
-            logger.warning("Chat start failed: Name not provided.")
+        if not validate_name(name):
+            logger.warning("Chat start failed: Invalid name.")
 
             return jsonify({
                 "success": False,
-                "error": "Name is required."
+                "error": "Invalid name. Name must contain more than 2 characters."
             }), 400
 
-        if not email:
-            logger.warning("Chat start failed: Email not provided.")
+        if not validate_email(email):
+            logger.warning(
+                "Chat start failed: Invalid email."
+            )
 
             return jsonify({
                 "success": False,
-                "error": "Email is required."
+                "error": "Invalid email format."
             }), 400
 
         logger.info(f"Looking up user with email: {email}")
-        user = get_user_by_email(email)
 
+        user = get_user_by_email(email)
         if user is None:
             logger.info(f"User not found. Creating new user: {email}")
-            user = create_user(
-                name=name,
-                email=email
-            )
+            user = create_user(name=name, email=email)
+
         else:
             logger.info(f"Existing user found. User ID: {user.id}")
-
         logger.info(f"Creating chat session for user ID: {user.id}")
         session = create_chat_session(user.id)
         logger.info(f"Chat session created successfully. Session ID: {session.chat_id}")
@@ -105,12 +105,15 @@ def start_chat():
             "email": user.email
         }), 201
 
+
+
+
     except Exception as e:
         logger.exception("Failed to start chat session.")
 
         return jsonify({
             "success": False,
-            "error": str(e)
+            "error": "Internal server error."
         }), 500
 
 @chat_bp.route("/chat", methods=["POST"])
@@ -188,9 +191,12 @@ def chat():
             "error": "Invalid or expired chat session."
         }), 404
 
+    # Store the database ID before streaming
+    session_db_id = session.id
+
     # Save the user's message before generating a response
     save_chat_message(
-        session_id=session.id,
+        session_id=session_db_id,
         role=MessageRole.USER,
         message=question
     )
@@ -212,7 +218,7 @@ def chat():
             # Save the assistant response only if one exists
             if full_response.strip():
                 save_chat_message(
-                    session_id=session.id,
+                    session_id=session_db_id,
                     role=MessageRole.ASSISTANT,
                     message=full_response
                 )

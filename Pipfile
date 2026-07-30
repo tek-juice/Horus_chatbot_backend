@@ -18,6 +18,7 @@ pymupdf = "*"
 python-docx = "*"
 fastembed = "*"
 openai = "*"
+flask-cors = "*"
 
 [dev-packages]
 
