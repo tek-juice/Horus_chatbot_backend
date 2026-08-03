@@ -1,96 +1,95 @@
-2026-07-31 13:23:40,118 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:23:40] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:24:09,099 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:09] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:24:09,107 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:24:09,109 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:09] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:24:22,105 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:22] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:24:22,113 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:24:22,115 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:22] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:24:59,130 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:59] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:24:59,138 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:24:59,140 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:59] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:26:43,109 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:26:43] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:26:43,120 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:26:43,122 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:26:43] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:27:17,106 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:27:17] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:27:17,112 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:27:17,113 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:27:17] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:29:01,260 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:01] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-07-31 13:29:01,366 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
-2026-07-31 13:29:01,367 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:01] "POST /auth/super-admin/login HTTP/1.1" 200 -
-2026-07-31 13:29:02,991 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:02] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:29:02,993 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:02] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:29:02,999 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:29:03,000 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:03] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:29:03,005 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:29:03,006 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:03] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:29:08,927 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:08] "[33mOPTIONS /auth/admin/11 HTTP/1.1[0m" 404 -
-2026-07-31 13:29:28,000 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:28] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:29:28,005 INFO routes.auth_routes: Admin registration attempt: 
-2026-07-31 13:29:28,005 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:29:28,006 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:28] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:29:33,437 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:33] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:29:33,442 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
-2026-07-31 13:29:33,442 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:29:33,443 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:33] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:29:35,550 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
-2026-07-31 13:29:35,551 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:29:35,552 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:35] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:29:36,094 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
-2026-07-31 13:29:36,094 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:29:36,095 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:36] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:29:36,907 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
-2026-07-31 13:29:36,907 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:29:36,908 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:36] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:29:37,158 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
-2026-07-31 13:29:37,158 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:29:37,159 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:37] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:29:37,334 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
-2026-07-31 13:29:37,334 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:29:37,335 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:37] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:33:22,923 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:22] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-07-31 13:33:23,013 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
-2026-07-31 13:33:23,014 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:23] "POST /auth/super-admin/login HTTP/1.1" 200 -
-2026-07-31 13:33:24,573 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:24] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:33:24,574 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:24] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:33:24,579 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:33:24,580 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:24] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:33:24,587 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-07-31 13:33:24,588 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:24] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:33:38,747 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:38] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:33:38,754 INFO routes.auth_routes: Admin registration attempt: dsds
-2026-07-31 13:33:38,755 WARNING routes.auth_routes: Invalid email format: dsds
-2026-07-31 13:33:38,757 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:38] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:36:14,987 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:14] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:36:14,992 INFO routes.auth_routes: Admin registration attempt: dsds
-2026-07-31 13:36:14,993 WARNING routes.auth_routes: Invalid email format: dsds
-2026-07-31 13:36:14,993 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:14] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:36:50,031 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:50] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:36:50,036 INFO routes.auth_routes: Admin registration attempt: jam@gmail.com
-2026-07-31 13:36:50,149 INFO routes.auth_routes: Admin created successfully: jam@gmail.com
-2026-07-31 13:36:50,149 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:50] "[35m[1mPOST /auth/register-admin HTTP/1.1[0m" 201 -
-2026-07-31 13:36:50,155 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:50] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:36:50,163 INFO routes.auth_routes: Retrieved 4 admin account(s).
-2026-07-31 13:36:50,165 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:50] "GET /auth/admins HTTP/1.1" 200 -
-2026-07-31 13:37:23,697 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:23] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:37:23,700 INFO routes.auth_routes: Admin registration attempt: 
-2026-07-31 13:37:23,701 WARNING routes.auth_routes: Invalid email format: 
-2026-07-31 13:37:23,702 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:23] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:37:27,307 INFO routes.auth_routes: Admin registration attempt: vfvfvfv
-2026-07-31 13:37:27,307 WARNING routes.auth_routes: Invalid email format: vfvfvfv
-2026-07-31 13:37:27,308 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:27] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:37:29,183 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:29] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:37:29,187 INFO routes.auth_routes: Admin registration attempt: vfvfvfv
-2026-07-31 13:37:29,188 WARNING routes.auth_routes: Invalid email format: vfvfvfv
-2026-07-31 13:37:29,188 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:29] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:37:39,568 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:39] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:37:39,573 INFO routes.auth_routes: Admin registration attempt: vfvfvfv@gmail.com
-2026-07-31 13:37:39,573 WARNING routes.auth_routes: Weak password attempt: vfvfvfv@gmail.com
-2026-07-31 13:37:39,573 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:39] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:37:51,659 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:51] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-07-31 13:37:51,665 INFO routes.auth_routes: Admin registration attempt: vfvfvfv@gmail.com
-2026-07-31 13:37:51,665 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:37:51,666 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:51] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:37:52,279 INFO routes.auth_routes: Admin registration attempt: vfvfvfv@gmail.com
-2026-07-31 13:37:52,279 WARNING routes.auth_routes: Admin registration failed: Invalid name
-2026-07-31 13:37:52,280 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:52] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
-2026-07-31 13:38:35,457 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:38:35] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 09:10:22,333 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:10:22] "[33mOPTIONS /stat/super-admin/stats HTTP/1.1[0m" 404 -
+2026-08-03 09:10:22,336 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:10:22] "[33mOPTIONS /stat/super-admin/stats HTTP/1.1[0m" 404 -
+2026-08-03 09:14:04,151 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:14:04,153 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:14:04,163 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:14:04,165 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:14:04,175 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:14:04,176 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:14:04,907 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:14:04,908 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:14:04,930 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:14:04,955 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:36,866 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:36] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:36,868 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:36] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:36,874 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:15:36,875 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:36] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:36,881 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:15:36,882 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:36] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:45,186 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:45] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:45,188 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:45] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:45,209 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:45] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:45,236 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:45] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:47,830 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:47] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:47,831 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:47] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:47,837 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:15:47,838 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:47] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:47,843 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:15:47,845 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:47] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:23,963 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:23] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:23,965 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:23] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:23,970 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:23,971 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:23] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:23,976 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:23,978 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:23] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:25,083 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:25] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:25,084 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:25] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:25,122 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:25] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:25,161 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:25] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:26,651 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:26,653 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:26] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:26,658 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:26,660 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:26] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:28,355 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:28,356 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:28] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:28,362 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:28,363 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:28] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:29,584 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:29] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:29,608 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:29] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:30,580 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:30] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:30,583 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:30] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:30,588 WARNING root: Expired JWT token used
+2026-08-03 09:23:30,589 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:30] "[31m[1mGET /auth/admins HTTP/1.1[0m" 401 -
+2026-08-03 09:23:30,594 WARNING root: Expired JWT token used
+2026-08-03 09:23:30,595 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:30] "[31m[1mGET /auth/admins HTTP/1.1[0m" 401 -
+2026-08-03 09:23:39,886 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:39] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 09:23:39,995 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-08-03 09:23:39,996 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:39] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 09:23:40,268 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:40] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:40,270 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:40] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:40,311 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:40] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:40,352 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:40] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:41,798 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:41] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:41,799 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:41] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:41,807 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:23:41,808 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:41] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:41,814 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:23:41,815 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:41] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:00,170 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:00] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-08-03 09:24:00,174 INFO routes.auth_routes: Admin registration attempt: super@gmail.com
+2026-08-03 09:24:00,307 INFO routes.auth_routes: Admin created successfully: super@gmail.com
+2026-08-03 09:24:00,308 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:00] "[35m[1mPOST /auth/register-admin HTTP/1.1[0m" 201 -
+2026-08-03 09:24:00,314 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:00] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:00,320 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:00,322 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:00] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:01,889 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:01] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:01,891 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:01] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:01,911 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:01] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:01,937 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:01] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:21,729 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:21] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:21,731 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:21] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:21,738 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:21,739 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:21] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:21,746 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:21,747 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:21] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:26,025 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:26] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:26,027 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:26] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:26,047 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:26] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:26,073 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:26] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:34,668 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:34] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:34,670 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:34] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:34,676 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:34,677 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:34] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:34,683 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:34,684 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:34] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:38,362 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:38] "OPTIONS /super-admin/stats HTTP/1.1" 200 -

@@ -1,45 +1,81 @@
-2026-08-03 09:37:12,132 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:12] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-03 09:37:12,292 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
-2026-08-03 09:37:12,294 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:12] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
-2026-08-03 09:37:17,809 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:17] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-03 09:37:17,906 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
-2026-08-03 09:37:17,907 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:17] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
-2026-08-03 09:37:22,857 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
-2026-08-03 09:37:22,858 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:22] "POST /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-03 09:37:23,156 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:23] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:37:23,158 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:23] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:37:23,196 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:23] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:37:23,239 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:23] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:39:59,416 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:39:59] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:39:59,418 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:39:59] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:39:59,426 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:39:59,428 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:39:59] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:39:59,437 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:39:59,439 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:39:59] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:01,904 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:01] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:40:01,905 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:01] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:40:01,928 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:01] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:40:01,957 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:01] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:40:02,425 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:40:02,427 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:02] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:02,438 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:40:02,439 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:02] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:04,379 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:40:04,411 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:40:04,813 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:04,816 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:04,820 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:40:04,821 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:04,827 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:40:04,828 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:06,092 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:40:06,094 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:06] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:06,099 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:40:06,100 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:06] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:06,553 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:06] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:40:06,580 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:06] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-03 09:40:07,205 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:40:07,207 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:07] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:40:07,213 INFO routes.auth_routes: Retrieved 3 admin account(s).
-2026-08-03 09:40:07,214 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:07] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-03 09:41:43,827 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 14:06:01,710 INFO werkzeug:  * Restarting with stat
+2026-08-03 14:20:35,371 INFO root: Starting Horus Backend Application
+2026-08-03 14:20:35,428 INFO root: Routes registered successfully
+2026-08-03 14:20:35,428 INFO root: Running development server
+2026-08-03 14:20:35,451 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-03 14:20:35,451 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-03 14:20:35,454 INFO werkzeug:  * Restarting with stat
+2026-08-03 14:20:40,345 INFO root: Starting Horus Backend Application
+2026-08-03 14:20:40,375 INFO root: Routes registered successfully
+2026-08-03 14:20:40,376 INFO root: Running development server
+2026-08-03 14:20:40,387 WARNING werkzeug:  * Debugger is active!
+2026-08-03 14:20:40,388 INFO werkzeug:  * Debugger PIN: 128-526-681
+2026-08-03 14:23:02,066 INFO root: Starting Horus Backend Application
+2026-08-03 14:23:02,108 INFO root: Routes registered successfully
+2026-08-03 14:23:02,109 INFO root: Running development server
+2026-08-03 14:23:02,132 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-03 14:23:02,132 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-03 14:23:02,134 INFO werkzeug:  * Restarting with stat
+2026-08-03 14:23:06,906 INFO root: Starting Horus Backend Application
+2026-08-03 14:23:06,933 INFO root: Routes registered successfully
+2026-08-03 14:23:06,934 INFO root: Running development server
+2026-08-03 14:23:06,946 WARNING werkzeug:  * Debugger is active!
+2026-08-03 14:23:06,946 INFO werkzeug:  * Debugger PIN: 184-294-643
+2026-08-03 14:23:07,229 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:07] "GET /apidocs/ HTTP/1.1" 200 -
+2026-08-03 14:23:07,264 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:07] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-08-03 14:23:07,265 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:07] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-08-03 14:23:07,266 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:07] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-08-03 14:23:07,277 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:07] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-08-03 14:23:07,592 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:07] "GET /apispec.json HTTP/1.1" 200 -
+2026-08-03 14:23:07,594 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:07] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
+2026-08-03 14:23:17,202 WARNING root: Missing JWT token: Missing Authorization Header
+2026-08-03 14:23:17,203 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:17] "[31m[1mGET /auth/chat_users HTTP/1.1[0m" 401 -
+2026-08-03 14:23:36,060 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-03 14:23:36,061 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:36] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-03 14:23:36,062 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-03 14:23:36,064 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:36] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-03 14:23:57,402 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:23:57] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-03 14:24:27,270 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:24:27] "GET /auth/users/8/sessions HTTP/1.1" 200 -
+2026-08-03 14:24:52,823 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:24:52] "GET /auth/users/4/sessions HTTP/1.1" 200 -
+2026-08-03 14:25:29,642 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:25:29] "GET /auth/users/1/sessions HTTP/1.1" 200 -
+2026-08-03 14:26:01,665 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:26:01] "GET /auth/users/9/sessions HTTP/1.1" 200 -
+2026-08-03 14:31:53,568 INFO werkzeug:  * Detected change in '/app/routes/auth_routes.py', reloading
+2026-08-03 14:31:53,974 INFO werkzeug:  * Restarting with stat
+2026-08-03 14:32:18,380 INFO root: Starting Horus Backend Application
+2026-08-03 14:32:18,403 INFO root: Routes registered successfully
+2026-08-03 14:32:18,403 INFO root: Running development server
+2026-08-03 14:32:18,432 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-03 14:32:18,432 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-03 14:32:18,434 INFO werkzeug:  * Restarting with stat
+2026-08-03 14:32:22,610 INFO root: Starting Horus Backend Application
+2026-08-03 14:32:22,633 INFO root: Routes registered successfully
+2026-08-03 14:32:22,634 INFO root: Running development server
+2026-08-03 14:32:22,656 WARNING werkzeug:  * Debugger is active!
+2026-08-03 14:32:22,657 INFO werkzeug:  * Debugger PIN: 478-530-312
+2026-08-03 14:33:07,625 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:07] "GET /apidocs/ HTTP/1.1" 200 -
+2026-08-03 14:33:07,641 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:07] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-08-03 14:33:07,642 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:07] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-08-03 14:33:07,642 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:07] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-08-03 14:33:07,643 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:07] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-08-03 14:33:07,761 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:07] "GET /apispec.json HTTP/1.1" 200 -
+2026-08-03 14:33:07,762 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:07] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
+2026-08-03 14:33:37,478 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-03 14:33:37,479 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:37] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-03 14:33:59,621 ERROR routes.auth_routes: Dashboard statistics failed
+Traceback (most recent call last):
+  File "/app/routes/auth_routes.py", line 2649, in dashboard_statistics
+    extract(
+    ^^^^^^^
+NameError: name 'extract' is not defined
+2026-08-03 14:33:59,629 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 14:33:59] "[35m[1mGET /auth/dashboard/statistics HTTP/1.1[0m" 500 -
+2026-08-03 14:34:38,343 INFO werkzeug:  * Detected change in '/app/routes/auth_routes.py', reloading
+2026-08-03 14:34:38,912 INFO werkzeug:  * Restarting with stat

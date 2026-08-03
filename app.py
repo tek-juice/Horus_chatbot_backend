@@ -3,7 +3,7 @@ from config.extensions.database_config import db, migrate
 from config.extensions.jwt_config import jwt
 import os
 import logging
-from routes.auth_routes import auth
+from routes.auth_routes import auth, chat_user_bp
 from routes.documents import document
 from routes.chat import chat_bp
 from routes.statistics import stat_bp
@@ -143,6 +143,7 @@ def create_app():
     app.register_blueprint(document)
     app.register_blueprint(chat_bp)
     app.register_blueprint(stat_bp)
+    app.register_blueprint(chat_user_bp)
     logging.info("Routes registered successfully")
     return app
 

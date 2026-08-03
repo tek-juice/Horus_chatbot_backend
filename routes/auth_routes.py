@@ -1,4 +1,5 @@
 import logging
+from sqlalchemy import func, extract
 from flask import Blueprint, request, jsonify, current_app
 from flask_jwt_extended import get_jwt_identity
 from sqlalchemy.exc import SQLAlchemyError
@@ -6,6 +7,7 @@ from flasgger import swag_from
 from werkzeug.security import generate_password_hash
 from config.extensions.database_config import db
 from models.users import User, UserRole, UserStatus
+from models.users import ChatSession , ChatMessage
 from flask_jwt_extended import create_access_token
 from config.helpers.validators import validate_email, validate_name, validate_password
 from itsdangerous import URLSafeTimedSerializer
@@ -14,6 +16,7 @@ from itsdangerous import (URLSafeTimedSerializer, SignatureExpired, BadSignature
 from config.helpers.helpers import admin_required, super_admin_required, admin_or_super_admin_required
 
 auth =  Blueprint("auth", __name__, url_prefix="/auth")
+chat_user_bp =  Blueprint("chat_user_bp", __name__, url_prefix="/auth")
 
 logger = logging.getLogger(__name__)
 
@@ -2289,4 +2292,461 @@ def delete_admin(admin_id):
         return jsonify({
             "success": False,
             "message": "An unexpected error occurred while deleting the admin."
+        }), 500
+
+
+@chat_user_bp.route("/chat_users", methods=["GET"])
+@admin_or_super_admin_required
+@swag_from({
+    "tags": ["Users"],
+    "summary": "Get all chatbot users",
+    "description": "Returns a list of users with the USER role, including their session count.",
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Users retrieved successfully",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": True
+                    },
+                    "users": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "example": 1
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "John Doe"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "john@example.com"
+                                },
+                                "created_at": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2026-08-03T10:15:22"
+                                },
+                                "sessions": {
+                                    "type": "integer",
+                                    "example": 5
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        401: {
+            "description": "Unauthorized"
+        },
+        500: {
+            "description": "Failed to fetch users",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "example": False
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Failed to fetch users."
+                    }
+                }
+            }
+        }
+    }
+})
+def get_users():
+    try:
+        users = (
+            db.session.query(
+                User.id,
+                User.name,
+                User.email,
+                User.created_at,
+                func.count(ChatSession.id).label("sessions")
+            )
+            .outerjoin(ChatSession, User.id == ChatSession.user_id)
+            .filter(User.role == UserRole.USER)
+            .group_by(User.id)
+            .order_by(User.created_at.desc())
+            .all()
+        )
+
+        return jsonify({
+            "success": True,
+            "users": [
+                {
+                    "id": user.id,
+                    "name": user.name,
+                    "email": user.email,
+                    "created_at": user.created_at.isoformat(),
+                    "sessions": user.sessions,
+                }
+                for user in users
+            ]
+        }), 200
+
+    except Exception as e:
+        logger.exception("Failed to fetch users.")
+
+        return jsonify({
+            "success": False,
+            "message": "Failed to fetch users."
+        }), 500
+
+@chat_user_bp.route("/users/<int:user_id>/sessions", methods=["GET"])
+@admin_or_super_admin_required
+@swag_from({
+    "tags": ["Users"],
+    "summary": "Get user's chat sessions with messages",
+    "description": "Returns all chat sessions and messages belonging to a specific user.",
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "parameters": [
+        {
+            "name": "user_id",
+            "in": "path",
+            "required": True,
+            "type": "integer",
+            "example": 1,
+            "description": "User ID"
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "User sessions retrieved successfully"
+        },
+        404: {
+            "description": "User not found"
+        },
+        500: {
+            "description": "Server error"
+        }
+    }
+})
+def get_user_sessions(user_id):
+    try:
+        user = User.query.get(user_id)
+
+        if not user:
+            return jsonify({
+                "success": False,
+                "message": "User not found."
+            }), 404
+
+
+        sessions = ChatSession.query.filter_by(
+            user_id=user_id
+        ).order_by(
+            ChatSession.created_at.desc()
+        ).all()
+
+
+        return jsonify({
+            "success": True,
+            "user": {
+                "id": user.id,
+                "name": user.name,
+                "email": user.email
+            },
+            "sessions": [
+                {
+                    "id": session.id,
+                    "chat_id": session.chat_id,
+                    "created_at": session.created_at.isoformat(),
+                    "updated_at": session.updated_at.isoformat(),
+
+                    "messages": [
+                        {
+                            "id": message.id,
+                            "role": message.role.value,
+                            "message": message.message,
+                            "created_at": message.created_at.isoformat()
+                        }
+                        for message in session.messages
+                    ]
+                }
+                for session in sessions
+            ]
+        }), 200
+
+
+    except Exception:
+        logger.exception(
+            f"Failed to fetch sessions for user {user_id}"
+        )
+
+        return jsonify({
+            "success": False,
+            "message": "Failed to fetch user sessions."
+        }), 500
+
+
+@chat_user_bp.route("/dashboard/statistics", methods=["GET"])
+@admin_or_super_admin_required
+@swag_from({
+    "tags": ["Dashboard"],
+    "summary": "Get chatbot analytics statistics",
+    "description": "Returns analytics only for users with USER role.",
+    "security": [
+        {
+            "Bearer": []
+        }
+    ],
+    "responses": {
+        200: {
+            "description": "Statistics retrieved successfully"
+        },
+        500: {
+            "description": "Server error"
+        }
+    }
+})
+def dashboard_statistics():
+
+    try:
+
+        # Only chatbot users
+        user_filter = User.role == UserRole.USER
+
+        total_users = (
+            User.query
+            .filter(user_filter)
+            .count()
+        )
+
+
+        active_users = (
+            User.query
+            .filter(
+                user_filter,
+                User.status == UserStatus.ACTIVE
+            )
+            .count()
+        )
+
+
+        total_sessions = (
+            db.session.query(ChatSession)
+            .join(User)
+            .filter(user_filter)
+            .count()
+        )
+
+
+        total_messages = (
+            db.session.query(ChatMessage)
+            .join(ChatSession)
+            .join(User)
+            .filter(user_filter)
+            .count()
+        )
+
+
+        avg_messages_session = (
+            round(total_messages / total_sessions, 2)
+            if total_sessions
+            else 0
+        )
+
+
+        avg_sessions_user = (
+            round(total_sessions / total_users, 2)
+            if total_users
+            else 0
+        )
+
+
+        user_growth = (
+            db.session.query(
+                func.date(User.created_at).label("date"),
+                func.count(User.id)
+            )
+            .filter(user_filter)
+            .group_by(
+                func.date(User.created_at)
+            )
+            .order_by("date")
+            .all()
+        )
+
+        session_activity = (
+            db.session.query(
+                func.date(ChatSession.created_at).label("date"),
+                func.count(ChatSession.id)
+            )
+            .join(User)
+            .filter(user_filter)
+            .group_by(
+                func.date(ChatSession.created_at)
+            )
+            .order_by("date")
+            .all()
+        )
+
+        message_distribution = (
+            db.session.query(
+                ChatMessage.role,
+                func.count(ChatMessage.id)
+            )
+            .join(ChatSession)
+            .join(User)
+            .filter(user_filter)
+            .group_by(
+                ChatMessage.role
+            )
+            .all()
+        )
+
+        user_status = (
+            db.session.query(
+                User.status,
+                func.count(User.id)
+            )
+            .filter(user_filter)
+            .group_by(
+                User.status
+            )
+            .all()
+        )
+
+        top_users = (
+            db.session.query(
+                User.name,
+                User.email,
+                func.count(ChatSession.id)
+                .label("sessions")
+            )
+            .outerjoin(ChatSession)
+            .filter(user_filter)
+            .group_by(User.id)
+            .order_by(
+                func.count(ChatSession.id).desc()
+            )
+            .limit(10)
+            .all()
+        )
+
+        active_hours = (
+            db.session.query(
+                extract(
+                    "hour",
+                    ChatMessage.created_at
+                ).label("hour"),
+                func.count(ChatMessage.id)
+            )
+            .join(ChatSession)
+            .join(User)
+            .filter(user_filter)
+            .group_by("hour")
+            .order_by("hour")
+            .all()
+        )
+
+        return jsonify({
+
+            "success": True,
+
+
+            "cards": {
+                "total_users": total_users,
+                "active_users": active_users,
+                "total_sessions": total_sessions,
+                "total_messages": total_messages,
+                "avg_messages_session": avg_messages_session,
+                "avg_sessions_user": avg_sessions_user
+            },
+
+
+            "charts": {
+                "user_growth": [
+                    {
+                        "date": str(date),
+                        "users": count
+                    }
+                    for date, count in user_growth
+                ],
+
+
+                "session_activity": [
+                    {
+                        "date": str(date),
+                        "sessions": count
+                    }
+                    for date, count in session_activity
+                ],
+
+
+                "message_distribution": [
+                    {
+                        "role": role.value,
+                        "count": count
+                    }
+                    for role, count in message_distribution
+                ],
+
+
+                "user_status": [
+                    {
+                        "status": status.value,
+                        "count": count
+                    }
+                    for status, count in user_status
+                ],
+
+
+                "active_hours": [
+                    {
+                        "hour": int(hour),
+                        "messages": count
+                    }
+                    for hour, count in active_hours
+                ]
+
+            },
+
+
+            "top_users": [
+                {
+                    "name": name,
+                    "email": email,
+                    "sessions": sessions
+                }
+
+                for name, email, sessions in top_users
+
+            ]
+
+        }), 200
+
+
+
+    except Exception:
+
+        logger.exception(
+            "Dashboard statistics failed"
+        )
+
+        return jsonify({
+
+            "success": False,
+            "message": "Failed to load dashboard statistics"
+
         }), 500
