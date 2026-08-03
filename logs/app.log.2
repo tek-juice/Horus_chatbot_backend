@@ -1,100 +1,95 @@
-2026-07-28 09:10:44,836 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 09:10:44,875 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 09:10:44,878 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 09:10:44,878 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 09:10:44,879 INFO config.model_engine.model_streamer: Context created. Length=308 characters.
-2026-07-28 09:10:44,879 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 09:10:45,657 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 09:10:45,657 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 09:10:45,658 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:10:45] "POST /chat HTTP/1.1" 200 -
-2026-07-28 09:10:48,163 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-28 09:11:15,243 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:11:15] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 09:11:15,253 INFO config.model_engine.model_streamer: Starting AI response generation. Session=77892f98-870d-4178-99c8-3b7571f0cb79
-2026-07-28 09:11:15,253 INFO config.model_engine.model_streamer: Searching documents.
-2026-07-28 09:11:15,253 INFO config.model_engine.vector_search: Starting document search. Question length: 45
-2026-07-28 09:11:15,254 INFO config.model_engine.vector_search: Generating query embedding.
-2026-07-28 09:11:15,254 INFO config.document_services.embedding_services: Generating query embedding.
-2026-07-28 09:11:15,283 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 09:11:15,284 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 09:11:15,287 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 09:11:15,287 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 09:11:15,288 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-07-28 09:11:15,288 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 09:11:16,055 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 09:11:16,055 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 09:11:16,056 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:11:16] "POST /chat HTTP/1.1" 200 -
-2026-07-28 09:11:18,567 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-28 09:11:48,667 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:11:48] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 09:11:48,687 INFO config.model_engine.model_streamer: Starting AI response generation. Session=77892f98-870d-4178-99c8-3b7571f0cb79
-2026-07-28 09:11:48,687 INFO config.model_engine.model_streamer: Searching documents.
-2026-07-28 09:11:48,688 INFO config.model_engine.vector_search: Starting document search. Question length: 41
-2026-07-28 09:11:48,688 INFO config.model_engine.vector_search: Generating query embedding.
-2026-07-28 09:11:48,688 INFO config.document_services.embedding_services: Generating query embedding.
-2026-07-28 09:11:48,705 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 09:11:48,705 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 09:11:48,709 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 09:11:48,709 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 09:11:48,709 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-07-28 09:11:48,709 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 09:11:49,469 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 09:11:49,470 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 09:11:49,471 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:11:49] "POST /chat HTTP/1.1" 200 -
-2026-07-28 09:11:49,860 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-28 09:34:36,837 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:34:36] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-28 09:34:36,842 INFO routes.chat: Starting new chat session.
-2026-07-28 09:34:36,843 INFO routes.chat: Looking up user with email: demo@gmail.com
-2026-07-28 09:34:36,855 INFO routes.chat: User not found. Creating new user: demo@gmail.com
-2026-07-28 09:34:36,864 INFO routes.chat: Creating chat session for user ID: 8
-2026-07-28 09:34:36,871 INFO routes.chat: Chat session created successfully. Session ID: b17045f6-e630-4e48-b572-14c50cfd061b
-2026-07-28 09:34:36,873 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:34:36] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-07-28 09:36:46,017 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:36:46] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 09:36:46,028 INFO config.model_engine.model_streamer: Starting AI response generation. Session=b17045f6-e630-4e48-b572-14c50cfd061b
-2026-07-28 09:36:46,029 INFO config.model_engine.model_streamer: Searching documents.
-2026-07-28 09:36:46,029 INFO config.model_engine.vector_search: Starting document search. Question length: 11
-2026-07-28 09:36:46,030 INFO config.model_engine.vector_search: Generating query embedding.
-2026-07-28 09:36:46,030 INFO config.document_services.embedding_services: Generating query embedding.
-2026-07-28 09:36:46,098 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 09:36:46,099 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 09:36:46,104 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 09:36:46,104 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 09:36:46,105 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-07-28 09:36:46,105 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 09:36:47,082 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 09:36:47,083 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 09:36:47,084 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:36:47] "POST /chat HTTP/1.1" 200 -
-2026-07-28 09:36:49,600 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-28 09:37:43,340 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:37:43] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 09:37:43,359 INFO config.model_engine.model_streamer: Starting AI response generation. Session=b17045f6-e630-4e48-b572-14c50cfd061b
-2026-07-28 09:37:43,360 INFO config.model_engine.model_streamer: Searching documents.
-2026-07-28 09:37:43,360 INFO config.model_engine.vector_search: Starting document search. Question length: 52
-2026-07-28 09:37:43,361 INFO config.model_engine.vector_search: Generating query embedding.
-2026-07-28 09:37:43,361 INFO config.document_services.embedding_services: Generating query embedding.
-2026-07-28 09:37:43,369 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 09:37:43,370 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 09:37:43,372 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 09:37:43,372 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 09:37:43,373 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-07-28 09:37:43,373 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 09:37:44,201 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 09:37:44,202 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 09:37:44,203 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:37:44] "POST /chat HTTP/1.1" 200 -
-2026-07-28 09:37:44,439 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-28 10:10:45,883 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 10:10:45] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 10:10:45,914 INFO config.model_engine.model_streamer: Starting AI response generation. Session=b17045f6-e630-4e48-b572-14c50cfd061b
-2026-07-28 10:10:45,914 INFO config.model_engine.model_streamer: Searching documents.
-2026-07-28 10:10:45,915 INFO config.model_engine.vector_search: Starting document search. Question length: 11
-2026-07-28 10:10:45,915 INFO config.model_engine.vector_search: Generating query embedding.
-2026-07-28 10:10:45,915 INFO config.document_services.embedding_services: Generating query embedding.
-2026-07-28 10:10:45,958 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 10:10:45,960 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 10:10:45,963 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 10:10:45,964 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 10:10:45,964 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-07-28 10:10:45,964 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 10:10:46,924 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 10:10:46,925 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 10:10:46,928 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 10:10:46] "POST /chat HTTP/1.1" 200 -
-2026-07-28 10:10:52,702 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-30 14:43:33,028 INFO root: Starting Horus Backend Application
-2026-07-30 14:43:33,076 INFO root: Routes registered successfully
-2026-07-30 14:43:33,077 INFO root: Running development server
+2026-08-03 09:10:22,333 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:10:22] "[33mOPTIONS /stat/super-admin/stats HTTP/1.1[0m" 404 -
+2026-08-03 09:10:22,336 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:10:22] "[33mOPTIONS /stat/super-admin/stats HTTP/1.1[0m" 404 -
+2026-08-03 09:14:04,151 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:14:04,153 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:14:04,163 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:14:04,165 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:14:04,175 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:14:04,176 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:14:04,907 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:14:04,908 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:14:04,930 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:14:04,955 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:14:04] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:36,866 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:36] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:36,868 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:36] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:36,874 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:15:36,875 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:36] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:36,881 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:15:36,882 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:36] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:45,186 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:45] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:45,188 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:45] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:45,209 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:45] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:45,236 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:45] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:15:47,830 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:47] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:47,831 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:47] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:47,837 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:15:47,838 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:47] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:15:47,843 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:15:47,845 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:15:47] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:23,963 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:23] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:23,965 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:23] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:23,970 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:23,971 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:23] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:23,976 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:23,978 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:23] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:25,083 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:25] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:25,084 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:25] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:25,122 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:25] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:25,161 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:25] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:26,651 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:26,653 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:26] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:26,658 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:26,660 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:26] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:28,355 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:28,356 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:28] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:28,362 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:16:28,363 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:28] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:16:29,584 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:29] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:16:29,608 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:16:29] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:30,580 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:30] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:30,583 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:30] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:30,588 WARNING root: Expired JWT token used
+2026-08-03 09:23:30,589 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:30] "[31m[1mGET /auth/admins HTTP/1.1[0m" 401 -
+2026-08-03 09:23:30,594 WARNING root: Expired JWT token used
+2026-08-03 09:23:30,595 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:30] "[31m[1mGET /auth/admins HTTP/1.1[0m" 401 -
+2026-08-03 09:23:39,886 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:39] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 09:23:39,995 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-08-03 09:23:39,996 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:39] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 09:23:40,268 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:40] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:40,270 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:40] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:40,311 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:40] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:40,352 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:40] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:23:41,798 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:41] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:41,799 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:41] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:41,807 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:23:41,808 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:41] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:23:41,814 INFO routes.auth_routes: Retrieved 2 admin account(s).
+2026-08-03 09:23:41,815 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:23:41] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:00,170 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:00] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-08-03 09:24:00,174 INFO routes.auth_routes: Admin registration attempt: super@gmail.com
+2026-08-03 09:24:00,307 INFO routes.auth_routes: Admin created successfully: super@gmail.com
+2026-08-03 09:24:00,308 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:00] "[35m[1mPOST /auth/register-admin HTTP/1.1[0m" 201 -
+2026-08-03 09:24:00,314 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:00] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:00,320 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:00,322 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:00] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:01,889 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:01] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:01,891 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:01] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:01,911 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:01] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:01,937 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:01] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:21,729 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:21] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:21,731 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:21] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:21,738 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:21,739 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:21] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:21,746 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:21,747 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:21] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:26,025 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:26] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:26,027 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:26] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:26,047 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:26] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:26,073 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:26] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:24:34,668 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:34] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:34,670 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:34] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:34,676 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:34,677 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:34] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:34,683 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:24:34,684 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:34] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:24:38,362 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:24:38] "OPTIONS /super-admin/stats HTTP/1.1" 200 -

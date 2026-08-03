@@ -1,3 +1,45 @@
-2026-07-30 15:13:18,805 INFO routes.chat: Fetching chat messages for chat_id=9bdde70a-eb28-45fe-8d22-6e6f3ff4e8c4
-2026-07-30 15:13:18,856 INFO routes.chat: Retrieved 2 messages for chat_id=9bdde70a-eb28-45fe-8d22-6e6f3ff4e8c4
-2026-07-30 15:13:18,857 INFO werkzeug: 172.18.0.1 - - [30/Jul/2026 15:13:18] "GET /messages/9bdde70a-eb28-45fe-8d22-6e6f3ff4e8c4 HTTP/1.1" 200 -
+2026-08-03 09:37:12,132 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:12] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 09:37:12,292 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
+2026-08-03 09:37:12,294 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:12] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
+2026-08-03 09:37:17,809 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:17] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 09:37:17,906 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
+2026-08-03 09:37:17,907 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:17] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
+2026-08-03 09:37:22,857 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-08-03 09:37:22,858 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:22] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 09:37:23,156 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:23] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:37:23,158 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:23] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:37:23,196 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:23] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:37:23,239 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:37:23] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:39:59,416 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:39:59] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:39:59,418 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:39:59] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:39:59,426 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:39:59,428 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:39:59] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:39:59,437 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:39:59,439 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:39:59] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:01,904 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:01] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:40:01,905 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:01] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:40:01,928 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:01] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:40:01,957 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:01] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:40:02,425 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:40:02,427 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:02] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:02,438 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:40:02,439 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:02] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:04,379 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:40:04,411 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:40:04,813 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:04,816 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:04,820 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:40:04,821 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:04,827 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:40:04,828 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:04] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:06,092 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:40:06,094 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:06] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:06,099 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:40:06,100 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:06] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:06,553 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:06] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:40:06,580 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:06] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 09:40:07,205 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:40:07,207 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:07] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:40:07,213 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-08-03 09:40:07,214 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 09:40:07] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-03 09:41:43,827 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading

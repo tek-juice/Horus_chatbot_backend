@@ -6,6 +6,7 @@ import logging
 from routes.auth_routes import auth
 from routes.documents import document
 from routes.chat import chat_bp
+from routes.statistics import stat_bp
 from flasgger import Swagger
 from dotenv import load_dotenv
 from config.logs.logs import setup_logging
@@ -42,7 +43,18 @@ def create_app():
         app,
         resources={
             r"/*": {
-                "origins": "http://localhost:5173"
+                "origins": "http://localhost:5173",
+                "allow_headers": [
+                "Content-Type",
+                "Authorization"
+            ],
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE",
+                "OPTIONS"
+            ]
             }
         },
         supports_credentials=True,
@@ -130,6 +142,7 @@ def create_app():
     app.register_blueprint(auth)
     app.register_blueprint(document)
     app.register_blueprint(chat_bp)
+    app.register_blueprint(stat_bp)
     logging.info("Routes registered successfully")
     return app
 

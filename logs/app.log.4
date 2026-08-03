@@ -1,97 +1,121 @@
-2026-07-28 08:04:09,916 INFO config.document_services.ingest_document: Saving document chunks.
-2026-07-28 08:04:09,948 INFO config.document_services.save_chunks: Saving 13 chunks for document 3.
-2026-07-28 08:04:09,965 INFO config.document_services.save_chunks: Successfully saved 13 chunks for document 3.
-2026-07-28 08:04:09,965 INFO config.document_services.ingest_document: Document chunks saved successfully.
-2026-07-28 08:04:09,965 INFO config.document_services.ingest_document: Document ingestion completed successfully: horus_Video_Distribution.pdf
-2026-07-28 08:04:09,967 INFO routes.documents: Document 'horus Video Distribution.pdf' ingested successfully.
-2026-07-28 08:04:09,968 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 08:04:09] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 201 -
-2026-07-28 08:04:24,451 INFO routes.documents: Document upload request received.
-2026-07-28 08:04:24,493 INFO config.document_services.allowed_files: File extension validation successful for 'Horus Label Services.pdf'.
-2026-07-28 08:04:24,494 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
-2026-07-28 08:04:24,498 INFO config.document_services.ingest_document: Starting document ingestion: Horus Label Services.pdf
-2026-07-28 08:04:24,573 INFO config.document_services.ingest_document: Document saved successfully: uploads/documents/Horus_Label_Services.pdf
-2026-07-28 08:04:24,578 INFO config.document_services.save_document: Document saved: 4
-2026-07-28 08:04:24,581 INFO config.document_services.ingest_document: Document record created with ID: 4
-2026-07-28 08:04:24,584 INFO config.document_services.ingest_document: Extracting text from document 4.
-2026-07-28 08:04:24,586 INFO config.document_services.code_extractor.pdf_extractor: Extracting text from PDF: uploads/documents/Horus_Label_Services.pdf
-2026-07-28 08:04:24,840 INFO config.document_services.code_extractor.pdf_extractor: PDF text extraction completed.
-2026-07-28 08:04:24,840 INFO config.document_services.ingest_document: Text extraction completed.
-2026-07-28 08:04:24,840 INFO config.document_services.ingest_document: Creating document chunks.
-2026-07-28 08:04:24,840 INFO config.document_services.create_chunks: Created 31 chunks.
-2026-07-28 08:04:24,840 INFO config.document_services.ingest_document: 31 chunks created.
-2026-07-28 08:04:24,841 INFO config.document_services.ingest_document: Generating embeddings.
-2026-07-28 08:04:24,841 INFO config.document_services.embedding_services: Generating embeddings for 31 chunks.
-2026-07-28 08:04:25,914 INFO config.document_services.embedding_services: Successfully generated 31 embeddings.
-2026-07-28 08:04:25,914 INFO config.document_services.ingest_document: 31 embeddings generated.
-2026-07-28 08:04:25,915 INFO config.document_services.ingest_document: Saving document chunks.
-2026-07-28 08:04:25,915 INFO config.document_services.save_chunks: Saving 31 chunks for document 4.
-2026-07-28 08:04:25,937 INFO config.document_services.save_chunks: Successfully saved 31 chunks for document 4.
-2026-07-28 08:04:25,938 INFO config.document_services.ingest_document: Document chunks saved successfully.
-2026-07-28 08:04:25,938 INFO config.document_services.ingest_document: Document ingestion completed successfully: Horus_Label_Services.pdf
-2026-07-28 08:04:25,939 INFO routes.documents: Document 'Horus Label Services.pdf' ingested successfully.
-2026-07-28 08:04:25,940 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 08:04:25] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 201 -
-2026-07-28 08:11:49,770 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 08:11:49] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 08:11:49,780 INFO config.model_engine.model_streamer: Starting AI response generation. Session=b2da60c8-c532-496b-918b-77843b9b85f8
-2026-07-28 08:11:49,780 INFO config.model_engine.model_streamer: Searching documents.
-2026-07-28 08:11:49,781 INFO config.model_engine.vector_search: Starting document search. Question length: 18
-2026-07-28 08:11:49,781 INFO config.model_engine.vector_search: Generating query embedding.
-2026-07-28 08:11:49,781 INFO config.document_services.embedding_services: Generating query embedding.
-2026-07-28 08:11:49,788 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 08:11:49,789 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 08:11:49,791 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 08:11:49,792 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 08:11:49,792 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-07-28 08:11:49,792 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 08:11:50,817 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 08:11:50,818 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 08:11:50,821 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 08:11:50] "POST /chat HTTP/1.1" 200 -
-2026-07-28 08:11:52,747 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-28 08:12:33,734 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 08:12:33] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 08:12:33,743 INFO config.model_engine.model_streamer: Starting AI response generation. Session=b2da60c8-c532-496b-918b-77843b9b85f8
-2026-07-28 08:12:33,744 INFO config.model_engine.model_streamer: Searching documents.
-2026-07-28 08:12:33,744 INFO config.model_engine.vector_search: Starting document search. Question length: 26
-2026-07-28 08:12:33,744 INFO config.model_engine.vector_search: Generating query embedding.
-2026-07-28 08:12:33,744 INFO config.document_services.embedding_services: Generating query embedding.
-2026-07-28 08:12:33,750 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 08:12:33,750 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 08:12:33,753 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 08:12:33,753 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 08:12:33,753 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-07-28 08:12:33,753 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 08:12:34,492 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 08:12:34,493 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 08:12:34,493 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 08:12:34] "POST /chat HTTP/1.1" 200 -
-2026-07-28 08:12:34,825 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-28 08:13:06,145 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 08:13:06] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 08:13:06,165 INFO config.model_engine.model_streamer: Starting AI response generation. Session=b2da60c8-c532-496b-918b-77843b9b85f8
-2026-07-28 08:13:06,166 INFO config.model_engine.model_streamer: Searching documents.
-2026-07-28 08:13:06,166 INFO config.model_engine.vector_search: Starting document search. Question length: 33
-2026-07-28 08:13:06,166 INFO config.model_engine.vector_search: Generating query embedding.
-2026-07-28 08:13:06,166 INFO config.document_services.embedding_services: Generating query embedding.
-2026-07-28 08:13:06,171 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-07-28 08:13:06,172 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-07-28 08:13:06,175 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-07-28 08:13:06,175 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-07-28 08:13:06,175 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-07-28 08:13:06,176 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-07-28 08:13:06,935 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-07-28 08:13:06,935 INFO config.model_engine.model_streamer: LLM stream started.
-2026-07-28 08:13:06,936 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 08:13:06] "POST /chat HTTP/1.1" 200 -
-2026-07-28 08:13:09,890 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-07-28 09:04:03,671 WARNING root: Expired JWT token used
-2026-07-28 09:04:03,679 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:04:03] "[31m[1mGET /document/view-list-documents HTTP/1.1[0m" 401 -
-2026-07-28 09:04:19,710 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-07-28 09:04:19,713 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:04:19] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-07-28 09:04:43,405 INFO routes.documents: Fetching document metadata.
-2026-07-28 09:04:43,424 INFO routes.documents: Retrieved 3 documents.
-2026-07-28 09:04:43,425 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:04:43] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-07-28 09:08:32,704 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:08:32] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-28 09:08:32,709 INFO routes.chat: Starting new chat session.
-2026-07-28 09:08:32,711 INFO routes.chat: Looking up user with email: jude@gmail.com
-2026-07-28 09:08:32,721 INFO routes.chat: User not found. Creating new user: jude@gmail.com
-2026-07-28 09:08:32,752 INFO routes.chat: Creating chat session for user ID: 7
-2026-07-28 09:08:32,763 INFO routes.chat: Chat session created successfully. Session ID: 77892f98-870d-4178-99c8-3b7571f0cb79
-2026-07-28 09:08:32,765 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:08:32] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-07-28 09:08:46,568 INFO werkzeug: 172.18.0.1 - - [28/Jul/2026 09:08:46] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-28 09:08:46,591 INFO config.model_engine.model_streamer: Starting AI response generation. Session=77892f98-870d-4178-99c8-3b7571f0cb79
-2026-07-28 09:08:46,592 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-03 08:37:21,204 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:37:26,123 INFO root: Starting Horus Backend Application
+2026-08-03 08:37:26,154 INFO root: Routes registered successfully
+2026-08-03 08:37:26,154 INFO root: Running development server
+2026-08-03 08:37:26,167 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:37:26,168 INFO werkzeug:  * Debugger PIN: 104-399-768
+2026-08-03 08:39:11,464 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 08:39:11,990 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:39:17,691 INFO root: Starting Horus Backend Application
+2026-08-03 08:39:17,730 INFO root: Routes registered successfully
+2026-08-03 08:39:17,730 INFO root: Running development server
+2026-08-03 08:39:17,745 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:39:17,747 INFO werkzeug:  * Debugger PIN: 104-399-768
+2026-08-03 08:39:47,414 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 08:39:47,859 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:39:52,268 INFO root: Starting Horus Backend Application
+2026-08-03 08:39:52,294 INFO root: Routes registered successfully
+2026-08-03 08:39:52,294 INFO root: Running development server
+2026-08-03 08:39:52,305 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:39:52,306 INFO werkzeug:  * Debugger PIN: 104-399-768
+2026-08-03 08:41:06,452 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 08:41:06,921 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:41:12,463 INFO root: Starting Horus Backend Application
+2026-08-03 08:41:12,488 INFO root: Routes registered successfully
+2026-08-03 08:41:12,489 INFO root: Running development server
+2026-08-03 08:41:12,501 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:41:12,502 INFO werkzeug:  * Debugger PIN: 104-399-768
+2026-08-03 08:41:37,773 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 08:41:38,264 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:41:43,159 INFO root: Starting Horus Backend Application
+2026-08-03 08:41:43,183 INFO root: Routes registered successfully
+2026-08-03 08:41:43,184 INFO root: Running development server
+2026-08-03 08:41:43,194 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:41:43,194 INFO werkzeug:  * Debugger PIN: 104-399-768
+2026-08-03 08:42:40,553 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 08:42:41,078 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:42:46,614 INFO root: Starting Horus Backend Application
+2026-08-03 08:42:46,643 INFO root: Routes registered successfully
+2026-08-03 08:42:46,643 INFO root: Running development server
+2026-08-03 08:42:46,656 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:42:46,657 INFO werkzeug:  * Debugger PIN: 104-399-768
+2026-08-03 08:42:53,222 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 08:42:53,559 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:43:19,908 INFO root: Starting Horus Backend Application
+2026-08-03 08:43:19,940 INFO root: Routes registered successfully
+2026-08-03 08:43:19,941 INFO root: Running development server
+2026-08-03 08:43:19,973 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-03 08:43:19,974 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-03 08:43:19,976 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:43:24,593 INFO root: Starting Horus Backend Application
+2026-08-03 08:43:24,644 INFO root: Routes registered successfully
+2026-08-03 08:43:24,645 INFO root: Running development server
+2026-08-03 08:43:24,659 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:43:24,660 INFO werkzeug:  * Debugger PIN: 137-535-449
+2026-08-03 08:43:24,957 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:43:24] "GET /apidocs/ HTTP/1.1" 200 -
+2026-08-03 08:43:24,984 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:43:24] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2026-08-03 08:43:24,984 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:43:24] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
+2026-08-03 08:43:24,985 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:43:24] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2026-08-03 08:43:25,012 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:43:25] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
+2026-08-03 08:43:25,393 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:43:25] "GET /apispec.json HTTP/1.1" 200 -
+2026-08-03 08:43:25,660 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:43:25] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
+2026-08-03 08:43:53,278 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 08:43:53,711 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:43:58,631 INFO root: Starting Horus Backend Application
+2026-08-03 08:43:58,661 INFO root: Routes registered successfully
+2026-08-03 08:43:58,662 INFO root: Running development server
+2026-08-03 08:43:58,675 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:43:58,676 INFO werkzeug:  * Debugger PIN: 137-535-449
+2026-08-03 08:44:09,360 INFO werkzeug:  * Detected change in '/app/routes/statistics.py', reloading
+2026-08-03 08:44:09,760 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:44:14,418 INFO root: Starting Horus Backend Application
+2026-08-03 08:44:14,450 INFO root: Routes registered successfully
+2026-08-03 08:44:14,451 INFO root: Running development server
+2026-08-03 08:44:14,465 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:44:14,466 INFO werkzeug:  * Debugger PIN: 137-535-449
+2026-08-03 08:44:16,470 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:44:16] "GET /apidocs/ HTTP/1.1" 200 -
+2026-08-03 08:44:16,485 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:44:16] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-08-03 08:44:16,487 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:44:16] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-08-03 08:44:16,490 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:44:16] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-08-03 08:44:16,491 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:44:16] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-08-03 08:44:16,586 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:44:16] "GET /apispec.json HTTP/1.1" 200 -
+2026-08-03 08:44:16,588 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:44:16] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
+2026-08-03 08:45:07,959 INFO werkzeug:  * Detected change in '/app/app.py', reloading
+2026-08-03 08:45:08,423 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:45:33,321 INFO root: Starting Horus Backend Application
+2026-08-03 08:45:33,347 INFO root: Routes registered successfully
+2026-08-03 08:45:33,348 INFO root: Running development server
+2026-08-03 08:45:33,366 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-03 08:45:33,367 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-03 08:45:33,369 INFO werkzeug:  * Restarting with stat
+2026-08-03 08:45:37,895 INFO root: Starting Horus Backend Application
+2026-08-03 08:45:37,924 INFO root: Routes registered successfully
+2026-08-03 08:45:37,925 INFO root: Running development server
+2026-08-03 08:45:37,937 WARNING werkzeug:  * Debugger is active!
+2026-08-03 08:45:37,938 INFO werkzeug:  * Debugger PIN: 101-090-587
+2026-08-03 08:45:38,229 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:45:38] "GET /apidocs/ HTTP/1.1" 200 -
+2026-08-03 08:45:38,246 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:45:38] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-08-03 08:45:38,250 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:45:38] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-08-03 08:45:38,252 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:45:38] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-08-03 08:45:38,253 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:45:38] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-08-03 08:45:38,345 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:45:38] "GET /apispec.json HTTP/1.1" 200 -
+2026-08-03 08:45:38,349 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:45:38] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
+2026-08-03 08:45:45,238 WARNING root: Missing JWT token: Missing Authorization Header
+2026-08-03 08:45:45,239 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:45:45] "[31m[1mGET /super-admin/stats HTTP/1.1[0m" 401 -
+2026-08-03 08:46:14,101 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-08-03 08:46:14,102 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:46:14] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 08:46:37,674 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:46:37] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-03 08:47:12,274 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:47:12] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 08:47:12,275 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:47:12] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-03 08:47:12,280 WARNING root: Expired JWT token used
+2026-08-03 08:47:12,281 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:47:12] "[31m[1mGET /auth/admins HTTP/1.1[0m" 401 -
+2026-08-03 08:47:12,285 WARNING root: Expired JWT token used
+2026-08-03 08:47:12,286 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:47:12] "[31m[1mGET /auth/admins HTTP/1.1[0m" 401 -
+2026-08-03 08:47:21,239 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 08:47:21] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-03 08:47:21,347 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com

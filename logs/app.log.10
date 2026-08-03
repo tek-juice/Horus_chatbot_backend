@@ -1,121 +1,96 @@
-2026-07-27 19:36:53,530 WARNING werkzeug:  * Debugger is active!
-2026-07-27 19:36:53,581 INFO werkzeug:  * Debugger PIN: 984-884-624
-2026-07-27 19:37:14,299 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 19:37:14] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-27 19:37:14,305 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 19:37:14] "[31m[1mPOST /chat HTTP/1.1[0m" 400 -
-2026-07-27 21:04:31,664 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:04:31] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-27 21:04:31,677 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:04:31] "[31m[1mPOST /chat HTTP/1.1[0m" 400 -
-2026-07-27 21:05:25,386 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:05:25] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-27 21:05:25,398 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:05:25] "[31m[1mPOST /chat HTTP/1.1[0m" 400 -
-2026-07-27 21:06:02,629 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:06:02] "OPTIONS /chat HTTP/1.1" 200 -
-2026-07-27 21:06:02,643 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:06:02] "[31m[1mPOST /chat HTTP/1.1[0m" 400 -
-2026-07-27 21:09:39,629 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:09:39] "[33mOPTIONS /chat/chat HTTP/1.1[0m" 404 -
-2026-07-27 21:09:59,669 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:09:59] "[33mOPTIONS /chat/chat HTTP/1.1[0m" 404 -
-2026-07-27 21:10:13,048 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:10:13] "[33mOPTIONS /chat/chat HTTP/1.1[0m" 404 -
-2026-07-27 21:11:21,865 INFO root: Starting Horus Backend Application
-2026-07-27 21:11:21,911 INFO root: Routes registered successfully
-2026-07-27 21:11:21,912 INFO root: Running development server
-2026-07-27 21:11:21,944 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-07-27 21:11:21,945 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-07-27 21:11:21,947 INFO werkzeug:  * Restarting with stat
-2026-07-27 21:11:27,171 INFO root: Starting Horus Backend Application
-2026-07-27 21:11:27,215 INFO root: Routes registered successfully
-2026-07-27 21:11:27,216 INFO root: Running development server
-2026-07-27 21:11:27,231 WARNING werkzeug:  * Debugger is active!
-2026-07-27 21:11:27,232 INFO werkzeug:  * Debugger PIN: 131-589-118
-2026-07-27 21:11:53,440 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:11:53] "[33mGET /chat/chat HTTP/1.1[0m" 404 -
-2026-07-27 21:11:53,584 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:11:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-2026-07-27 21:12:53,789 INFO root: Starting Horus Backend Application
-2026-07-27 21:12:53,817 INFO root: Routes registered successfully
-2026-07-27 21:12:53,818 INFO root: Running development server
-2026-07-27 21:12:53,840 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-07-27 21:12:53,841 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-07-27 21:12:53,843 INFO werkzeug:  * Restarting with stat
-2026-07-27 21:12:59,805 INFO root: Starting Horus Backend Application
-2026-07-27 21:12:59,856 INFO root: Routes registered successfully
-2026-07-27 21:12:59,857 INFO root: Running development server
-2026-07-27 21:12:59,875 WARNING werkzeug:  * Debugger is active!
-2026-07-27 21:12:59,876 INFO werkzeug:  * Debugger PIN: 300-207-629
-2026-07-27 21:13:56,318 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:13:56] "[33mOPTIONS /chat/chat HTTP/1.1[0m" 404 -
-2026-07-27 21:15:01,797 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:15:01] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:15:01,809 INFO routes.chat: Starting new chat session.
-2026-07-27 21:15:01,811 INFO routes.chat: Looking up user with email: ish@gmail.com
-2026-07-27 21:15:01,964 INFO routes.chat: User not found. Creating new user: ish@gmail.com
-2026-07-27 21:15:01,980 INFO routes.chat: Creating chat session for user ID: 4
-2026-07-27 21:15:01,992 INFO routes.chat: Chat session created successfully. Session ID: b2da60c8-c532-496b-918b-77843b9b85f8
-2026-07-27 21:15:01,995 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:15:01] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-07-27 21:15:42,284 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:15:42] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:15:42,292 INFO routes.chat: Starting new chat session.
-2026-07-27 21:15:42,294 INFO routes.chat: Looking up user with email: john
-2026-07-27 21:15:42,300 INFO routes.chat: User not found. Creating new user: john
-2026-07-27 21:15:42,311 INFO routes.chat: Creating chat session for user ID: 5
-2026-07-27 21:15:42,316 INFO routes.chat: Chat session created successfully. Session ID: e3d55cb3-fddd-4924-84da-c7b55bc697cd
-2026-07-27 21:15:42,319 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:15:42] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-07-27 21:19:40,635 INFO werkzeug:  * Detected change in '/app/config/helpers/validators.py', reloading
-2026-07-27 21:19:41,459 INFO werkzeug:  * Restarting with stat
-2026-07-27 21:19:47,839 INFO root: Starting Horus Backend Application
-2026-07-27 21:19:47,871 INFO root: Routes registered successfully
-2026-07-27 21:19:47,872 INFO root: Running development server
-2026-07-27 21:19:47,888 WARNING werkzeug:  * Debugger is active!
-2026-07-27 21:19:47,890 INFO werkzeug:  * Debugger PIN: 300-207-629
-2026-07-27 21:24:17,959 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
-2026-07-27 21:24:18,542 INFO werkzeug:  * Restarting with stat
-2026-07-27 21:25:33,227 INFO root: Starting Horus Backend Application
-2026-07-27 21:25:33,277 INFO root: Routes registered successfully
-2026-07-27 21:25:33,277 INFO root: Running development server
-2026-07-27 21:25:33,312 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-07-27 21:25:33,313 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-07-27 21:25:33,316 INFO werkzeug:  * Restarting with stat
-2026-07-27 21:25:39,474 INFO root: Starting Horus Backend Application
-2026-07-27 21:25:39,513 INFO root: Routes registered successfully
-2026-07-27 21:25:39,514 INFO root: Running development server
-2026-07-27 21:25:39,532 WARNING werkzeug:  * Debugger is active!
-2026-07-27 21:25:39,533 INFO werkzeug:  * Debugger PIN: 128-756-223
-2026-07-27 21:26:26,552 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:26:26] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:26:26,559 INFO routes.chat: Starting new chat session.
-2026-07-27 21:26:26,561 WARNING routes.chat: Chat start failed: Invalid email.
-2026-07-27 21:26:26,562 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:26:26] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
-2026-07-27 21:32:56,655 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:32:56] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:32:56,682 INFO routes.chat: Starting new chat session.
-2026-07-27 21:32:56,687 WARNING routes.chat: Chat start failed: Invalid email.
-2026-07-27 21:32:56,690 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:32:56] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
-2026-07-27 21:34:37,284 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:37] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:34:37,298 INFO routes.chat: Starting new chat session.
-2026-07-27 21:34:37,300 WARNING routes.chat: Chat start failed: Invalid email.
-2026-07-27 21:34:37,301 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:37] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
-2026-07-27 21:34:42,635 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:42] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:34:42,680 INFO routes.chat: Starting new chat session.
-2026-07-27 21:34:42,681 WARNING routes.chat: Chat start failed: Invalid email.
-2026-07-27 21:34:42,682 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:42] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
-2026-07-27 21:34:53,728 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:53] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:34:53,736 INFO routes.chat: Starting new chat session.
-2026-07-27 21:34:53,737 WARNING routes.chat: Chat start failed: Invalid email.
-2026-07-27 21:34:53,738 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:34:53] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
-2026-07-27 21:36:32,910 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:36:32] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:36:32,920 INFO routes.chat: Starting new chat session.
-2026-07-27 21:36:32,922 INFO routes.chat: Looking up user with email: dsds@gmail.com
-2026-07-27 21:36:33,038 INFO routes.chat: User not found. Creating new user: dsds@gmail.com
-2026-07-27 21:36:33,055 INFO routes.chat: Creating chat session for user ID: 6
-2026-07-27 21:36:33,066 INFO routes.chat: Chat session created successfully. Session ID: 3db583cc-d1a9-4179-b2dc-8cc45ce4b535
-2026-07-27 21:36:33,070 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:36:33] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-07-27 21:37:04,651 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:37:04] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:37:04,663 INFO routes.chat: Starting new chat session.
-2026-07-27 21:37:04,665 WARNING routes.chat: Chat start failed: Invalid name.
-2026-07-27 21:37:04,667 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:37:04] "[31m[1mPOST /chat/start HTTP/1.1[0m" 400 -
-2026-07-27 21:37:33,706 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
-2026-07-27 21:37:34,369 INFO werkzeug:  * Restarting with stat
-2026-07-27 21:37:41,452 INFO root: Starting Horus Backend Application
-2026-07-27 21:37:41,493 INFO root: Routes registered successfully
-2026-07-27 21:37:41,494 INFO root: Running development server
-2026-07-27 21:37:41,509 WARNING werkzeug:  * Debugger is active!
-2026-07-27 21:37:41,510 INFO werkzeug:  * Debugger PIN: 128-756-223
-2026-07-27 21:37:41,756 INFO werkzeug: 172.18.0.1 - - [27/Jul/2026 21:37:41] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-07-27 21:38:08,702 INFO werkzeug:  * Restarting with stat
+2026-07-31 13:23:40,118 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:23:40] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:24:09,099 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:09] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:24:09,107 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:24:09,109 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:09] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:24:22,105 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:22] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:24:22,113 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:24:22,115 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:22] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:24:59,130 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:59] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:24:59,138 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:24:59,140 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:24:59] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:26:43,109 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:26:43] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:26:43,120 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:26:43,122 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:26:43] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:27:17,106 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:27:17] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:27:17,112 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:27:17,113 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:27:17] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:29:01,260 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:01] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-07-31 13:29:01,366 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-07-31 13:29:01,367 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:01] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-07-31 13:29:02,991 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:02] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:29:02,993 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:02] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:29:02,999 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:29:03,000 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:03] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:29:03,005 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:29:03,006 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:03] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:29:08,927 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:08] "[33mOPTIONS /auth/admin/11 HTTP/1.1[0m" 404 -
+2026-07-31 13:29:28,000 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:28] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:29:28,005 INFO routes.auth_routes: Admin registration attempt: 
+2026-07-31 13:29:28,005 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:29:28,006 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:28] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:29:33,437 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:33] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:29:33,442 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
+2026-07-31 13:29:33,442 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:29:33,443 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:33] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:29:35,550 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
+2026-07-31 13:29:35,551 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:29:35,552 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:35] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:29:36,094 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
+2026-07-31 13:29:36,094 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:29:36,095 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:36] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:29:36,907 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
+2026-07-31 13:29:36,907 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:29:36,908 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:36] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:29:37,158 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
+2026-07-31 13:29:37,158 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:29:37,159 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:37] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:29:37,334 INFO routes.auth_routes: Admin registration attempt: ishmo255super@gmail.com
+2026-07-31 13:29:37,334 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:29:37,335 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:29:37] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:33:22,923 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:22] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-07-31 13:33:23,013 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-07-31 13:33:23,014 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:23] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-07-31 13:33:24,573 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:24] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:33:24,574 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:24] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:33:24,579 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:33:24,580 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:24] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:33:24,587 INFO routes.auth_routes: Retrieved 3 admin account(s).
+2026-07-31 13:33:24,588 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:24] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:33:38,747 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:38] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:33:38,754 INFO routes.auth_routes: Admin registration attempt: dsds
+2026-07-31 13:33:38,755 WARNING routes.auth_routes: Invalid email format: dsds
+2026-07-31 13:33:38,757 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:33:38] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:36:14,987 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:14] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:36:14,992 INFO routes.auth_routes: Admin registration attempt: dsds
+2026-07-31 13:36:14,993 WARNING routes.auth_routes: Invalid email format: dsds
+2026-07-31 13:36:14,993 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:14] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:36:50,031 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:50] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:36:50,036 INFO routes.auth_routes: Admin registration attempt: jam@gmail.com
+2026-07-31 13:36:50,149 INFO routes.auth_routes: Admin created successfully: jam@gmail.com
+2026-07-31 13:36:50,149 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:50] "[35m[1mPOST /auth/register-admin HTTP/1.1[0m" 201 -
+2026-07-31 13:36:50,155 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:50] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:36:50,163 INFO routes.auth_routes: Retrieved 4 admin account(s).
+2026-07-31 13:36:50,165 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:36:50] "GET /auth/admins HTTP/1.1" 200 -
+2026-07-31 13:37:23,697 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:23] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:37:23,700 INFO routes.auth_routes: Admin registration attempt: 
+2026-07-31 13:37:23,701 WARNING routes.auth_routes: Invalid email format: 
+2026-07-31 13:37:23,702 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:23] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:37:27,307 INFO routes.auth_routes: Admin registration attempt: vfvfvfv
+2026-07-31 13:37:27,307 WARNING routes.auth_routes: Invalid email format: vfvfvfv
+2026-07-31 13:37:27,308 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:27] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:37:29,183 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:29] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:37:29,187 INFO routes.auth_routes: Admin registration attempt: vfvfvfv
+2026-07-31 13:37:29,188 WARNING routes.auth_routes: Invalid email format: vfvfvfv
+2026-07-31 13:37:29,188 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:29] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:37:39,568 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:39] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:37:39,573 INFO routes.auth_routes: Admin registration attempt: vfvfvfv@gmail.com
+2026-07-31 13:37:39,573 WARNING routes.auth_routes: Weak password attempt: vfvfvfv@gmail.com
+2026-07-31 13:37:39,573 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:39] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:37:51,659 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:51] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-07-31 13:37:51,665 INFO routes.auth_routes: Admin registration attempt: vfvfvfv@gmail.com
+2026-07-31 13:37:51,665 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:37:51,666 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:51] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:37:52,279 INFO routes.auth_routes: Admin registration attempt: vfvfvfv@gmail.com
+2026-07-31 13:37:52,279 WARNING routes.auth_routes: Admin registration failed: Invalid name
+2026-07-31 13:37:52,280 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:37:52] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 400 -
+2026-07-31 13:38:35,457 INFO werkzeug: 172.18.0.1 - - [31/Jul/2026 13:38:35] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
