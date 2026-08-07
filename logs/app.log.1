@@ -1,75 +1,95 @@
-2026-08-03 13:47:54,437 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:47:54] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:47:54,441 WARNING root: Expired JWT token used
-2026-08-03 13:47:54,481 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:47:54] "[31m[1mGET /document/view-list-documents HTTP/1.1[0m" 401 -
-2026-08-03 13:47:54,486 WARNING root: Expired JWT token used
-2026-08-03 13:47:54,487 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:47:54] "[31m[1mGET /document/view-list-documents HTTP/1.1[0m" 401 -
-2026-08-03 13:48:47,562 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:48:47] "OPTIONS /auth/admin-change-password HTTP/1.1" 200 -
-2026-08-03 13:48:47,603 WARNING root: Expired JWT token used
-2026-08-03 13:48:47,604 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:48:47] "[31m[1mPOST /auth/admin-change-password HTTP/1.1[0m" 401 -
-2026-08-03 13:48:54,979 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:48:54] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 13:48:54,988 WARNING root: Admin account not found: ishmo255super@gmail.com
-2026-08-03 13:48:54,989 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:48:54] "[33mPOST /auth/admin/login HTTP/1.1[0m" 404 -
-2026-08-03 13:49:16,609 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:16] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 13:49:16,708 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-03 13:49:16,710 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:16] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 13:49:18,562 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:18] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:49:18,563 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:18] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:49:18,566 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:49:18,569 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:49:18,570 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:18] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:49:18,574 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:49:18,577 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:49:18,578 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:18] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:49:25,930 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:25] "OPTIONS /auth/admin-change-password HTTP/1.1" 200 -
-2026-08-03 13:49:25,945 INFO routes.auth_routes: Admin password change requested. User ID: 2
-2026-08-03 13:49:26,041 WARNING routes.auth_routes: Incorrect current password. User ID: 2
-2026-08-03 13:49:26,042 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:26] "[31m[1mPOST /auth/admin-change-password HTTP/1.1[0m" 400 -
-2026-08-03 13:49:34,625 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:34] "OPTIONS /auth/admin-change-password HTTP/1.1" 200 -
-2026-08-03 13:49:34,629 INFO routes.auth_routes: Admin password change requested. User ID: 2
-2026-08-03 13:49:34,725 WARNING routes.auth_routes: Password confirmation mismatch. User ID: 2
-2026-08-03 13:49:34,726 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:34] "[31m[1mPOST /auth/admin-change-password HTTP/1.1[0m" 400 -
-2026-08-03 13:49:50,601 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:50] "OPTIONS /auth/admin-change-password HTTP/1.1" 200 -
-2026-08-03 13:49:50,605 INFO routes.auth_routes: Admin password change requested. User ID: 2
-2026-08-03 13:49:50,706 WARNING routes.auth_routes: Password confirmation mismatch. User ID: 2
-2026-08-03 13:49:50,708 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:49:50] "[31m[1mPOST /auth/admin-change-password HTTP/1.1[0m" 400 -
-2026-08-03 13:50:03,016 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:50:03] "OPTIONS /auth/admin-change-password HTTP/1.1" 200 -
-2026-08-03 13:50:03,021 INFO routes.auth_routes: Admin password change requested. User ID: 2
-2026-08-03 13:50:03,137 WARNING routes.auth_routes: Password validation failed. User ID: 2
-2026-08-03 13:50:03,138 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:50:03] "[31m[1mPOST /auth/admin-change-password HTTP/1.1[0m" 400 -
-2026-08-03 13:50:08,792 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:50:08] "OPTIONS /auth/admin-change-password HTTP/1.1" 200 -
-2026-08-03 13:50:08,797 INFO routes.auth_routes: Admin password change requested. User ID: 2
-2026-08-03 13:50:09,101 INFO routes.auth_routes: Password changed successfully. User ID: 2
-2026-08-03 13:50:09,102 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:50:09] "POST /auth/admin-change-password HTTP/1.1" 200 -
-2026-08-03 13:50:13,731 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:50:13] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:50:13,732 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:50:13] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:50:13,737 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:50:13,740 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:50:13,741 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:50:13] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:50:13,745 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:50:13,746 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:50:13,747 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:50:13] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:09,953 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:09] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:09,954 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:09] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:09,958 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:51:09,960 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:51:09,961 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:09] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:09,965 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:51:09,967 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:51:09,968 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:09] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:16,873 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:16] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:16,874 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:16] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:16,878 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:51:16,880 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:51:16,881 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:16] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:16,885 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:51:16,887 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:51:16,888 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:16] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:23,521 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:23] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:23,523 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:23] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:23,528 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:51:23,530 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:51:23,531 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:23] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 13:51:23,536 INFO routes.documents: Fetching document metadata.
-2026-08-03 13:51:23,538 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 13:51:23,540 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:51:23] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 14:05:59,201 INFO werkzeug:  * Detected change in '/app/routes/auth_routes.py', reloading
+2026-08-07 08:14:11,027 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:11] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-07 08:14:11,080 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:11] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-07 08:14:18,722 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:18] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-07 08:14:18,724 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:18] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-07 08:14:18,727 INFO routes.documents: Fetching document metadata.
+2026-08-07 08:14:18,729 INFO routes.documents: Retrieved 3 documents.
+2026-08-07 08:14:18,730 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:18] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-07 08:14:18,734 INFO routes.documents: Fetching document metadata.
+2026-08-07 08:14:18,736 INFO routes.documents: Retrieved 3 documents.
+2026-08-07 08:14:18,737 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:18] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-07 08:14:35,949 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:35] "OPTIONS /document/delete-document/7 HTTP/1.1" 200 -
+2026-08-07 08:14:35,955 INFO routes.documents: Delete document request received. ID=7
+2026-08-07 08:14:35,962 INFO routes.documents: Document found: Horus_Label_Services.pdf
+2026-08-07 08:14:35,969 INFO routes.documents: Found 31 chunk(s) associated with document 7.
+2026-08-07 08:14:35,977 INFO routes.documents: Deleted file: /app/uploads/documents/Horus_Label_Services.pdf
+2026-08-07 08:14:35,990 INFO routes.documents: Deleted 31 document chunk(s).
+2026-08-07 08:14:35,997 INFO routes.documents: Document 7 deleted successfully.
+2026-08-07 08:14:35,998 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:35] "DELETE /document/delete-document/7 HTTP/1.1" 200 -
+2026-08-07 08:14:36,003 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:36] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-07 08:14:36,008 INFO routes.documents: Fetching document metadata.
+2026-08-07 08:14:36,010 INFO routes.documents: Retrieved 2 documents.
+2026-08-07 08:14:36,011 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:36] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-07 08:14:53,925 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:53] "OPTIONS /document/ingest HTTP/1.1" 200 -
+2026-08-07 08:14:53,933 INFO routes.documents: Document upload request received.
+2026-08-07 08:14:53,951 INFO config.document_services.allowed_files: File extension validation successful for 'Horus_Label_Services.pdf'.
+2026-08-07 08:14:53,951 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
+2026-08-07 08:14:53,952 INFO config.document_services.ingest_document: Starting document ingestion: Horus_Label_Services.pdf
+2026-08-07 08:14:53,966 INFO config.document_services.ingest_document: Document saved successfully: uploads/documents/Horus_Label_Services.pdf
+2026-08-07 08:14:53,976 INFO config.document_services.save_document: Document saved: 8
+2026-08-07 08:14:53,976 INFO config.document_services.ingest_document: Document record created with ID: 8
+2026-08-07 08:14:53,977 INFO config.document_services.ingest_document: Extracting text from document 8.
+2026-08-07 08:14:53,978 INFO config.document_services.code_extractor.pdf_extractor: Extracting text from PDF: uploads/documents/Horus_Label_Services.pdf
+2026-08-07 08:14:54,306 INFO config.document_services.code_extractor.pdf_extractor: PDF text extraction completed.
+2026-08-07 08:14:54,306 INFO config.document_services.ingest_document: Text extraction completed.
+2026-08-07 08:14:54,306 INFO config.document_services.ingest_document: Creating document chunks.
+2026-08-07 08:14:54,307 INFO config.document_services.create_chunks: Created 31 chunks.
+2026-08-07 08:14:54,307 INFO config.document_services.ingest_document: 31 chunks created.
+2026-08-07 08:14:54,307 INFO config.document_services.ingest_document: Generating embeddings.
+2026-08-07 08:14:54,307 INFO config.document_services.embedding_services: Generating embeddings for 31 chunks.
+2026-08-07 08:14:55,482 INFO config.document_services.embedding_services: Successfully generated 31 embeddings.
+2026-08-07 08:14:55,483 INFO config.document_services.ingest_document: 31 embeddings generated.
+2026-08-07 08:14:55,483 INFO config.document_services.ingest_document: Saving document chunks.
+2026-08-07 08:14:55,484 INFO config.document_services.save_chunks: Saving 31 chunks for document 8.
+2026-08-07 08:14:55,545 INFO config.document_services.save_chunks: Successfully saved 31 chunks for document 8.
+2026-08-07 08:14:55,545 INFO config.document_services.ingest_document: Document chunks saved successfully.
+2026-08-07 08:14:55,546 INFO config.document_services.ingest_document: Document ingestion completed successfully: Horus_Label_Services.pdf
+2026-08-07 08:14:55,548 INFO routes.documents: Document 'Horus_Label_Services.pdf' ingested successfully.
+2026-08-07 08:14:55,549 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:55] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 201 -
+2026-08-07 08:14:55,555 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:55] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-07 08:14:55,560 INFO routes.documents: Fetching document metadata.
+2026-08-07 08:14:55,561 INFO routes.documents: Retrieved 3 documents.
+2026-08-07 08:14:55,562 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:55] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-07 08:15:00,063 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:00] "OPTIONS /document/view-document/8?download=false HTTP/1.1" 200 -
+2026-08-07 08:15:00,068 INFO routes.documents: Document request received. ID=8
+2026-08-07 08:15:00,075 INFO routes.documents: Previewing document 'Horus_Label_Services.pdf'
+2026-08-07 08:15:00,086 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:00] "GET /document/view-document/8?download=false HTTP/1.1" 200 -
+2026-08-07 08:15:17,367 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:17] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-07 08:15:17,375 INFO config.model_engine.model_streamer: Starting AI response generation. Session=e82e7c91-bc6e-4b41-8f6b-1e6747547793
+2026-08-07 08:15:17,376 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-07 08:15:17,376 INFO config.model_engine.vector_search: Starting document search. Question length: 33
+2026-08-07 08:15:17,376 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-07 08:15:17,376 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-07 08:15:17,381 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-07 08:15:17,382 INFO config.model_engine.vector_search: Executing vector search. top_k=3
+2026-08-07 08:15:17,386 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
+2026-08-07 08:15:17,386 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-07 08:15:17,386 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
+2026-08-07 08:15:17,387 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-07 08:15:18,204 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-07 08:15:18,206 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-07 08:15:18,209 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:18] "POST /chat HTTP/1.1" 200 -
+2026-08-07 08:15:18,888 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-07 08:15:51,153 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:51] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-07 08:15:51,171 INFO config.model_engine.model_streamer: Starting AI response generation. Session=e82e7c91-bc6e-4b41-8f6b-1e6747547793
+2026-08-07 08:15:51,171 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-07 08:15:51,172 INFO config.model_engine.vector_search: Starting document search. Question length: 30
+2026-08-07 08:15:51,172 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-07 08:15:51,172 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-07 08:15:51,192 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-07 08:15:51,193 INFO config.model_engine.vector_search: Executing vector search. top_k=3
+2026-08-07 08:15:51,195 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
+2026-08-07 08:15:51,195 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-07 08:15:51,196 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
+2026-08-07 08:15:51,196 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-07 08:15:51,974 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-07 08:15:51,976 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-07 08:15:51,978 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:51] "POST /chat HTTP/1.1" 200 -
+2026-08-07 08:15:53,241 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-07 08:16:04,584 INFO routes.chat: Fetching chat messages for chat_id=e82e7c91-bc6e-4b41-8f6b-1e6747547793
+2026-08-07 08:16:04,587 INFO routes.chat: Retrieved 6 messages for chat_id=e82e7c91-bc6e-4b41-8f6b-1e6747547793
+2026-08-07 08:16:04,588 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:04] "GET /messages/e82e7c91-bc6e-4b41-8f6b-1e6747547793 HTTP/1.1" 200 -
+2026-08-07 08:16:15,316 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:15] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-07 08:16:15,317 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:15] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-07 08:16:15,333 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:15] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-07 08:16:15,351 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:15] "GET /auth/dashboard/statistics HTTP/1.1" 200 -

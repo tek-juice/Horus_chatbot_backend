@@ -1,5 +1,5 @@
 from flasgger import swag_from
-from flask import Blueprint, jsonify, request, stream_with_context, Response
+from flask import Blueprint, jsonify, request, stream_with_context, Response, send_file
 from config.model_engine.model_streamer import stream_answer
 from config.chat_services.get_chat_session import get_chat_session
 from config.chat_services.save_chat_message import save_chat_message
@@ -11,9 +11,18 @@ import logging
 from models.users import ChatSession
 from config.helpers.validators import validate_email, validate_name
 
+from config.speech.speech_service import speech_to_text, text_to_speech
+from config.speech.chat_service import generate_answer
+import tempfile
+import os
+
+
 logger = logging.getLogger(__name__)
 
 chat_bp = Blueprint("chat", __name__)
+
+
+speech_bp = Blueprint("speech", __name__, url_prefix="/speech")
 
 @chat_bp.route("/chat/start", methods=["POST"])
 @swag_from({
@@ -335,4 +344,130 @@ def get_session_messages(chat_id):
             "error": "An unexpected error occurred while fetching chat messages."
         }), 500
 
-    
+
+@speech_bp.route("/chat-speech", methods=["POST"])
+@swag_from({
+    "tags": ["Speech"],
+    "summary": "Voice chat with Horus",
+    "description": """
+    Accepts user's voice input, converts speech to text using Faster Whisper,
+    generates an AI response, converts the response back to speech using Edge TTS,
+    and returns an audio response.
+    """,
+
+    "consumes": [
+        "multipart/form-data"
+    ],
+
+    "parameters": [
+        {
+            "name": "audio",
+            "in": "formData",
+            "type": "file",
+            "required": True,
+            "description": "User voice recording file (wav/mp3)"
+        },
+        {
+            "name": "session_id",
+            "in": "formData",
+            "type": "string",
+            "required": True,
+            "description": "Chat session UUID"
+        }
+    ],
+
+    "responses": {
+        "200": {
+            "description": "Generated AI voice response",
+            "content": {
+                "audio/mpeg": {}
+            }
+        },
+
+        "400": {
+            "description": "Missing required fields",
+            "examples": {
+                "application/json": {
+                    "error": "Audio file required"
+                }
+            }
+        },
+
+        "500": {
+            "description": "Internal server error"
+        }
+    }
+})
+def speech_chat():
+
+    audio = request.files.get("audio")
+    session_uuid = request.form.get("session_id")
+
+
+    if not audio:
+        return jsonify({
+            "success": False,
+            "error": "Audio file required"
+        }), 400
+
+
+    if not session_uuid:
+        return jsonify({
+            "success": False,
+            "error": "session_id required"
+        }), 400
+
+
+    temp_audio = tempfile.NamedTemporaryFile(
+        delete=False,
+        suffix=".webm"
+    )
+
+    audio.save(temp_audio.name)
+
+
+    try:
+
+        # 1. Speech → Text
+
+        question = speech_to_text(
+            temp_audio.name
+        )
+
+
+        if not question:
+
+            return jsonify({
+                "success": False,
+                "error": "Could not understand audio"
+            }), 400
+
+
+        # 2. Generate + save chat response
+
+        answer = generate_answer(
+            session_uuid,
+            question
+        )
+
+
+        # 3. Text → Speech
+
+        output_audio = text_to_speech(
+            answer
+        )
+
+
+        # 4. Return MP3
+
+        return send_file(
+            output_audio,
+            mimetype="audio/mpeg",
+            as_attachment=False
+        )
+
+
+    finally:
+
+        if os.path.exists(temp_audio.name):
+            os.remove(temp_audio.name)

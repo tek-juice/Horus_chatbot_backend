@@ -14,3 +14,5 @@ PyMuPDF
 python-docx
 openai
 flask_cors
+faster-whisper==1.1.0
+gtts

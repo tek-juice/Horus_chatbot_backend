@@ -19,6 +19,9 @@ python-docx = "*"
 fastembed = "*"
 openai = "*"
 flask-cors = "*"
+faster-whisper = "*"
+piper-tts = "*"
+gtts = "*"
 
 [dev-packages]
 

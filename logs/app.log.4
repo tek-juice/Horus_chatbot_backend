@@ -1,96 +1,106 @@
-2026-08-03 12:19:22,120 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:19:22] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:19:22,440 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-03 12:19:22,442 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:19:22] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:23:57,085 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:23:57] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:23:57,332 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-03 12:23:57,334 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:23:57] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:25:30,527 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:25:30] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:25:30,737 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-03 12:25:30,739 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:25:30] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:27:52,788 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:27:52] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:27:53,097 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-03 12:27:53,099 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:27:53] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:42:34,563 WARNING root: Expired JWT token used
-2026-08-03 12:42:34,565 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:42:34] "[31m[1mGET /document/view-list-documents HTTP/1.1[0m" 401 -
-2026-08-03 12:42:44,570 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-03 12:42:44,572 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:42:44] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:43:18,094 INFO routes.documents: Fetching document metadata.
-2026-08-03 12:43:18,175 INFO routes.documents: Retrieved 3 documents.
-2026-08-03 12:43:18,178 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:43:18] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:45:03,398 INFO routes.documents: Document request received. ID=1
-2026-08-03 12:45:03,433 WARNING routes.documents: Document 1 not found.
-2026-08-03 12:45:03,435 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:45:03] "[33mGET /document/view-document/1?download=false HTTP/1.1[0m" 404 -
-2026-08-03 12:45:10,232 INFO routes.documents: Document request received. ID=4
-2026-08-03 12:45:10,285 INFO routes.documents: Previewing document 'Horus_Label_Services.pdf'
-2026-08-03 12:45:10,386 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:45:10] "GET /document/view-document/4?download=false HTTP/1.1" 200 -
-2026-08-03 12:45:20,358 INFO routes.documents: Document request received. ID=4
-2026-08-03 12:45:20,368 INFO routes.documents: Downloading document 'Horus_Label_Services.pdf'
-2026-08-03 12:45:20,419 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:45:20] "GET /document/view-document/4?download=true HTTP/1.1" 200 -
-2026-08-03 12:52:44,613 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:52:44] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:52:44,616 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:52:44] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:52:44,627 WARNING root: Expired JWT token used
-2026-08-03 12:52:44,629 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:52:44] "[31m[1mGET /document/view-list-documents HTTP/1.1[0m" 401 -
-2026-08-03 12:52:44,639 WARNING root: Expired JWT token used
-2026-08-03 12:52:44,642 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:52:44] "[31m[1mGET /document/view-list-documents HTTP/1.1[0m" 401 -
-2026-08-03 12:52:52,644 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:52:52] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:52:52,646 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:52:52] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:52:52,653 WARNING root: Expired JWT token used
-2026-08-03 12:52:52,654 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:52:52] "[31m[1mGET /document/view-list-documents HTTP/1.1[0m" 401 -
-2026-08-03 12:52:52,694 WARNING root: Expired JWT token used
-2026-08-03 12:52:52,695 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:52:52] "[31m[1mGET /document/view-list-documents HTTP/1.1[0m" 401 -
-2026-08-03 12:54:14,956 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:14] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:54:15,223 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-03 12:54:15,225 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:15] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-03 12:54:17,204 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:17] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:54:17,206 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:17] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:54:17,214 INFO routes.documents: Fetching document metadata.
-2026-08-03 12:54:17,220 INFO routes.documents: Retrieved 3 documents.
-2026-08-03 12:54:17,222 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:17] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:54:17,229 INFO routes.documents: Fetching document metadata.
-2026-08-03 12:54:17,232 INFO routes.documents: Retrieved 3 documents.
-2026-08-03 12:54:17,233 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:17] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:54:33,522 WARNING root: Missing JWT token: Missing Authorization Header
-2026-08-03 12:54:33,524 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:33] "[31m[1mGET /document/view-document/4?download=false HTTP/1.1[0m" 401 -
-2026-08-03 12:54:43,063 WARNING root: Missing JWT token: Missing Authorization Header
-2026-08-03 12:54:43,065 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:43] "[31m[1mGET /document/view-document/4?download=true HTTP/1.1[0m" 401 -
-2026-08-03 12:54:56,487 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:56] "OPTIONS /document/delete-document/4 HTTP/1.1" 200 -
-2026-08-03 12:54:56,501 INFO routes.documents: Delete document request received. ID=4
-2026-08-03 12:54:56,511 INFO routes.documents: Document found: Horus_Label_Services.pdf
-2026-08-03 12:54:56,548 INFO routes.documents: Found 31 chunk(s) associated with document 4.
-2026-08-03 12:54:56,560 INFO routes.documents: Deleted file: /app/uploads/documents/Horus_Label_Services.pdf
-2026-08-03 12:54:56,626 INFO routes.documents: Deleted 31 document chunk(s).
-2026-08-03 12:54:56,686 INFO routes.documents: Document 4 deleted successfully.
-2026-08-03 12:54:56,688 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:56] "DELETE /document/delete-document/4 HTTP/1.1" 200 -
-2026-08-03 12:54:56,700 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:56] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:54:56,707 INFO routes.documents: Fetching document metadata.
-2026-08-03 12:54:56,713 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 12:54:56,715 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:54:56] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:55:41,228 WARNING root: Missing JWT token: Missing Authorization Header
-2026-08-03 12:55:41,231 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:55:41] "[31m[1mGET /document/view-document/3?download=false HTTP/1.1[0m" 401 -
-2026-08-03 12:55:50,144 WARNING root: Missing JWT token: Missing Authorization Header
-2026-08-03 12:55:50,145 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:55:50] "[31m[1mGET /document/view-document/3?download=True HTTP/1.1[0m" 401 -
-2026-08-03 12:56:43,211 WARNING root: Missing JWT token: Missing Authorization Header
-2026-08-03 12:56:43,213 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:56:43] "[31m[1mGET /document/view-document/3?download=true HTTP/1.1[0m" 401 -
-2026-08-03 12:59:39,793 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:59:39] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:59:39,797 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:59:39] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:59:39,806 INFO routes.documents: Fetching document metadata.
-2026-08-03 12:59:39,810 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 12:59:39,812 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:59:39] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:59:39,820 INFO routes.documents: Fetching document metadata.
-2026-08-03 12:59:39,823 INFO routes.documents: Retrieved 2 documents.
-2026-08-03 12:59:39,825 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:59:39] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-03 12:59:42,498 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:59:42] "OPTIONS /document/view-document/3?download=false HTTP/1.1" 200 -
-2026-08-03 12:59:42,506 INFO routes.documents: Document request received. ID=3
-2026-08-03 12:59:42,555 INFO routes.documents: Previewing document 'horus_Video_Distribution.pdf'
-2026-08-03 12:59:42,596 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:59:42] "GET /document/view-document/3?download=false HTTP/1.1" 200 -
-2026-08-03 12:59:49,658 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:59:49] "OPTIONS /document/view-document/3?download=true HTTP/1.1" 200 -
-2026-08-03 12:59:49,664 INFO routes.documents: Document request received. ID=3
-2026-08-03 12:59:49,673 INFO routes.documents: Downloading document 'horus_Video_Distribution.pdf'
-2026-08-03 12:59:49,679 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 12:59:49] "GET /document/view-document/3?download=true HTTP/1.1" 200 -
-2026-08-03 13:01:48,232 INFO werkzeug: 172.18.0.1 - - [03/Aug/2026 13:01:48] "OPTIONS /document/delete-document/3 HTTP/1.1" 200 -
-2026-08-03 13:01:48,241 INFO routes.documents: Delete document request received. ID=3
-2026-08-03 13:01:48,247 INFO routes.documents: Document found: horus_Video_Distribution.pdf
-2026-08-03 13:01:48,296 INFO routes.documents: Found 13 chunk(s) associated with document 3.
-2026-08-03 13:01:48,306 INFO routes.documents: Deleted file: /app/uploads/documents/horus_Video_Distribution.pdf
-2026-08-03 13:01:48,314 INFO routes.documents: Deleted 13 document chunk(s).
-2026-08-03 13:01:48,322 INFO routes.documents: Document 3 deleted successfully.
+2026-08-06 17:22:20,892 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
+2026-08-06 17:22:21,122 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-06 17:23:03,226 INFO openai._base_client: Retrying request to /chat/completions in 0.475335 seconds
+2026-08-06 17:23:19,565 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-06 17:23:19,565 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-06 17:23:19,882 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-06 17:23:21,764 INFO werkzeug: 172.18.0.1 - - [06/Aug/2026 17:23:21] "POST /speech/chat-speech HTTP/1.1" 200 -
+2026-08-06 17:23:24,502 INFO faster_whisper: Processing audio with duration 00:01.200
+2026-08-06 17:23:26,818 INFO faster_whisper: Detected language 'en' with probability 0.30
+2026-08-06 17:23:29,133 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
+2026-08-06 17:23:29,133 WARNING config.model_engine.model_streamer: Empty question received.
+2026-08-06 17:23:29,143 INFO werkzeug: 172.18.0.1 - - [06/Aug/2026 17:23:29] "POST /speech/chat-speech HTTP/1.1" 200 -
+2026-08-07 06:05:29,995 INFO root: Starting Horus Backend Application
+2026-08-07 06:05:30,034 INFO root: Routes registered successfully
+2026-08-07 06:05:30,035 INFO root: Running development server
+2026-08-07 06:05:30,065 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-07 06:05:30,065 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-07 06:05:30,067 INFO werkzeug:  * Restarting with stat
+2026-08-07 06:05:38,724 INFO root: Starting Horus Backend Application
+2026-08-07 06:05:38,752 INFO root: Routes registered successfully
+2026-08-07 06:05:38,753 INFO root: Running development server
+2026-08-07 06:05:38,766 WARNING werkzeug:  * Debugger is active!
+2026-08-07 06:05:38,771 INFO werkzeug:  * Debugger PIN: 121-138-016
+2026-08-07 06:09:35,883 INFO faster_whisper: Processing audio with duration 00:03.900
+2026-08-07 06:09:38,146 INFO faster_whisper: Detected language 'en' with probability 0.54
+2026-08-07 06:09:40,535 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
+2026-08-07 06:09:40,536 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-07 06:09:40,537 INFO config.model_engine.vector_search: Starting document search. Question length: 13
+2026-08-07 06:09:40,538 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-07 06:09:40,538 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-07 06:09:40,594 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-07 06:09:40,595 INFO config.model_engine.vector_search: Executing vector search. top_k=3
+2026-08-07 06:09:40,629 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
+2026-08-07 06:09:40,629 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-07 06:09:40,630 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
+2026-08-07 06:09:40,630 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-07 06:09:42,392 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-07 06:09:42,393 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-07 06:09:46,229 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-07 06:10:19,485 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 06:10:19] "POST /speech/chat-speech HTTP/1.1" 200 -
+2026-08-07 06:12:07,351 INFO werkzeug:  * Detected change in '/app/config/speech/speech_service.py', reloading
+2026-08-07 06:12:08,141 INFO werkzeug:  * Restarting with stat
+2026-08-07 06:12:18,649 INFO root: Starting Horus Backend Application
+2026-08-07 06:12:18,701 INFO root: Routes registered successfully
+2026-08-07 06:12:18,702 INFO root: Running development server
+2026-08-07 06:12:18,720 WARNING werkzeug:  * Debugger is active!
+2026-08-07 06:12:18,721 INFO werkzeug:  * Debugger PIN: 121-138-016
+2026-08-07 06:14:36,059 INFO faster_whisper: Processing audio with duration 00:04.680
+2026-08-07 06:14:38,538 INFO faster_whisper: Detected language 'en' with probability 0.59
+2026-08-07 06:14:41,047 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
+2026-08-07 06:14:41,048 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-07 06:14:41,049 INFO config.model_engine.vector_search: Starting document search. Question length: 39
+2026-08-07 06:14:41,049 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-07 06:14:41,050 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-07 06:14:41,086 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-07 06:14:41,088 INFO config.model_engine.vector_search: Executing vector search. top_k=3
+2026-08-07 06:14:41,100 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
+2026-08-07 06:14:41,101 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-07 06:14:41,101 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
+2026-08-07 06:14:41,102 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-07 06:14:42,663 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-07 06:14:42,665 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-07 06:14:49,859 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-07 06:15:16,971 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 06:15:16] "POST /speech/chat-speech HTTP/1.1" 200 -
+2026-08-07 06:41:20,451 INFO faster_whisper: Processing audio with duration 00:02.160
+2026-08-07 06:41:23,027 INFO faster_whisper: Detected language 'en' with probability 0.52
+2026-08-07 06:41:25,451 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
+2026-08-07 06:41:25,452 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-07 06:41:25,452 INFO config.model_engine.vector_search: Starting document search. Question length: 14
+2026-08-07 06:41:25,453 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-07 06:41:25,453 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-07 06:41:25,661 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-07 06:41:25,662 INFO config.model_engine.vector_search: Executing vector search. top_k=3
+2026-08-07 06:41:25,668 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
+2026-08-07 06:41:25,668 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-07 06:41:25,669 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
+2026-08-07 06:41:25,669 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-07 06:41:26,858 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-07 06:41:26,859 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-07 06:41:27,240 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-07 06:41:29,700 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 06:41:29] "POST /speech/chat-speech HTTP/1.1" 200 -
+2026-08-07 06:41:46,252 INFO faster_whisper: Processing audio with duration 00:02.640
+2026-08-07 06:41:48,876 INFO faster_whisper: Detected language 'en' with probability 0.43
+2026-08-07 06:41:51,229 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
+2026-08-07 06:41:51,234 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-07 06:41:51,235 INFO config.model_engine.vector_search: Starting document search. Question length: 19
+2026-08-07 06:41:51,236 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-07 06:41:51,236 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-07 06:41:51,248 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-07 06:41:51,249 INFO config.model_engine.vector_search: Executing vector search. top_k=3
+2026-08-07 06:41:51,253 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
+2026-08-07 06:41:51,253 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-07 06:41:51,253 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
+2026-08-07 06:41:51,254 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-07 06:41:52,181 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-07 06:41:52,182 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-07 06:41:58,237 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-07 06:42:17,414 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 06:42:17] "POST /speech/chat-speech HTTP/1.1" 200 -
+2026-08-07 06:55:40,627 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 06:55:40] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-07 06:55:40,664 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
+2026-08-07 06:55:40,665 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-07 06:55:40,665 INFO config.model_engine.vector_search: Starting document search. Question length: 3
+2026-08-07 06:55:40,666 INFO config.model_engine.vector_search: Generating query embedding.
