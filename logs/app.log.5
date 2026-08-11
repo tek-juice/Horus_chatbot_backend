@@ -1,112 +1,137 @@
-2026-08-06 16:48:36,863 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-06 16:48:36,932 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-06 16:48:37,015 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-06 16:48:37,017 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-06 16:48:37,070 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-06 16:48:37,070 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-06 16:48:37,071 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
-2026-08-06 16:48:37,071 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-06 16:48:42,072 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-06 16:48:42,073 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-06 16:48:42,492 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-06 16:48:44,545 INFO werkzeug: 172.18.0.1 - - [06/Aug/2026 16:48:44] "POST /speech/chat-speech HTTP/1.1" 200 -
-2026-08-06 16:51:09,425 INFO werkzeug:  * Detected change in '/app/config/speech/edge-tts service.py', reloading
-2026-08-06 16:54:54,161 INFO root: Starting Horus Backend Application
-2026-08-06 16:54:54,248 INFO root: Routes registered successfully
-2026-08-06 16:54:54,248 INFO root: Running development server
-2026-08-06 16:54:54,302 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2026-08-10 13:54:17,919 ERROR config.model_engine.model_streamer: Unexpected error generating response: Request timed out.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1080, in request
+    response = self._send_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_client.py", line 491, in _send_request
+    response = self._send_with_auth_retry(request, stream=stream, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_client.py", line 469, in _send_with_auth_retry
+    response = super()._send_request(request, stream=stream, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1005, in _send_request
+    return self._client.send(request, stream=stream, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/config/model_engine/model_streamer.py", line 110, in stream_answer
+    stream = client.chat.completions.create(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1098, in request
+    raise APITimeoutError(request=request) from err
+openai.APITimeoutError: Request timed out.
+2026-08-10 13:54:17,960 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:54:17] "POST /chat HTTP/1.1" 200 -
+2026-08-10 13:58:53,716 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
+2026-08-10 14:04:38,101 INFO root: Starting Horus Backend Application
+2026-08-10 14:04:38,159 INFO root: Routes registered successfully
+2026-08-10 14:04:38,160 INFO root: Running development server
+2026-08-10 14:04:38,188 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://172.18.0.3:5000
-2026-08-06 16:54:54,303 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-06 16:54:54,311 INFO werkzeug:  * Restarting with stat
-2026-08-06 16:55:08,055 INFO root: Starting Horus Backend Application
-2026-08-06 16:55:08,107 INFO root: Routes registered successfully
-2026-08-06 16:55:08,108 INFO root: Running development server
-2026-08-06 16:55:08,126 WARNING werkzeug:  * Debugger is active!
-2026-08-06 16:55:08,130 INFO werkzeug:  * Debugger PIN: 945-185-673
-2026-08-06 16:58:30,370 INFO faster_whisper: Processing audio with duration 00:03.660
-2026-08-06 16:58:33,341 INFO faster_whisper: Detected language 'en' with probability 0.63
-2026-08-06 16:58:44,331 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-06 16:58:44,333 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-06 16:58:44,333 INFO config.model_engine.vector_search: Starting document search. Question length: 12
-2026-08-06 16:58:44,334 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-06 16:58:44,334 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-06 16:58:44,699 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-06 16:58:44,701 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-06 16:58:44,808 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-06 16:58:44,809 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-06 16:58:44,810 INFO config.model_engine.model_streamer: Context created. Length=308 characters.
-2026-08-06 16:58:44,810 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-06 16:58:52,630 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-06 16:58:52,631 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-06 16:58:53,507 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-06 16:58:55,709 INFO werkzeug: 172.18.0.1 - - [06/Aug/2026 16:58:55] "POST /speech/chat-speech HTTP/1.1" 200 -
-2026-08-06 17:01:23,415 INFO faster_whisper: Processing audio with duration 00:02.700
-2026-08-06 17:01:25,608 INFO faster_whisper: Detected language 'en' with probability 0.30
-2026-08-06 17:01:28,320 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-06 17:01:28,320 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-06 17:01:28,321 INFO config.model_engine.vector_search: Starting document search. Question length: 11
-2026-08-06 17:01:28,321 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-06 17:01:28,321 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-06 17:01:28,341 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-06 17:01:28,342 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-06 17:01:28,346 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-06 17:01:28,347 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-06 17:01:28,347 INFO config.model_engine.model_streamer: Context created. Length=308 characters.
-2026-08-06 17:01:28,348 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-06 17:01:29,148 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-06 17:01:29,148 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-06 17:01:29,942 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-06 17:01:29,951 INFO werkzeug: 172.18.0.1 - - [06/Aug/2026 17:01:29] "POST /speech/chat-speech HTTP/1.1" 200 -
-2026-08-06 17:03:47,587 INFO werkzeug:  * Detected change in '/app/config/speech/edge-tts service.py', reloading
-2026-08-06 17:03:49,120 INFO werkzeug:  * Restarting with stat
-2026-08-06 17:04:04,772 INFO root: Starting Horus Backend Application
-2026-08-06 17:04:04,839 INFO root: Routes registered successfully
-2026-08-06 17:04:04,840 INFO root: Running development server
-2026-08-06 17:04:04,855 WARNING werkzeug:  * Debugger is active!
-2026-08-06 17:04:04,858 INFO werkzeug:  * Debugger PIN: 945-185-673
-2026-08-06 17:04:15,454 INFO werkzeug:  * Detected change in '/app/routes/chat.py', reloading
-2026-08-06 17:04:16,488 INFO werkzeug:  * Restarting with stat
-2026-08-06 17:15:59,722 INFO root: Starting Horus Backend Application
-2026-08-06 17:15:59,767 INFO root: Routes registered successfully
-2026-08-06 17:15:59,768 INFO root: Running development server
-2026-08-06 17:15:59,803 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2026-08-10 14:04:38,189 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-10 14:04:38,192 INFO werkzeug:  * Restarting with stat
+2026-08-10 14:04:44,993 INFO root: Starting Horus Backend Application
+2026-08-10 14:04:45,021 INFO root: Routes registered successfully
+2026-08-10 14:04:45,021 INFO root: Running development server
+2026-08-10 14:04:45,031 WARNING werkzeug:  * Debugger is active!
+2026-08-10 14:04:45,032 INFO werkzeug:  * Debugger PIN: 137-674-187
+2026-08-10 14:08:44,977 INFO root: Starting Horus Backend Application
+2026-08-10 14:08:44,998 INFO root: Routes registered successfully
+2026-08-10 14:08:44,999 INFO root: Running development server
+2026-08-10 14:08:45,014 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://172.18.0.3:5000
-2026-08-06 17:15:59,803 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-06 17:15:59,809 INFO werkzeug:  * Restarting with stat
-2026-08-06 17:16:16,895 INFO root: Starting Horus Backend Application
-2026-08-06 17:16:16,978 INFO root: Routes registered successfully
-2026-08-06 17:16:16,979 INFO root: Running development server
-2026-08-06 17:16:17,002 WARNING werkzeug:  * Debugger is active!
-2026-08-06 17:16:17,010 INFO werkzeug:  * Debugger PIN: 699-812-265
-2026-08-06 17:21:09,305 INFO werkzeug: 172.18.0.1 - - [06/Aug/2026 17:21:09] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-06 17:21:09,475 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-06 17:21:09,475 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-06 17:21:09,476 INFO config.model_engine.vector_search: Starting document search. Question length: 3
-2026-08-06 17:21:09,476 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-06 17:21:09,476 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-06 17:21:09,536 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-06 17:21:09,537 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-06 17:21:09,576 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-06 17:21:09,576 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-06 17:21:09,577 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
-2026-08-06 17:21:09,577 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-06 17:21:14,457 INFO openai._base_client: Retrying request to /chat/completions in 0.493614 seconds
-2026-08-06 17:21:19,954 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-06 17:21:19,955 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-06 17:21:19,972 INFO werkzeug: 172.18.0.1 - - [06/Aug/2026 17:21:19] "POST /chat HTTP/1.1" 200 -
-2026-08-06 17:21:20,217 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-06 17:22:14,176 INFO faster_whisper: Processing audio with duration 00:01.680
-2026-08-06 17:22:18,452 INFO faster_whisper: Detected language 'en' with probability 0.69
-2026-08-06 17:22:20,843 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-06 17:22:20,843 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-06 17:22:20,844 INFO config.model_engine.vector_search: Starting document search. Question length: 8
-2026-08-06 17:22:20,844 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-06 17:22:20,844 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-06 17:22:20,884 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-06 17:22:20,885 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-06 17:22:20,891 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-06 17:22:20,892 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-10 14:08:45,014 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-10 14:08:45,015 INFO werkzeug:  * Restarting with stat
+2026-08-10 14:08:50,124 INFO root: Starting Horus Backend Application
+2026-08-10 14:08:50,144 INFO root: Routes registered successfully
+2026-08-10 14:08:50,144 INFO root: Running development server
+2026-08-10 14:08:50,153 WARNING werkzeug:  * Debugger is active!
+2026-08-10 14:08:50,154 INFO werkzeug:  * Debugger PIN: 641-148-421
+2026-08-10 14:10:18,982 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:10:18] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-10 14:10:19,074 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-10 14:10:19,074 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-10 14:10:19,074 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
+2026-08-10 14:10:19,074 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-10 14:10:19,074 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-10 14:10:19,075 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-10 14:10:19,088 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-10 14:10:19,089 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-10 14:10:19,103 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-10 14:10:19,104 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
+2026-08-10 14:10:19,104 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
+2026-08-10 14:10:19,104 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
+2026-08-10 14:10:19,104 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-10 14:10:19,105 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-10 14:10:19,105 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-10 14:10:20,331 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-08-10 14:13:14,944 INFO werkzeug:  * Restarting with stat

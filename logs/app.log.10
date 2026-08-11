@@ -1,91 +1,104 @@
-2026-08-04 08:56:39,521 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:39] "[31m[1mGET /auth/chat_users HTTP/1.1[0m" 401 -
-2026-08-04 08:56:52,117 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:52] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-04 08:56:52,218 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-04 08:56:52,219 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:52] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-04 08:56:52,230 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:52] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:56:52,231 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:52] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:56:52,254 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:52] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:56:52,270 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:52] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:56:53,826 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:53] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:56:53,827 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:53] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:56:53,833 INFO routes.documents: Fetching document metadata.
-2026-08-04 08:56:53,835 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 08:56:53,836 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:53] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:56:53,840 INFO routes.documents: Fetching document metadata.
-2026-08-04 08:56:53,854 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 08:56:53,855 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:53] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:56:55,347 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:55] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:56:55,349 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:55] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:56:55,358 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:55] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:56:55,367 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:56:55] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:57:03,022 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:03] "OPTIONS /auth/users/9/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:03,045 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:03] "GET /auth/users/9/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:17,356 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:17] "OPTIONS /auth/users/3/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:17,363 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:17] "GET /auth/users/3/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:25,810 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:25] "OPTIONS /auth/users/4/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:25,818 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:25] "GET /auth/users/4/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:27,855 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:27] "OPTIONS /auth/users/6/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:27,873 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:27] "GET /auth/users/6/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:29,637 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:29] "OPTIONS /auth/users/8/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:29,644 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:29] "GET /auth/users/8/sessions HTTP/1.1" 200 -
-2026-08-04 08:57:45,272 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:45] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:57:45,273 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:45] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:57:45,293 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:45] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:57:45,313 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:45] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:57:46,912 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:46] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:57:46,915 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:46] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:57:46,920 INFO routes.documents: Fetching document metadata.
-2026-08-04 08:57:46,922 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 08:57:46,923 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:46] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:57:46,928 INFO routes.documents: Fetching document metadata.
-2026-08-04 08:57:46,930 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 08:57:46,932 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:46] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:57:47,631 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:47] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:57:47,632 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:47] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:57:47,641 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:47] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:57:47,648 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:47] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:57:49,369 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:49] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:57:49,386 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:49] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:57:50,199 INFO routes.documents: Fetching document metadata.
-2026-08-04 08:57:50,201 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 08:57:50,202 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:50] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:57:50,218 INFO routes.documents: Fetching document metadata.
-2026-08-04 08:57:50,221 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 08:57:50,222 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:50] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:57:51,511 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:51] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:57:51,518 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:57:51] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:02,688 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:02] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:02,691 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:02] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:02,728 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:02] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:02,754 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:02] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:04,515 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:04] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:58:04,516 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:04] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:58:04,529 INFO routes.documents: Fetching document metadata.
-2026-08-04 08:58:04,533 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 08:58:04,534 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:04] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:58:04,539 INFO routes.documents: Fetching document metadata.
-2026-08-04 08:58:04,540 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 08:58:04,541 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:04] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 08:58:05,677 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:05] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:05,679 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:05] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:05,685 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:05] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:05,693 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:05] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:07,924 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:07] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:07,926 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:07] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:07,942 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:07] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:07,960 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:07] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:16,251 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:16] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:16,253 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:16] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:16,260 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:16] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:16,267 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:16] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-04 08:58:18,692 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:18] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:18,694 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:18] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:18,717 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:18] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 08:58:18,734 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 08:58:18] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-04 09:06:14,810 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 09:06:14] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 09:06:14,811 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 09:06:14] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 09:06:14,817 INFO routes.documents: Fetching document metadata.
-2026-08-04 09:06:14,819 INFO routes.documents: Retrieved 3 documents.
-2026-08-04 09:06:14,820 INFO werkzeug: 172.18.0.1 - - [04/Aug/2026 09:06:14] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-04 09:06:14,824 INFO routes.documents: Fetching document metadata.
-2026-08-04 09:06:14,826 INFO routes.documents: Retrieved 3 documents.
+2026-08-10 13:08:59,523 INFO werkzeug:  * Restarting with stat
+2026-08-10 13:09:06,567 INFO root: Starting Horus Backend Application
+2026-08-10 13:09:06,607 INFO root: Routes registered successfully
+2026-08-10 13:09:06,608 INFO root: Running development server
+2026-08-10 13:09:06,625 WARNING werkzeug:  * Debugger is active!
+2026-08-10 13:09:06,626 INFO werkzeug:  * Debugger PIN: 939-733-501
+2026-08-10 13:13:49,879 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
+2026-08-10 13:13:50,441 INFO werkzeug:  * Restarting with stat
+2026-08-10 13:13:57,329 INFO root: Starting Horus Backend Application
+2026-08-10 13:13:57,361 INFO root: Routes registered successfully
+2026-08-10 13:13:57,362 INFO root: Running development server
+2026-08-10 13:13:57,374 WARNING werkzeug:  * Debugger is active!
+2026-08-10 13:13:57,375 INFO werkzeug:  * Debugger PIN: 939-733-501
+2026-08-10 13:15:06,519 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
+2026-08-10 13:15:06,903 INFO werkzeug:  * Restarting with stat
+2026-08-10 13:18:50,908 INFO root: Starting Horus Backend Application
+2026-08-10 13:18:50,945 INFO root: Routes registered successfully
+2026-08-10 13:18:50,945 INFO root: Running development server
+2026-08-10 13:18:50,966 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-10 13:18:50,966 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-10 13:18:50,968 INFO werkzeug:  * Restarting with stat
+2026-08-10 13:18:56,154 INFO root: Starting Horus Backend Application
+2026-08-10 13:18:56,175 INFO root: Routes registered successfully
+2026-08-10 13:18:56,175 INFO root: Running development server
+2026-08-10 13:18:56,184 WARNING werkzeug:  * Debugger is active!
+2026-08-10 13:18:56,185 INFO werkzeug:  * Debugger PIN: 136-127-876
+2026-08-10 13:20:56,565 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:20:56] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-10 13:20:56,670 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-10 13:20:56,670 INFO config.model_engine.model_streamer: Fetching previous assistant response. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-10 13:20:56,670 INFO config.model_engine.memory_service: Fetching last assistant message. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-10 13:20:56,674 ERROR config.model_engine.memory_service: Error fetching last assistant message: Session=1c982353-f829-4fc4-9851-64936d969fe3: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
+LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
+                                         ^
+
+[SQL: SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.role AS chat_messages_role, chat_messages.message AS chat_messages_message, chat_messages.created_at AS chat_messages_created_at 
+FROM chat_messages 
+WHERE chat_messages.session_id = %(session_id_1)s AND chat_messages.role = %(role_1)s ORDER BY chat_messages.created_at DESC 
+ LIMIT %(param_1)s]
+[parameters: {'session_id_1': '1c982353-f829-4fc4-9851-64936d969fe3', 'role_1': 'ASSISTANT', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
+LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
+                                         ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/config/model_engine/memory_service.py", line 20, in get_last_assistant_message
+    .first()
+     ^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2766, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2373, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2271, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
+LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
+                                         ^
+
+[SQL: SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.role AS chat_messages_role, chat_messages.message AS chat_messages_message, chat_messages.created_at AS chat_messages_created_at 
+FROM chat_messages 
+WHERE chat_messages.session_id = %(session_id_1)s AND chat_messages.role = %(role_1)s ORDER BY chat_messages.created_at DESC 
+ LIMIT %(param_1)s]
+[parameters: {'session_id_1': '1c982353-f829-4fc4-9851-64936d969fe3', 'role_1': 'ASSISTANT', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)

@@ -1,98 +1,104 @@
-2026-08-07 06:55:40,668 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 06:55:40,778 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 06:55:40,779 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 06:55:40,784 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 06:55:40,785 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 06:55:40,785 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
-2026-08-07 06:55:40,785 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 06:55:41,719 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 06:55:41,720 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 06:55:41,722 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 06:55:41] "POST /chat HTTP/1.1" 200 -
-2026-08-07 06:55:41,928 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 06:56:01,089 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 06:56:01] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-07 06:56:01,111 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 06:56:01,112 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 06:56:01,113 INFO config.model_engine.vector_search: Starting document search. Question length: 41
-2026-08-07 06:56:01,115 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 06:56:01,116 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 06:56:01,136 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 06:56:01,137 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 06:56:01,144 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 06:56:01,145 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 06:56:01,146 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-08-07 06:56:01,146 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 06:56:01,951 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 06:56:01,953 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 06:56:01,954 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 06:56:01] "POST /chat HTTP/1.1" 200 -
-2026-08-07 06:56:02,783 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 07:19:48,881 INFO routes.chat: Fetching chat messages for chat_id=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:19:48,902 INFO routes.chat: Retrieved 68 messages for chat_id=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:19:48,904 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:19:48] "GET /messages/c46a340d-53e8-4d03-977e-231aca66f5e7 HTTP/1.1" 200 -
-2026-08-07 07:20:00,142 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:20:00] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-07 07:20:00,150 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:20:00,150 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 07:20:00,151 INFO config.model_engine.vector_search: Starting document search. Question length: 11
-2026-08-07 07:20:00,151 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 07:20:00,151 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 07:20:00,161 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 07:20:00,162 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 07:20:00,164 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 07:20:00,165 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 07:20:00,165 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-08-07 07:20:00,165 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 07:20:01,046 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 07:20:01,047 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 07:20:01,049 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:20:01] "POST /chat HTTP/1.1" 200 -
-2026-08-07 07:20:02,200 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 07:21:06,048 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:21:06] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-07 07:21:06,058 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:21:06,058 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 07:21:06,058 INFO config.model_engine.vector_search: Starting document search. Question length: 5
-2026-08-07 07:21:06,058 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 07:21:06,058 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 07:21:06,063 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 07:21:06,064 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 07:21:06,066 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 07:21:06,066 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 07:21:06,067 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
-2026-08-07 07:21:06,067 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 07:21:07,611 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 07:21:07,611 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 07:21:07,612 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:21:07] "POST /chat HTTP/1.1" 200 -
-2026-08-07 07:21:07,857 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 07:21:29,194 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:21:29] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-07 07:21:29,202 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:21:29,202 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 07:21:29,202 INFO config.model_engine.vector_search: Starting document search. Question length: 11
-2026-08-07 07:21:29,202 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 07:21:29,202 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 07:21:29,209 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 07:21:29,210 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 07:21:29,212 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 07:21:29,212 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 07:21:29,212 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
-2026-08-07 07:21:29,213 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 07:21:30,052 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 07:21:30,053 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 07:21:30,054 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:21:30] "POST /chat HTTP/1.1" 200 -
-2026-08-07 07:21:30,743 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 07:21:55,516 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:21:55] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-07 07:21:55,529 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:21:55,529 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 07:21:55,530 INFO config.model_engine.vector_search: Starting document search. Question length: 19
-2026-08-07 07:21:55,530 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 07:21:55,530 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 07:21:55,536 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 07:21:55,537 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 07:21:55,539 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 07:21:55,540 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 07:21:55,540 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-08-07 07:21:55,540 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 07:21:56,324 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 07:21:56,324 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 07:21:56,325 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:21:56] "POST /chat HTTP/1.1" 200 -
-2026-08-07 07:21:57,904 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 07:24:01,995 INFO routes.chat: Fetching chat messages for chat_id=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:24:02,001 INFO routes.chat: Retrieved 76 messages for chat_id=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:24:02,003 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:24:02] "GET /messages/c46a340d-53e8-4d03-977e-231aca66f5e7 HTTP/1.1" 200 -
-2026-08-07 07:26:09,313 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:26:09] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-10 14:17:43,331 ERROR config.model_engine.model_streamer: Unexpected error generating response: The read operation timed out
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 407, in __iter__
+    raise exc from None
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+                ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 342, in __iter__
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/config/model_engine/model_streamer.py", line 122, in stream_answer
+    for chunk in stream:
+                 ^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 49, in __iter__
+    for item in self._iterator:
+                ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 62, in __stream__
+    for sse in iterator:
+               ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 53, in _iter_events
+    yield from self._decoder.iter_bytes(self.response.iter_bytes())
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 297, in iter_bytes
+    for chunk in self._iter_chunks(iterator):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 308, in _iter_chunks
+    for chunk in iterator:
+                 ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+                 ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 126, in __iter__
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-08-10 14:17:43,378 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:17:43] "POST /chat HTTP/1.1" 200 -
+2026-08-10 14:18:01,775 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
+2026-08-11 08:15:37,073 INFO root: Starting Horus Backend Application
+2026-08-11 08:15:37,186 INFO root: Routes registered successfully
+2026-08-11 08:15:37,186 INFO root: Running development server
+2026-08-11 08:15:37,233 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-11 08:15:37,234 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-11 08:15:37,238 INFO werkzeug:  * Restarting with stat
+2026-08-11 08:15:48,704 INFO root: Starting Horus Backend Application
+2026-08-11 08:15:48,788 INFO root: Routes registered successfully
+2026-08-11 08:15:48,788 INFO root: Running development server
+2026-08-11 08:15:48,814 WARNING werkzeug:  * Debugger is active!
+2026-08-11 08:15:48,860 INFO werkzeug:  * Debugger PIN: 334-513-064
+2026-08-11 08:16:52,595 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 08:16:52] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-11 08:16:52,814 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 08:16:52,815 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-11 08:16:52,815 INFO config.model_engine.vector_search: Starting document search. Question length: 3, top_k=3, similarity_threshold=0.5
+2026-08-11 08:16:52,815 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-11 08:16:52,816 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-11 08:16:52,816 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-11 08:16:52,863 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-11 08:16:52,864 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-11 08:16:52,900 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-11 08:16:52,901 INFO config.model_engine.vector_search: Result 1: similarity=0.6084, distance=0.3916
+2026-08-11 08:16:52,901 INFO config.model_engine.vector_search: Result 2: similarity=0.5431, distance=0.4569
+2026-08-11 08:16:52,901 INFO config.model_engine.vector_search: Result 3: similarity=0.5412, distance=0.4588
+2026-08-11 08:16:52,901 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-11 08:16:52,902 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-11 08:16:52,902 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-11 08:16:55,017 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-11 08:16:55,018 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-11 08:29:40,808 INFO werkzeug:  * Restarting with stat

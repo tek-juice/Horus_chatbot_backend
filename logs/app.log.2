@@ -1,93 +1,111 @@
-2026-08-07 07:26:09,334 INFO config.model_engine.model_streamer: Starting AI response generation. Session=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 07:26:09,372 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 07:26:09,373 INFO config.model_engine.vector_search: Starting document search. Question length: 3
-2026-08-07 07:26:09,373 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 07:26:09,373 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 07:26:09,378 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 07:26:09,379 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 07:26:09,381 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 07:26:09,382 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 07:26:09,382 INFO config.model_engine.model_streamer: Context created. Length=345 characters.
-2026-08-07 07:26:09,382 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 07:26:10,321 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 07:26:10,322 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 07:26:10,324 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:26:10] "POST /chat HTTP/1.1" 200 -
-2026-08-07 07:26:11,133 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 07:26:19,490 INFO faster_whisper: Processing audio with duration 00:02.880
-2026-08-07 07:26:21,262 INFO faster_whisper: Detected language 'nn' with probability 0.37
-2026-08-07 07:26:53,007 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 07:26:53] "[31m[1mPOST /speech/chat-speech HTTP/1.1[0m" 400 -
-2026-08-07 08:11:37,849 INFO routes.chat: Fetching chat messages for chat_id=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 08:11:37,904 INFO routes.chat: Retrieved 78 messages for chat_id=c46a340d-53e8-4d03-977e-231aca66f5e7
-2026-08-07 08:11:37,912 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:11:37] "GET /messages/c46a340d-53e8-4d03-977e-231aca66f5e7 HTTP/1.1" 200 -
-2026-08-07 08:12:16,922 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:16] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-08-07 08:12:16,926 INFO routes.chat: Starting new chat session.
-2026-08-07 08:12:16,929 INFO routes.chat: Looking up user with email: don@gmail.com
-2026-08-07 08:12:16,968 INFO routes.chat: User not found. Creating new user: don@gmail.com
-2026-08-07 08:12:16,999 INFO routes.chat: Creating chat session for user ID: 15
-2026-08-07 08:12:17,015 INFO routes.chat: Chat session created successfully. Session ID: e82e7c91-bc6e-4b41-8f6b-1e6747547793
-2026-08-07 08:12:17,017 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:17] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-08-07 08:12:19,967 INFO routes.chat: Fetching chat messages for chat_id=e82e7c91-bc6e-4b41-8f6b-1e6747547793
-2026-08-07 08:12:19,973 INFO routes.chat: Retrieved 0 messages for chat_id=e82e7c91-bc6e-4b41-8f6b-1e6747547793
-2026-08-07 08:12:19,975 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:19] "GET /messages/e82e7c91-bc6e-4b41-8f6b-1e6747547793 HTTP/1.1" 200 -
-2026-08-07 08:12:24,849 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:24] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-07 08:12:24,872 INFO config.model_engine.model_streamer: Starting AI response generation. Session=e82e7c91-bc6e-4b41-8f6b-1e6747547793
-2026-08-07 08:12:24,872 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 08:12:24,872 INFO config.model_engine.vector_search: Starting document search. Question length: 11
-2026-08-07 08:12:24,873 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 08:12:24,873 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 08:12:24,976 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 08:12:24,979 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 08:12:24,984 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 08:12:24,985 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 08:12:24,985 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-08-07 08:12:24,985 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 08:12:25,955 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 08:12:25,957 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 08:12:25,962 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:25] "POST /chat HTTP/1.1" 200 -
-2026-08-07 08:12:27,740 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 08:12:50,122 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:50] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-07 08:12:50,240 WARNING root: Incorrect password for Admin: admin@example.com
-2026-08-07 08:12:50,242 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:50] "[31m[1mPOST /auth/admin/login HTTP/1.1[0m" 401 -
-2026-08-07 08:12:58,820 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:58] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-07 08:12:58,925 WARNING root: Incorrect password for Admin: admin@example.com
-2026-08-07 08:12:58,926 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:12:58] "[31m[1mPOST /auth/admin/login HTTP/1.1[0m" 401 -
-2026-08-07 08:13:03,447 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-07 08:13:03,448 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:03] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-07 08:13:03,471 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:03] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:13:03,474 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:03] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:13:03,569 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:03] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:13:03,583 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:03] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:13:35,581 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:35] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:13:35,582 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:35] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:13:35,587 INFO routes.documents: Fetching document metadata.
-2026-08-07 08:13:35,592 INFO routes.documents: Retrieved 3 documents.
-2026-08-07 08:13:35,593 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:35] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:13:35,596 INFO routes.documents: Fetching document metadata.
-2026-08-07 08:13:35,598 INFO routes.documents: Retrieved 3 documents.
-2026-08-07 08:13:35,599 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:35] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:13:38,380 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:38] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-07 08:13:38,389 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:38] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-07 08:13:38,392 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:38] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-07 08:13:38,399 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:38] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-07 08:13:41,907 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:41] "OPTIONS /auth/users/15/sessions HTTP/1.1" 200 -
-2026-08-07 08:13:41,924 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:41] "GET /auth/users/15/sessions HTTP/1.1" 200 -
-2026-08-07 08:13:48,104 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:48] "OPTIONS /auth/users/15/sessions HTTP/1.1" 200 -
-2026-08-07 08:13:48,111 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:48] "GET /auth/users/15/sessions HTTP/1.1" 200 -
-2026-08-07 08:13:56,248 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:56] "OPTIONS /auth/users/8/sessions HTTP/1.1" 200 -
-2026-08-07 08:13:56,266 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:56] "GET /auth/users/8/sessions HTTP/1.1" 200 -
-2026-08-07 08:13:59,167 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:59] "OPTIONS /auth/users/5/sessions HTTP/1.1" 200 -
-2026-08-07 08:13:59,173 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:13:59] "GET /auth/users/5/sessions HTTP/1.1" 200 -
-2026-08-07 08:14:02,871 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:02] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:02,873 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:02] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:02,877 INFO routes.documents: Fetching document metadata.
-2026-08-07 08:14:02,879 INFO routes.documents: Retrieved 3 documents.
-2026-08-07 08:14:02,880 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:02] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:02,888 INFO routes.documents: Fetching document metadata.
-2026-08-07 08:14:02,889 INFO routes.documents: Retrieved 3 documents.
-2026-08-07 08:14:02,891 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:02] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:04,642 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:04] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-07 08:14:04,644 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:04] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-07 08:14:04,652 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:04] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-07 08:14:04,659 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:04] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-07 08:14:11,010 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:11] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:14:11,011 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:11] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-11 08:17:15,036 ERROR config.model_engine.model_streamer: Unexpected error generating response: The read operation timed out
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 407, in __iter__
+    raise exc from None
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+                ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 342, in __iter__
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/config/model_engine/model_streamer.py", line 127, in stream_answer
+    for chunk in stream:
+                 ^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 49, in __iter__
+    for item in self._iterator:
+                ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 62, in __stream__
+    for sse in iterator:
+               ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 53, in _iter_events
+    yield from self._decoder.iter_bytes(self.response.iter_bytes())
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 297, in iter_bytes
+    for chunk in self._iter_chunks(iterator):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 308, in _iter_chunks
+    for chunk in iterator:
+                 ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+                 ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 126, in __iter__
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-08-11 08:17:15,160 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 08:17:15] "POST /chat HTTP/1.1" 200 -
+2026-08-11 08:22:48,474 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 08:22:48,523 INFO routes.chat: Retrieved 144 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 08:22:48,531 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 08:22:48] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
+2026-08-11 08:29:39,502 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
+2026-08-11 08:29:51,218 INFO root: Starting Horus Backend Application
+2026-08-11 08:29:51,277 INFO root: Routes registered successfully
+2026-08-11 08:29:51,278 INFO root: Running development server
+2026-08-11 08:29:51,298 WARNING werkzeug:  * Debugger is active!
+2026-08-11 08:29:51,299 INFO werkzeug:  * Debugger PIN: 334-513-064
+2026-08-11 08:32:59,624 INFO root: Starting Horus Backend Application
+2026-08-11 08:32:59,872 INFO root: Routes registered successfully
+2026-08-11 08:32:59,873 INFO root: Running development server
+2026-08-11 08:32:59,906 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-11 08:32:59,907 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-11 08:32:59,909 INFO werkzeug:  * Restarting with stat
+2026-08-11 08:33:09,514 INFO root: Starting Horus Backend Application
+2026-08-11 08:33:09,574 INFO root: Routes registered successfully
+2026-08-11 08:33:09,575 INFO root: Running development server
+2026-08-11 08:33:09,599 WARNING werkzeug:  * Debugger is active!
+2026-08-11 08:33:09,600 INFO werkzeug:  * Debugger PIN: 120-846-294
+2026-08-11 08:34:47,581 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 08:34:47] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-11 08:34:47,696 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 08:34:47,696 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-11 08:34:47,697 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
+2026-08-11 08:34:47,697 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-11 08:34:47,698 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-11 08:34:47,698 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-11 08:34:47,733 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-11 08:34:47,736 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-11 08:34:47,764 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-11 08:34:47,765 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
+2026-08-11 08:34:47,766 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
+2026-08-11 08:34:47,767 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
+2026-08-11 08:34:47,768 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-11 08:34:47,768 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-11 08:34:47,769 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-11 08:34:50,236 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-11 08:34:50,237 INFO config.model_engine.model_streamer: LLM stream started.

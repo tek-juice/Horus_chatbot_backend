@@ -1,95 +1,137 @@
-2026-08-07 08:14:11,027 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:11] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:14:11,080 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:11] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:14:18,722 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:18] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:18,724 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:18] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:18,727 INFO routes.documents: Fetching document metadata.
-2026-08-07 08:14:18,729 INFO routes.documents: Retrieved 3 documents.
-2026-08-07 08:14:18,730 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:18] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:18,734 INFO routes.documents: Fetching document metadata.
-2026-08-07 08:14:18,736 INFO routes.documents: Retrieved 3 documents.
-2026-08-07 08:14:18,737 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:18] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:35,949 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:35] "OPTIONS /document/delete-document/7 HTTP/1.1" 200 -
-2026-08-07 08:14:35,955 INFO routes.documents: Delete document request received. ID=7
-2026-08-07 08:14:35,962 INFO routes.documents: Document found: Horus_Label_Services.pdf
-2026-08-07 08:14:35,969 INFO routes.documents: Found 31 chunk(s) associated with document 7.
-2026-08-07 08:14:35,977 INFO routes.documents: Deleted file: /app/uploads/documents/Horus_Label_Services.pdf
-2026-08-07 08:14:35,990 INFO routes.documents: Deleted 31 document chunk(s).
-2026-08-07 08:14:35,997 INFO routes.documents: Document 7 deleted successfully.
-2026-08-07 08:14:35,998 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:35] "DELETE /document/delete-document/7 HTTP/1.1" 200 -
-2026-08-07 08:14:36,003 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:36] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:36,008 INFO routes.documents: Fetching document metadata.
-2026-08-07 08:14:36,010 INFO routes.documents: Retrieved 2 documents.
-2026-08-07 08:14:36,011 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:36] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:53,925 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:53] "OPTIONS /document/ingest HTTP/1.1" 200 -
-2026-08-07 08:14:53,933 INFO routes.documents: Document upload request received.
-2026-08-07 08:14:53,951 INFO config.document_services.allowed_files: File extension validation successful for 'Horus_Label_Services.pdf'.
-2026-08-07 08:14:53,951 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
-2026-08-07 08:14:53,952 INFO config.document_services.ingest_document: Starting document ingestion: Horus_Label_Services.pdf
-2026-08-07 08:14:53,966 INFO config.document_services.ingest_document: Document saved successfully: uploads/documents/Horus_Label_Services.pdf
-2026-08-07 08:14:53,976 INFO config.document_services.save_document: Document saved: 8
-2026-08-07 08:14:53,976 INFO config.document_services.ingest_document: Document record created with ID: 8
-2026-08-07 08:14:53,977 INFO config.document_services.ingest_document: Extracting text from document 8.
-2026-08-07 08:14:53,978 INFO config.document_services.code_extractor.pdf_extractor: Extracting text from PDF: uploads/documents/Horus_Label_Services.pdf
-2026-08-07 08:14:54,306 INFO config.document_services.code_extractor.pdf_extractor: PDF text extraction completed.
-2026-08-07 08:14:54,306 INFO config.document_services.ingest_document: Text extraction completed.
-2026-08-07 08:14:54,306 INFO config.document_services.ingest_document: Creating document chunks.
-2026-08-07 08:14:54,307 INFO config.document_services.create_chunks: Created 31 chunks.
-2026-08-07 08:14:54,307 INFO config.document_services.ingest_document: 31 chunks created.
-2026-08-07 08:14:54,307 INFO config.document_services.ingest_document: Generating embeddings.
-2026-08-07 08:14:54,307 INFO config.document_services.embedding_services: Generating embeddings for 31 chunks.
-2026-08-07 08:14:55,482 INFO config.document_services.embedding_services: Successfully generated 31 embeddings.
-2026-08-07 08:14:55,483 INFO config.document_services.ingest_document: 31 embeddings generated.
-2026-08-07 08:14:55,483 INFO config.document_services.ingest_document: Saving document chunks.
-2026-08-07 08:14:55,484 INFO config.document_services.save_chunks: Saving 31 chunks for document 8.
-2026-08-07 08:14:55,545 INFO config.document_services.save_chunks: Successfully saved 31 chunks for document 8.
-2026-08-07 08:14:55,545 INFO config.document_services.ingest_document: Document chunks saved successfully.
-2026-08-07 08:14:55,546 INFO config.document_services.ingest_document: Document ingestion completed successfully: Horus_Label_Services.pdf
-2026-08-07 08:14:55,548 INFO routes.documents: Document 'Horus_Label_Services.pdf' ingested successfully.
-2026-08-07 08:14:55,549 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:55] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 201 -
-2026-08-07 08:14:55,555 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:55] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:14:55,560 INFO routes.documents: Fetching document metadata.
-2026-08-07 08:14:55,561 INFO routes.documents: Retrieved 3 documents.
-2026-08-07 08:14:55,562 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:14:55] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-07 08:15:00,063 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:00] "OPTIONS /document/view-document/8?download=false HTTP/1.1" 200 -
-2026-08-07 08:15:00,068 INFO routes.documents: Document request received. ID=8
-2026-08-07 08:15:00,075 INFO routes.documents: Previewing document 'Horus_Label_Services.pdf'
-2026-08-07 08:15:00,086 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:00] "GET /document/view-document/8?download=false HTTP/1.1" 200 -
-2026-08-07 08:15:17,367 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:17] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-07 08:15:17,375 INFO config.model_engine.model_streamer: Starting AI response generation. Session=e82e7c91-bc6e-4b41-8f6b-1e6747547793
-2026-08-07 08:15:17,376 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 08:15:17,376 INFO config.model_engine.vector_search: Starting document search. Question length: 33
-2026-08-07 08:15:17,376 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 08:15:17,376 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 08:15:17,381 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 08:15:17,382 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 08:15:17,386 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 08:15:17,386 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 08:15:17,386 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-08-07 08:15:17,387 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 08:15:18,204 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 08:15:18,206 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 08:15:18,209 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:18] "POST /chat HTTP/1.1" 200 -
-2026-08-07 08:15:18,888 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 08:15:51,153 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:51] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-07 08:15:51,171 INFO config.model_engine.model_streamer: Starting AI response generation. Session=e82e7c91-bc6e-4b41-8f6b-1e6747547793
-2026-08-07 08:15:51,171 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-07 08:15:51,172 INFO config.model_engine.vector_search: Starting document search. Question length: 30
-2026-08-07 08:15:51,172 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-07 08:15:51,172 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-07 08:15:51,192 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-07 08:15:51,193 INFO config.model_engine.vector_search: Executing vector search. top_k=3
-2026-08-07 08:15:51,195 INFO config.model_engine.vector_search: Document search completed. Found 3 results.
-2026-08-07 08:15:51,195 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-07 08:15:51,196 INFO config.model_engine.model_streamer: Context created. Length=454 characters.
-2026-08-07 08:15:51,196 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-07 08:15:51,974 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-07 08:15:51,976 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-07 08:15:51,978 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:15:51] "POST /chat HTTP/1.1" 200 -
-2026-08-07 08:15:53,241 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-07 08:16:04,584 INFO routes.chat: Fetching chat messages for chat_id=e82e7c91-bc6e-4b41-8f6b-1e6747547793
-2026-08-07 08:16:04,587 INFO routes.chat: Retrieved 6 messages for chat_id=e82e7c91-bc6e-4b41-8f6b-1e6747547793
-2026-08-07 08:16:04,588 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:04] "GET /messages/e82e7c91-bc6e-4b41-8f6b-1e6747547793 HTTP/1.1" 200 -
-2026-08-07 08:16:15,316 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:15] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:16:15,317 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:15] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:16:15,333 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:15] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-07 08:16:15,351 INFO werkzeug: 172.18.0.1 - - [07/Aug/2026 08:16:15] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-11 08:36:50,310 ERROR config.model_engine.model_streamer: Unexpected error generating response: The read operation timed out
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 127, in __iter__
+    for part in self._httpcore_stream:
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 407, in __iter__
+    raise exc from None
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
+    for part in self._stream:
+                ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 342, in __iter__
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
+    for chunk in self._connection._receive_response_body(**kwargs):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/config/model_engine/model_streamer.py", line 127, in stream_answer
+    for chunk in stream:
+                 ^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 49, in __iter__
+    for item in self._iterator:
+                ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 62, in __stream__
+    for sse in iterator:
+               ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 53, in _iter_events
+    yield from self._decoder.iter_bytes(self.response.iter_bytes())
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 297, in iter_bytes
+    for chunk in self._iter_chunks(iterator):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 308, in _iter_chunks
+    for chunk in iterator:
+                 ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 897, in iter_bytes
+    for raw_bytes in self.iter_raw():
+                     ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 951, in iter_raw
+    for raw_stream_bytes in self.stream:
+                            ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 153, in __iter__
+    for chunk in self._stream:
+                 ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 126, in __iter__
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
+2026-08-11 08:36:50,487 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 08:36:50] "POST /chat HTTP/1.1" 200 -
+2026-08-11 09:02:23,614 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
+2026-08-11 09:05:02,808 INFO root: Starting Horus Backend Application
+2026-08-11 09:05:02,902 INFO root: Routes registered successfully
+2026-08-11 09:05:02,903 INFO root: Running development server
+2026-08-11 09:05:02,967 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-11 09:05:02,968 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-11 09:05:02,973 INFO werkzeug:  * Restarting with stat
+2026-08-11 09:05:10,704 INFO root: Starting Horus Backend Application
+2026-08-11 09:05:10,745 INFO root: Routes registered successfully
+2026-08-11 09:05:10,746 INFO root: Running development server
+2026-08-11 09:05:10,761 WARNING werkzeug:  * Debugger is active!
+2026-08-11 09:05:10,763 INFO werkzeug:  * Debugger PIN: 480-976-410
+2026-08-11 09:09:20,661 INFO root: Starting Horus Backend Application
+2026-08-11 09:09:20,722 INFO root: Routes registered successfully
+2026-08-11 09:09:20,723 INFO root: Running development server
+2026-08-11 09:09:20,765 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-11 09:09:20,766 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-11 09:09:20,769 INFO werkzeug:  * Restarting with stat
+2026-08-11 09:09:30,247 INFO root: Starting Horus Backend Application
+2026-08-11 09:09:30,286 INFO root: Routes registered successfully
+2026-08-11 09:09:30,287 INFO root: Running development server
+2026-08-11 09:09:30,300 WARNING werkzeug:  * Debugger is active!
+2026-08-11 09:09:30,301 INFO werkzeug:  * Debugger PIN: 562-862-749
+2026-08-11 09:09:35,633 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 09:09:35] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-11 09:09:35,797 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 09:09:35,798 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-11 09:09:35,799 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
+2026-08-11 09:09:35,800 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-11 09:09:35,800 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-11 09:09:35,801 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-11 09:09:35,827 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-11 09:09:35,828 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-11 09:09:35,850 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-11 09:09:35,851 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
+2026-08-11 09:09:35,851 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
+2026-08-11 09:09:35,852 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
+2026-08-11 09:09:35,852 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-11 09:09:35,852 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-11 09:09:35,852 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-11 09:09:42,981 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-11 09:09:42,982 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-11 09:09:43,462 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 09:09:43] "POST /chat HTTP/1.1" 200 -
+2026-08-11 09:09:47,829 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-11 09:10:02,871 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 09:10:02] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-11 09:10:02,898 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 09:10:02,899 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-11 09:10:02,899 INFO config.model_engine.vector_search: Starting document search. Question length: 25, top_k=3, similarity_threshold=0.5
+2026-08-11 09:10:02,900 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-11 09:10:02,901 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-11 09:10:02,901 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-11 09:10:02,912 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-11 09:10:02,913 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-11 09:10:02,917 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-11 09:10:02,917 INFO config.model_engine.vector_search: Result 1: similarity=0.7697, distance=0.2303
+2026-08-11 09:10:02,918 INFO config.model_engine.vector_search: Result 2: similarity=0.7640, distance=0.2360
+2026-08-11 09:10:02,918 INFO config.model_engine.vector_search: Result 3: similarity=0.7465, distance=0.2535
+2026-08-11 09:10:02,918 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-11 09:10:02,918 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
+2026-08-11 09:10:02,919 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-11 09:10:06,693 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-11 09:10:06,694 INFO config.model_engine.model_streamer: LLM stream started.
