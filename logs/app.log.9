@@ -1,126 +1,137 @@
-2026-08-10 13:20:56,697 ERROR config.model_engine.model_streamer: Unexpected error generating response: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
-LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
-                                         ^
-
-[SQL: SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.role AS chat_messages_role, chat_messages.message AS chat_messages_message, chat_messages.created_at AS chat_messages_created_at 
-FROM chat_messages 
-WHERE chat_messages.session_id = %(session_id_1)s AND chat_messages.role = %(role_1)s ORDER BY chat_messages.created_at DESC 
- LIMIT %(param_1)s]
-[parameters: {'session_id_1': '1c982353-f829-4fc4-9851-64936d969fe3', 'role_1': 'ASSISTANT', 'param_1': 1}]
-(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-08-10 13:54:17,919 ERROR config.model_engine.model_streamer: Unexpected error generating response: Request timed out.
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
-LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
-                                         ^
-
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout: The read operation timed out
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/app/config/model_engine/model_streamer.py", line 37, in stream_answer
-    last_assistant = get_last_assistant_message(session_id)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/app/config/model_engine/memory_service.py", line 20, in get_last_assistant_message
-    .first()
-     ^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2766, in first
-    return self.limit(1)._iter().first()  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2864, in _iter
-    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
-                                                  ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2373, in execute
-    return self._execute_internal(
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2271, in _execute_internal
-    result: Result[Any] = compile_state_cls.orm_execute_statement(
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
-    result = conn.execute(
-             ^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
-    return meth(
-           ^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
-    return connection._execute_clauseelement(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
-    ret = self._execute_context(
-          ^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
-    return self._exec_single_context(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
-    self._handle_dbapi_exception(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
-LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
-                                         ^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1080, in request
+    response = self._send_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_client.py", line 491, in _send_request
+    response = self._send_with_auth_retry(request, stream=stream, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_client.py", line 469, in _send_with_auth_retry
+    response = super()._send_request(request, stream=stream, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1005, in _send_request
+    return self._client.send(request, stream=stream, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout: The read operation timed out
 
-[SQL: SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.role AS chat_messages_role, chat_messages.message AS chat_messages_message, chat_messages.created_at AS chat_messages_created_at 
-FROM chat_messages 
-WHERE chat_messages.session_id = %(session_id_1)s AND chat_messages.role = %(role_1)s ORDER BY chat_messages.created_at DESC 
- LIMIT %(param_1)s]
-[parameters: {'session_id_1': '1c982353-f829-4fc4-9851-64936d969fe3', 'role_1': 'ASSISTANT', 'param_1': 1}]
-(Background on this error at: https://sqlalche.me/e/20/9h9h)
-2026-08-10 13:20:56,743 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:20:56] "POST /chat HTTP/1.1" 200 -
-2026-08-10 13:30:06,508 INFO root: Starting Horus Backend Application
-2026-08-10 13:30:06,532 INFO root: Routes registered successfully
-2026-08-10 13:30:06,532 INFO root: Running development server
-2026-08-10 13:30:06,547 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/config/model_engine/model_streamer.py", line 110, in stream_answer
+    stream = client.chat.completions.create(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1098, in request
+    raise APITimeoutError(request=request) from err
+openai.APITimeoutError: Request timed out.
+2026-08-10 13:54:17,960 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:54:17] "POST /chat HTTP/1.1" 200 -
+2026-08-10 13:58:53,716 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
+2026-08-10 14:04:38,101 INFO root: Starting Horus Backend Application
+2026-08-10 14:04:38,159 INFO root: Routes registered successfully
+2026-08-10 14:04:38,160 INFO root: Running development server
+2026-08-10 14:04:38,188 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://172.18.0.3:5000
-2026-08-10 13:30:06,547 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-10 13:30:06,548 INFO werkzeug:  * Restarting with stat
-2026-08-10 13:30:12,069 INFO root: Starting Horus Backend Application
-2026-08-10 13:30:12,095 INFO root: Routes registered successfully
-2026-08-10 13:30:12,096 INFO root: Running development server
-2026-08-10 13:30:12,107 WARNING werkzeug:  * Debugger is active!
-2026-08-10 13:30:12,108 INFO werkzeug:  * Debugger PIN: 442-923-221
-2026-08-10 13:32:36,467 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:32:36] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-10 13:32:36,517 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 13:32:36,518 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-10 13:32:36,518 INFO config.model_engine.vector_search: Starting document search. Question length: 3, top_k=3, similarity_threshold=0.5
-2026-08-10 13:32:36,518 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-10 13:32:36,519 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-10 13:32:36,519 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-10 13:32:36,554 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-10 13:32:36,555 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-10 13:32:36,582 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-10 13:32:36,582 INFO config.model_engine.vector_search: Result 1: similarity=0.6084, distance=0.3916
-2026-08-10 13:32:36,582 INFO config.model_engine.vector_search: Result 2: similarity=0.5431, distance=0.4569
-2026-08-10 13:32:36,583 INFO config.model_engine.vector_search: Result 3: similarity=0.5412, distance=0.4588
-2026-08-10 13:32:36,583 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-10 13:32:36,583 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
-2026-08-10 13:32:36,583 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-10 13:33:07,555 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:33:07] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-10 13:33:07,582 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 13:33:07,582 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-10 13:33:07,583 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
-2026-08-10 13:33:07,583 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-10 13:33:07,583 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-10 13:33:07,583 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-10 13:33:07,593 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-10 13:33:07,594 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-10 13:33:07,598 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-10 13:33:07,598 INFO config.model_engine.vector_search: Result 1: similarity=0.7661, distance=0.2339
-2026-08-10 13:33:07,599 INFO config.model_engine.vector_search: Result 2: similarity=0.7042, distance=0.2958
-2026-08-10 13:33:07,599 INFO config.model_engine.vector_search: Result 3: similarity=0.6909, distance=0.3091
-2026-08-10 13:33:07,599 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-10 13:33:07,599 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-10 13:33:07,600 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-10 13:33:18,335 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:33:18] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-10 13:33:18,353 INFO config.model_engine.model_streamer: Starting AI response generation. Session=8d87afaf-a1ed-4841-a634-f1f4c5fd9f03
-2026-08-10 13:33:18,354 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-10 13:33:18,354 INFO config.model_engine.vector_search: Starting document search. Question length: 3, top_k=3, similarity_threshold=0.5
-2026-08-10 13:33:18,354 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-10 14:04:38,189 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-10 14:04:38,192 INFO werkzeug:  * Restarting with stat
+2026-08-10 14:04:44,993 INFO root: Starting Horus Backend Application
+2026-08-10 14:04:45,021 INFO root: Routes registered successfully
+2026-08-10 14:04:45,021 INFO root: Running development server
+2026-08-10 14:04:45,031 WARNING werkzeug:  * Debugger is active!
+2026-08-10 14:04:45,032 INFO werkzeug:  * Debugger PIN: 137-674-187
+2026-08-10 14:08:44,977 INFO root: Starting Horus Backend Application
+2026-08-10 14:08:44,998 INFO root: Routes registered successfully
+2026-08-10 14:08:44,999 INFO root: Running development server
+2026-08-10 14:08:45,014 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-10 14:08:45,014 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-10 14:08:45,015 INFO werkzeug:  * Restarting with stat
+2026-08-10 14:08:50,124 INFO root: Starting Horus Backend Application
+2026-08-10 14:08:50,144 INFO root: Routes registered successfully
+2026-08-10 14:08:50,144 INFO root: Running development server
+2026-08-10 14:08:50,153 WARNING werkzeug:  * Debugger is active!
+2026-08-10 14:08:50,154 INFO werkzeug:  * Debugger PIN: 641-148-421
+2026-08-10 14:10:18,982 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:10:18] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-10 14:10:19,074 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-10 14:10:19,074 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-10 14:10:19,074 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
+2026-08-10 14:10:19,074 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-10 14:10:19,074 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-10 14:10:19,075 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-10 14:10:19,088 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-10 14:10:19,089 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-10 14:10:19,103 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-10 14:10:19,104 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
+2026-08-10 14:10:19,104 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
+2026-08-10 14:10:19,104 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
+2026-08-10 14:10:19,104 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-10 14:10:19,105 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-10 14:10:19,105 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-10 14:10:20,331 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-08-10 14:13:14,944 INFO werkzeug:  * Restarting with stat

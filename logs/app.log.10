@@ -1,104 +1,80 @@
-2026-08-10 13:08:59,523 INFO werkzeug:  * Restarting with stat
-2026-08-10 13:09:06,567 INFO root: Starting Horus Backend Application
-2026-08-10 13:09:06,607 INFO root: Routes registered successfully
-2026-08-10 13:09:06,608 INFO root: Running development server
-2026-08-10 13:09:06,625 WARNING werkzeug:  * Debugger is active!
-2026-08-10 13:09:06,626 INFO werkzeug:  * Debugger PIN: 939-733-501
-2026-08-10 13:13:49,879 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
-2026-08-10 13:13:50,441 INFO werkzeug:  * Restarting with stat
-2026-08-10 13:13:57,329 INFO root: Starting Horus Backend Application
-2026-08-10 13:13:57,361 INFO root: Routes registered successfully
-2026-08-10 13:13:57,362 INFO root: Running development server
-2026-08-10 13:13:57,374 WARNING werkzeug:  * Debugger is active!
-2026-08-10 13:13:57,375 INFO werkzeug:  * Debugger PIN: 939-733-501
-2026-08-10 13:15:06,519 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
-2026-08-10 13:15:06,903 INFO werkzeug:  * Restarting with stat
-2026-08-10 13:18:50,908 INFO root: Starting Horus Backend Application
-2026-08-10 13:18:50,945 INFO root: Routes registered successfully
-2026-08-10 13:18:50,945 INFO root: Running development server
-2026-08-10 13:18:50,966 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2026-08-10 13:44:38,830 INFO werkzeug:  * Restarting with stat
+2026-08-10 13:44:44,196 INFO root: Starting Horus Backend Application
+2026-08-10 13:44:44,217 INFO root: Routes registered successfully
+2026-08-10 13:44:44,218 INFO root: Running development server
+2026-08-10 13:44:44,227 WARNING werkzeug:  * Debugger is active!
+2026-08-10 13:44:44,228 INFO werkzeug:  * Debugger PIN: 535-936-574
+2026-08-10 13:47:18,283 INFO root: Starting Horus Backend Application
+2026-08-10 13:47:18,305 INFO root: Routes registered successfully
+2026-08-10 13:47:18,305 INFO root: Running development server
+2026-08-10 13:47:18,325 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://172.18.0.3:5000
-2026-08-10 13:18:50,966 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-10 13:18:50,968 INFO werkzeug:  * Restarting with stat
-2026-08-10 13:18:56,154 INFO root: Starting Horus Backend Application
-2026-08-10 13:18:56,175 INFO root: Routes registered successfully
-2026-08-10 13:18:56,175 INFO root: Running development server
-2026-08-10 13:18:56,184 WARNING werkzeug:  * Debugger is active!
-2026-08-10 13:18:56,185 INFO werkzeug:  * Debugger PIN: 136-127-876
-2026-08-10 13:20:56,565 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:20:56] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-10 13:20:56,670 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 13:20:56,670 INFO config.model_engine.model_streamer: Fetching previous assistant response. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 13:20:56,670 INFO config.model_engine.memory_service: Fetching last assistant message. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 13:20:56,674 ERROR config.model_engine.memory_service: Error fetching last assistant message: Session=1c982353-f829-4fc4-9851-64936d969fe3: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
-LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
-                                         ^
-
-[SQL: SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.role AS chat_messages_role, chat_messages.message AS chat_messages_message, chat_messages.created_at AS chat_messages_created_at 
-FROM chat_messages 
-WHERE chat_messages.session_id = %(session_id_1)s AND chat_messages.role = %(role_1)s ORDER BY chat_messages.created_at DESC 
- LIMIT %(param_1)s]
-[parameters: {'session_id_1': '1c982353-f829-4fc4-9851-64936d969fe3', 'role_1': 'ASSISTANT', 'param_1': 1}]
-(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2026-08-10 13:47:18,326 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-10 13:47:18,327 INFO werkzeug:  * Restarting with stat
+2026-08-10 13:47:23,767 INFO root: Starting Horus Backend Application
+2026-08-10 13:47:23,790 INFO root: Routes registered successfully
+2026-08-10 13:47:23,790 INFO root: Running development server
+2026-08-10 13:47:23,799 WARNING werkzeug:  * Debugger is active!
+2026-08-10 13:47:23,800 INFO werkzeug:  * Debugger PIN: 395-834-847
+2026-08-10 13:47:50,659 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:50] "GET /apidocs/ HTTP/1.1" 200 -
+2026-08-10 13:47:50,685 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:50] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2026-08-10 13:47:50,687 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:50] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2026-08-10 13:47:50,688 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:50] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2026-08-10 13:47:50,688 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:50] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2026-08-10 13:47:50,835 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:50] "GET /apispec.json HTTP/1.1" 200 -
+2026-08-10 13:47:50,838 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:50] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
+2026-08-10 13:47:58,126 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:58] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-10 13:47:58,172 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-10 13:47:58,173 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-10 13:47:58,173 INFO config.model_engine.vector_search: Starting document search. Question length: 3, top_k=3, similarity_threshold=0.5
+2026-08-10 13:47:58,173 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-10 13:47:58,174 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-10 13:47:58,174 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-10 13:47:58,180 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-10 13:47:58,180 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-10 13:47:58,187 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-10 13:47:58,187 INFO config.model_engine.vector_search: Result 1: similarity=0.6084, distance=0.3916
+2026-08-10 13:47:58,188 INFO config.model_engine.vector_search: Result 2: similarity=0.5431, distance=0.4569
+2026-08-10 13:47:58,188 INFO config.model_engine.vector_search: Result 3: similarity=0.5412, distance=0.4588
+2026-08-10 13:47:58,188 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-10 13:47:58,188 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-10 13:47:58,189 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-10 13:47:59,074 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-08-10 13:47:59,075 ERROR config.model_engine.model_streamer: Unexpected error generating response: Error code: 400 - {'status': 400, 'title': 'Bad Request', 'detail': "Function id 'e62a4350-2218-4cf5-9262-112432d239f8': DEGRADED function cannot be invoked"}
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
-LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
-                                         ^
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/app/config/model_engine/memory_service.py", line 20, in get_last_assistant_message
-    .first()
-     ^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2766, in first
-    return self.limit(1)._iter().first()  # type: ignore
+  File "/app/config/model_engine/model_streamer.py", line 110, in stream_answer
+    stream = client.chat.completions.create(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2864, in _iter
-    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
-                                                  ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2373, in execute
-    return self._execute_internal(
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2271, in _execute_internal
-    result: Result[Any] = compile_state_cls.orm_execute_statement(
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
-    result = conn.execute(
-             ^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
-    return meth(
-           ^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
-    return connection._execute_clauseelement(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
-    ret = self._execute_context(
-          ^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
-    return self._exec_single_context(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
-    self._handle_dbapi_exception(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type integer: "1c982353-f829-4fc4-9851-64936d969fe3"
-LINE 3: WHERE chat_messages.session_id = '1c982353-f829-4fc4-9851-64...
-                                         ^
-
-[SQL: SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.role AS chat_messages_role, chat_messages.message AS chat_messages_message, chat_messages.created_at AS chat_messages_created_at 
-FROM chat_messages 
-WHERE chat_messages.session_id = %(session_id_1)s AND chat_messages.role = %(role_1)s ORDER BY chat_messages.created_at DESC 
- LIMIT %(param_1)s]
-[parameters: {'session_id_1': '1c982353-f829-4fc4-9851-64936d969fe3', 'role_1': 'ASSISTANT', 'param_1': 1}]
-(Background on this error at: https://sqlalche.me/e/20/9h9h)
+  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1148, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'status': 400, 'title': 'Bad Request', 'detail': "Function id 'e62a4350-2218-4cf5-9262-112432d239f8': DEGRADED function cannot be invoked"}
+2026-08-10 13:47:59,097 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:47:59] "POST /chat HTTP/1.1" 200 -
+2026-08-10 13:48:15,401 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 13:48:15] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-10 13:48:15,411 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-10 13:48:15,411 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-10 13:48:15,411 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
+2026-08-10 13:48:15,412 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-10 13:48:15,412 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-10 13:48:15,412 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-10 13:48:15,417 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-10 13:48:15,418 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-10 13:48:15,420 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-10 13:48:15,420 INFO config.model_engine.vector_search: Result 1: similarity=0.7661, distance=0.2339
+2026-08-10 13:48:15,421 INFO config.model_engine.vector_search: Result 2: similarity=0.7042, distance=0.2958
+2026-08-10 13:48:15,421 INFO config.model_engine.vector_search: Result 3: similarity=0.6909, distance=0.3091
+2026-08-10 13:48:15,421 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-10 13:48:15,421 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
+2026-08-10 13:48:15,422 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-10 13:50:15,830 INFO openai._base_client: Retrying request to /chat/completions in 0.443086 seconds
+2026-08-10 13:52:16,697 INFO openai._base_client: Retrying request to /chat/completions in 0.815858 seconds

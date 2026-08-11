@@ -1,104 +1,107 @@
-2026-08-10 14:17:43,331 ERROR config.model_engine.model_streamer: Unexpected error generating response: The read operation timed out
+2026-08-11 10:16:15,394 INFO config.model_engine.vector_search: Result 3: similarity=0.5412, distance=0.4588
+2026-08-11 10:16:15,431 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-11 10:16:15,431 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-11 10:16:15,432 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-11 10:16:16,851 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-08-11 10:16:16,866 ERROR config.model_engine.model_streamer: Unexpected error generating response: Error code: 404 - {'status': 404, 'title': 'Not Found', 'detail': "Function 'e503b15c-62b0-4d69-b532-a88f0bfa2656': Not found for account 'c4TeNIdxpXOlyCXKvnqH2B_1CFgz_Q0mi-Y7t_qJHLQ'"}
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
-    yield
-  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 127, in __iter__
-    for part in self._httpcore_stream:
-                ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 407, in __iter__
-    raise exc from None
-  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 403, in __iter__
-    for part in self._stream:
-                ^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 342, in __iter__
-    raise exc
-  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 334, in __iter__
-    for chunk in self._connection._receive_response_body(**kwargs):
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 203, in _receive_response_body
-    event = self._receive_event(timeout=timeout)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
-    data = self._network_stream.read(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 126, in read
-    with map_exceptions(exc_map):
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
-    self.gen.throw(value)
-  File "/usr/local/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
-    raise to_exc(exc) from exc
-httpcore.ReadTimeout: The read operation timed out
-
-The above exception was the direct cause of the following exception:
-
+  File "/app/config/model_engine/model_streamer.py", line 115, in stream_answer
+    stream = client.chat.completions.create(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1148, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'status': 404, 'title': 'Not Found', 'detail': "Function 'e503b15c-62b0-4d69-b532-a88f0bfa2656': Not found for account 'c4TeNIdxpXOlyCXKvnqH2B_1CFgz_Q0mi-Y7t_qJHLQ'"}
+2026-08-11 10:16:16,881 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 10:16:16] "POST /chat HTTP/1.1" 200 -
+2026-08-11 10:23:08,993 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 10:23:08] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-11 10:23:09,015 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 10:23:09,016 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-11 10:23:09,016 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
+2026-08-11 10:23:09,016 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-11 10:23:09,017 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-11 10:23:09,017 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-11 10:23:09,030 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-11 10:23:09,031 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-11 10:23:09,034 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-11 10:23:09,034 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
+2026-08-11 10:23:09,035 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
+2026-08-11 10:23:09,035 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
+2026-08-11 10:23:09,035 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-11 10:23:09,035 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-11 10:23:09,036 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-11 10:23:09,957 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-08-11 10:23:09,958 ERROR config.model_engine.model_streamer: Unexpected error generating response: Error code: 404 - {'status': 404, 'title': 'Not Found', 'detail': "Function 'e503b15c-62b0-4d69-b532-a88f0bfa2656': Not found for account 'c4TeNIdxpXOlyCXKvnqH2B_1CFgz_Q0mi-Y7t_qJHLQ'"}
 Traceback (most recent call last):
-  File "/app/config/model_engine/model_streamer.py", line 122, in stream_answer
-    for chunk in stream:
-                 ^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 49, in __iter__
-    for item in self._iterator:
-                ^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 62, in __stream__
-    for sse in iterator:
-               ^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 53, in _iter_events
-    yield from self._decoder.iter_bytes(self.response.iter_bytes())
-  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 297, in iter_bytes
-    for chunk in self._iter_chunks(iterator):
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_streaming.py", line 308, in _iter_chunks
-    for chunk in iterator:
-                 ^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 897, in iter_bytes
-    for raw_bytes in self.iter_raw():
-                     ^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpx/_models.py", line 951, in iter_raw
-    for raw_stream_bytes in self.stream:
-                            ^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 153, in __iter__
-    for chunk in self._stream:
-                 ^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 126, in __iter__
-    with map_httpcore_exceptions():
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
-    self.gen.throw(value)
-  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
-    raise mapped_exc(message) from exc
-httpx.ReadTimeout: The read operation timed out
-2026-08-10 14:17:43,378 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:17:43] "POST /chat HTTP/1.1" 200 -
-2026-08-10 14:18:01,775 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
-2026-08-11 08:15:37,073 INFO root: Starting Horus Backend Application
-2026-08-11 08:15:37,186 INFO root: Routes registered successfully
-2026-08-11 08:15:37,186 INFO root: Running development server
-2026-08-11 08:15:37,233 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+  File "/app/config/model_engine/model_streamer.py", line 115, in stream_answer
+    stream = client.chat.completions.create(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1148, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'status': 404, 'title': 'Not Found', 'detail': "Function 'e503b15c-62b0-4d69-b532-a88f0bfa2656': Not found for account 'c4TeNIdxpXOlyCXKvnqH2B_1CFgz_Q0mi-Y7t_qJHLQ'"}
+2026-08-11 10:23:09,961 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 10:23:09] "POST /chat HTTP/1.1" 200 -
+2026-08-11 10:23:18,866 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
+2026-08-11 10:33:07,379 INFO root: Starting Horus Backend Application
+2026-08-11 10:33:07,427 INFO root: Routes registered successfully
+2026-08-11 10:33:07,427 INFO root: Running development server
+2026-08-11 10:33:07,450 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://172.18.0.3:5000
-2026-08-11 08:15:37,234 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-11 08:15:37,238 INFO werkzeug:  * Restarting with stat
-2026-08-11 08:15:48,704 INFO root: Starting Horus Backend Application
-2026-08-11 08:15:48,788 INFO root: Routes registered successfully
-2026-08-11 08:15:48,788 INFO root: Running development server
-2026-08-11 08:15:48,814 WARNING werkzeug:  * Debugger is active!
-2026-08-11 08:15:48,860 INFO werkzeug:  * Debugger PIN: 334-513-064
-2026-08-11 08:16:52,595 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 08:16:52] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-11 08:16:52,814 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-11 08:16:52,815 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-11 08:16:52,815 INFO config.model_engine.vector_search: Starting document search. Question length: 3, top_k=3, similarity_threshold=0.5
-2026-08-11 08:16:52,815 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-11 08:16:52,816 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-11 08:16:52,816 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-11 08:16:52,863 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-11 08:16:52,864 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-11 08:16:52,900 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-11 08:16:52,901 INFO config.model_engine.vector_search: Result 1: similarity=0.6084, distance=0.3916
-2026-08-11 08:16:52,901 INFO config.model_engine.vector_search: Result 2: similarity=0.5431, distance=0.4569
-2026-08-11 08:16:52,901 INFO config.model_engine.vector_search: Result 3: similarity=0.5412, distance=0.4588
-2026-08-11 08:16:52,901 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-11 08:16:52,902 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
-2026-08-11 08:16:52,902 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-11 08:16:55,017 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-11 08:16:55,018 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-11 08:29:40,808 INFO werkzeug:  * Restarting with stat
+2026-08-11 10:33:07,450 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-11 10:33:07,452 INFO werkzeug:  * Restarting with stat
+2026-08-11 10:33:14,229 INFO root: Starting Horus Backend Application
+2026-08-11 10:33:14,249 INFO root: Routes registered successfully
+2026-08-11 10:33:14,249 INFO root: Running development server
+2026-08-11 10:33:14,259 WARNING werkzeug:  * Debugger is active!
+2026-08-11 10:33:14,261 INFO werkzeug:  * Debugger PIN: 240-608-525
+2026-08-11 10:37:44,689 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 10:37:44] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-11 10:37:44,810 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 10:37:44,811 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-11 10:37:44,811 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
+2026-08-11 10:37:44,811 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-11 10:37:44,812 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-11 10:37:44,812 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-11 10:37:44,834 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-11 10:37:44,834 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-11 10:37:44,850 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-11 10:37:44,850 INFO config.model_engine.vector_search: Result 1: similarity=0.7661, distance=0.2339
+2026-08-11 10:37:44,851 INFO config.model_engine.vector_search: Result 2: similarity=0.7042, distance=0.2958
+2026-08-11 10:37:44,851 INFO config.model_engine.vector_search: Result 3: similarity=0.6909, distance=0.3091
+2026-08-11 10:37:44,851 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-11 10:37:44,851 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
+2026-08-11 10:37:44,852 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-11 10:39:24,241 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-11 10:39:24,242 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-11 10:39:24,550 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 10:39:24] "POST /chat HTTP/1.1" 200 -
+2026-08-11 10:39:30,406 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-11 10:40:09,137 INFO werkzeug: 172.18.0.1 - - [11/Aug/2026 10:40:09] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-11 10:40:09,147 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-11 10:40:09,147 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-11 10:40:09,148 INFO config.model_engine.vector_search: Starting document search. Question length: 18, top_k=3, similarity_threshold=0.5
+2026-08-11 10:40:09,148 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-11 10:40:09,148 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-11 10:40:09,148 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-11 10:40:09,154 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-11 10:40:09,154 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-11 10:40:09,157 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-11 10:40:09,157 INFO config.model_engine.vector_search: Result 1: similarity=0.7331, distance=0.2669
+2026-08-11 10:40:09,158 INFO config.model_engine.vector_search: Result 2: similarity=0.7221, distance=0.2779
+2026-08-11 10:40:09,158 INFO config.model_engine.vector_search: Result 3: similarity=0.7189, distance=0.2811
+2026-08-11 10:44:36,637 INFO werkzeug:  * Restarting with stat
