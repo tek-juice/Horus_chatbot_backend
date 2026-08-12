@@ -1,37 +1,49 @@
-# import logging
-# from models.users import ChatMessage, MessageRole
-# from config.extensions.database_config import db
+import logging
 
-# logger = logging.getLogger(__name__)
+from models.users import ChatSession, ChatMessage, MessageRole
 
 
-# def get_last_assistant_message(session_id: int):
-#     logger.info(
-#         f"Fetching last assistant message. Session={session_id}"
-#     )
-#     try:
-#         message = (
-#             ChatMessage.query
-#             .filter(
-#                 ChatMessage.session_id == session_id,
-#                 ChatMessage.role == MessageRole.ASSISTANT
-#             )
-#             .order_by(ChatMessage.created_at.desc())
-#             .first()
-#         )
+logger = logging.getLogger(__name__)
 
-#         if not message:
-#             return None
 
-#         return {
-#             "id": message.id,
-#             "message": message.message,
-#             "created_at": message.created_at
-#         }
+def get_last_assistant_message(chat_id):
+    logger.info(
+        "Fetching last assistant message for chat_id=%s",
+        chat_id
+    )
 
-#     except Exception as e:
-#         logger.exception(
-#             f"Error fetching last assistant message: "
-#             f"Session={session_id}: {str(e)}"
-#         )
-#         raise
+    try:
+        session = ChatSession.query.filter_by(chat_id=chat_id).first()
+
+        if not session:
+            logger.warning(
+                "Chat session not found. chat_id=%s",
+                chat_id
+            )
+            return None
+
+        message = (
+            ChatMessage.query
+            .filter_by(
+                session_id=session.id,
+                role=MessageRole.ASSISTANT
+            )
+            .order_by(ChatMessage.created_at.desc())
+            .first()
+        )
+
+        if not message:
+            logger.info(
+                "No previous assistant message for chat_id=%s",
+                chat_id
+            )
+            return None
+
+        return message.message
+
+    except Exception:
+        logger.exception(
+            "Error fetching last assistant message for chat_id=%s",
+            chat_id
+        )
+        return None

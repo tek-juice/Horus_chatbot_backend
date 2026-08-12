@@ -3,6 +3,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import logging
 from config.model_engine.vector_search import search_documents
+from config.model_engine.memory_service import get_last_assistant_message
 
 load_dotenv()
 logger = logging.getLogger(__name__)
@@ -12,12 +13,10 @@ client = OpenAI(
     api_key=os.getenv("NVIDIA_API_KEY")
 )
 
-# client = OpenAI(
-#     base_url="https://models.github.ai/inference",
-#     api_key=os.getenv("GITHUB_TOKEN")
-# )
 
-MODEL = "deepseek-ai/deepseek-v4-flash-0731"
+
+# MODEL = "deepseek-ai/deepseek-v4-flash-0731"
+MODEL = "meta/llama-3.2-3b-instruct"
 
 
 def stream_answer(session_id: int, question: str):
@@ -49,6 +48,20 @@ def stream_answer(session_id: int, question: str):
 
         logger.info(f"Context created. Length={len(context)} characters.")
 
+        # Get previous assistant message
+        last_assistant_message = get_last_assistant_message(session_id)
+
+        if last_assistant_message:
+            logger.info(
+                "Previous assistant message found for session=%s",
+                session_id
+            )
+        else:
+            logger.info(
+                "No previous assistant message found for session=%s",
+                session_id
+            )
+
         messages = [
             {
                 "role": "system",
@@ -58,17 +71,16 @@ You are the friendly AI assistant for Horus Music.
 Your goal is to have natural, helpful conversations while providing
 accurate information about Horus Music.
 
-There are two kinds of information you can provide:
-
 GENERAL CONVERSATION AND MUSIC KNOWLEDGE
-- You may naturally respond to greetings, conversation about music
-, and general questions about music.
-- D
+
+- You may naturally respond to greetings, conversation about music,
+  and general questions about music.
 - You may provide general music advice and general music-industry
   knowledge.
 - Be conversational, friendly, concise, and helpful.
 
 HORUS MUSIC INFORMATION
+
 - For questions specifically about Horus Music, its services,
   pricing, packages, policies, people, history, partnerships,
   or operations, use ONLY the provided Horus Music context.
@@ -80,33 +92,48 @@ HORUS MUSIC INFORMATION
   "I don't have enough information about that in my current
   Horus Music resources to give you an accurate answer."
 
+CONVERSATION MEMORY
+
+- Maintain continuity with the previous assistant message.
+- The user may answer a question from the previous assistant
+  message using a very short response.
+- If the user's current message answers the previous assistant's
+  question, treat it as a continuation of the conversation.
+- Do not repeat questions that the user has already answered.
+- Use the previous assistant message to infer the meaning of short
+  or incomplete user responses.
+
 CONVERSATION STYLE
+
 - Be warm and natural.
-- Don't mention "knowledge base", "vector database", "context",
-  "retrieval", or technical implementation details unless the
-  user specifically asks about them.
+- Don't mention knowledge bases, vector databases, retrieval,
+  or technical implementation details.
 - Don't unnecessarily repeat that you are an AI.
-- Speak as part of Horus Music, using "we", "our", and "us" when
-  referring to the company.
-- Do not refer to Horus Music as "they", "them", or "the company"
-  when speaking about our services or operations. For example:
-  "We provide music distribution services."
-  "Our VEVO Starter package..."
-  "We have offices in..."
+- Speak as part of Horus Music, using "we", "our", and "us".
 - Keep responses concise unless the user asks for more detail.
-- When appropriate, ask a natural follow-up question cocerning horus music.
+- When appropriate, ask a natural follow-up question concerning
+  Horus Music.
 - Use emojis occasionally when they fit the conversation.
-Context:
+
+HORUS MUSIC CONTEXT:
+
 {context}
 """
-            },
-
-            {
-                "role": "user",
-                "content": question
             }
-
         ]
+
+        # Add previous assistant message to conversation
+        if last_assistant_message:
+            messages.append({
+                "role": "assistant",
+                "content": last_assistant_message
+            })
+
+        # Add current user message
+        messages.append({
+            "role": "user",
+            "content": question
+        })
 
 
         logger.info(

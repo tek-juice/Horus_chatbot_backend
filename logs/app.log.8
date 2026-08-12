@@ -1,97 +1,149 @@
-2026-08-10 14:10:20,333 ERROR config.model_engine.model_streamer: Unexpected error generating response: Error code: 400 - {'status': 400, 'title': 'Bad Request', 'detail': "Function id 'e62a4350-2218-4cf5-9262-112432d239f8': DEGRADED function cannot be invoked"}
+2026-08-12 09:33:40,160 ERROR routes.chat: Error fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
 Traceback (most recent call last):
-  File "/app/config/model_engine/model_streamer.py", line 110, in stream_answer
-    stream = client.chat.completions.create(
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
-    return self._post(
-           ^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1375, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1148, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.BadRequestError: Error code: 400 - {'status': 400, 'title': 'Bad Request', 'detail': "Function id 'e62a4350-2218-4cf5-9262-112432d239f8': DEGRADED function cannot be invoked"}
-2026-08-10 14:10:20,375 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:10:20] "POST /chat HTTP/1.1" 200 -
-2026-08-10 14:10:37,963 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:10:37] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-10 14:10:37,974 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 14:10:37,975 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-10 14:10:37,975 INFO config.model_engine.vector_search: Starting document search. Question length: 3, top_k=3, similarity_threshold=0.5
-2026-08-10 14:10:37,975 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-10 14:10:37,976 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-10 14:10:37,976 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-10 14:10:37,980 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-10 14:10:37,981 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-10 14:10:37,984 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-10 14:10:37,984 INFO config.model_engine.vector_search: Result 1: similarity=0.6084, distance=0.3916
-2026-08-10 14:10:37,985 INFO config.model_engine.vector_search: Result 2: similarity=0.5431, distance=0.4569
-2026-08-10 14:10:37,985 INFO config.model_engine.vector_search: Result 3: similarity=0.5412, distance=0.4588
-2026-08-10 14:10:37,985 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-10 14:10:37,985 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
-2026-08-10 14:10:37,986 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-10 14:10:51,781 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 14:10:51,805 INFO routes.chat: Retrieved 139 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 14:10:51,807 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:10:51] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
-2026-08-10 14:10:57,239 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 14:10:57,244 INFO routes.chat: Retrieved 139 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 14:10:57,247 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:10:57] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
-2026-08-10 14:10:58,335 INFO openai._base_client: Retrying request to /chat/completions in 0.452544 seconds
-2026-08-10 14:10:59,267 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
-2026-08-10 14:10:59,269 ERROR config.model_engine.model_streamer: Unexpected error generating response: Error code: 400 - {'status': 400, 'title': 'Bad Request', 'detail': "Function id 'e62a4350-2218-4cf5-9262-112432d239f8': DEGRADED function cannot be invoked"}
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 144, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3319, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres" to address: Name or service not known
+
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
-  File "/app/config/model_engine/model_streamer.py", line 110, in stream_answer
-    stream = client.chat.completions.create(
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_utils/_utils.py", line 298, in wrapper
-    return func(*args, **kwargs)
+  File "/app/routes/chat.py", line 307, in get_session_messages
+    session = ChatSession.query.filter_by(chat_id=chat_id).first()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2766, in first
+    return self.limit(1)._iter().first()  # type: ignore
            ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1296, in create
-    return self._post(
-           ^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1375, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1148, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.BadRequestError: Error code: 400 - {'status': 400, 'title': 'Bad Request', 'detail': "Function id 'e62a4350-2218-4cf5-9262-112432d239f8': DEGRADED function cannot be invoked"}
-2026-08-10 14:10:59,273 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:10:59] "POST /chat HTTP/1.1" 200 -
-2026-08-10 14:13:14,545 INFO werkzeug:  * Detected change in '/app/config/model_engine/model_streamer.py', reloading
-2026-08-10 14:14:33,812 INFO root: Starting Horus Backend Application
-2026-08-10 14:14:33,832 INFO root: Routes registered successfully
-2026-08-10 14:14:33,833 INFO root: Running development server
-2026-08-10 14:14:33,848 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2373, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2261, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2113, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1191, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3295, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2450, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 144, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3319, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-08-12 09:33:40,252 INFO werkzeug: 172.18.0.1 - - [12/Aug/2026 09:33:40] "[35m[1mGET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1[0m" 500 -
+2026-08-12 09:39:34,658 INFO root: Starting Horus Backend Application
+2026-08-12 09:39:34,703 INFO root: Routes registered successfully
+2026-08-12 09:39:34,704 INFO root: Running development server
+2026-08-12 09:39:34,743 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-08-10 14:14:33,848 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-10 14:14:33,850 INFO werkzeug:  * Restarting with stat
-2026-08-10 14:14:39,046 INFO root: Starting Horus Backend Application
-2026-08-10 14:14:39,069 INFO root: Routes registered successfully
-2026-08-10 14:14:39,070 INFO root: Running development server
-2026-08-10 14:14:39,079 WARNING werkzeug:  * Debugger is active!
-2026-08-10 14:14:39,080 INFO werkzeug:  * Debugger PIN: 116-076-461
-2026-08-10 14:17:20,462 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 14:17:20,502 INFO routes.chat: Retrieved 140 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 14:17:20,505 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:17:20] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
-2026-08-10 14:17:22,352 INFO werkzeug: 172.18.0.1 - - [10/Aug/2026 14:17:22] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-10 14:17:22,365 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-10 14:17:22,365 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-10 14:17:22,366 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
-2026-08-10 14:17:22,366 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-10 14:17:22,366 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-10 14:17:22,366 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-10 14:17:22,377 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-10 14:17:22,378 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-10 14:17:22,383 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-10 14:17:22,383 INFO config.model_engine.vector_search: Result 1: similarity=0.7661, distance=0.2339
-2026-08-10 14:17:22,384 INFO config.model_engine.vector_search: Result 2: similarity=0.7042, distance=0.2958
-2026-08-10 14:17:22,384 INFO config.model_engine.vector_search: Result 3: similarity=0.6909, distance=0.3091
-2026-08-10 14:17:22,384 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-10 14:17:22,385 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-10 14:17:22,385 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-10 14:17:23,309 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-10 14:17:23,309 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-10 14:18:02,172 INFO werkzeug:  * Restarting with stat
+ * Running on http://172.18.0.2:5000
+2026-08-12 09:39:34,745 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-12 09:39:34,748 INFO werkzeug:  * Restarting with stat
+2026-08-12 09:39:44,437 INFO root: Starting Horus Backend Application
+2026-08-12 09:39:44,488 INFO root: Routes registered successfully
+2026-08-12 09:39:44,489 INFO root: Running development server
+2026-08-12 09:39:44,505 WARNING werkzeug:  * Debugger is active!
+2026-08-12 09:39:44,506 INFO werkzeug:  * Debugger PIN: 620-920-771
+2026-08-12 09:43:32,788 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
