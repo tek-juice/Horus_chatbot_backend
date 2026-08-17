@@ -1,92 +1,92 @@
-2026-08-17 08:00:44,287 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 08:00:44,322 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 08:00:44,322 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 08:00:44,361 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 08:00:44,362 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 08:00:44,387 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 08:00:44,387 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
-2026-08-17 08:00:44,388 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
-2026-08-17 08:00:44,388 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
-2026-08-17 08:00:44,388 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 08:00:44,389 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
-2026-08-17 08:00:44,389 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:00:44,400 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:00:44,400 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 08:00:45,869 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 08:00:45,870 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 08:01:02,953 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:02] "POST /chat HTTP/1.1" 200 -
-2026-08-17 08:01:04,822 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 08:01:21,088 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:21] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 08:01:21,108 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:01:21,108 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 08:01:21,108 INFO config.model_engine.vector_search: Starting document search. Question length: 31, top_k=3, similarity_threshold=0.5
-2026-08-17 08:01:21,109 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 08:01:21,109 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 08:01:21,109 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 08:01:21,116 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 08:01:21,117 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 08:01:21,121 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 08:01:21,121 INFO config.model_engine.vector_search: Result 1: similarity=0.6223, distance=0.3777
-2026-08-17 08:01:21,121 INFO config.model_engine.vector_search: Result 2: similarity=0.6175, distance=0.3825
-2026-08-17 08:01:21,122 INFO config.model_engine.vector_search: Result 3: similarity=0.6143, distance=0.3857
-2026-08-17 08:01:21,122 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 08:01:21,122 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 08:01:21,123 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:01:21,125 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:01:21,126 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 08:01:21,858 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 08:01:21,859 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 08:01:22,494 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:22] "POST /chat HTTP/1.1" 200 -
-2026-08-17 08:01:39,994 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 08:01:44,954 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:44] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 08:01:44,963 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:01:44,963 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 08:01:44,964 INFO config.model_engine.vector_search: Starting document search. Question length: 10, top_k=3, similarity_threshold=0.5
-2026-08-17 08:01:44,964 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 08:01:44,965 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 08:01:44,965 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 08:01:44,971 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 08:01:44,972 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 08:01:44,975 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 08:01:44,975 INFO config.model_engine.vector_search: Result 1: similarity=0.5768, distance=0.4232
-2026-08-17 08:01:44,976 INFO config.model_engine.vector_search: Result 2: similarity=0.5580, distance=0.4420
-2026-08-17 08:01:44,976 INFO config.model_engine.vector_search: Result 3: similarity=0.5549, distance=0.4451
-2026-08-17 08:01:44,976 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 08:01:44,976 INFO config.model_engine.model_streamer: Context created. Length=1165 characters.
-2026-08-17 08:01:44,977 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:01:44,979 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:01:44,979 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 08:01:45,792 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 08:01:45,792 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 08:01:46,427 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:46] "POST /chat HTTP/1.1" 200 -
-2026-08-17 08:01:57,546 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 08:02:01,684 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:02:01] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 08:02:01,692 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:02:01,692 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 08:02:01,692 INFO config.model_engine.vector_search: Starting document search. Question length: 10, top_k=3, similarity_threshold=0.5
-2026-08-17 08:02:01,693 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 08:02:01,693 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 08:02:01,693 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 08:02:01,697 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 08:02:01,698 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 08:02:01,701 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 08:02:01,702 INFO config.model_engine.vector_search: Result 1: similarity=0.5768, distance=0.4232
-2026-08-17 08:02:01,702 INFO config.model_engine.vector_search: Result 2: similarity=0.5580, distance=0.4420
-2026-08-17 08:02:01,702 INFO config.model_engine.vector_search: Result 3: similarity=0.5549, distance=0.4451
-2026-08-17 08:02:01,702 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 08:02:01,702 INFO config.model_engine.model_streamer: Context created. Length=1165 characters.
-2026-08-17 08:02:01,703 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:02:01,705 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:02:01,705 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 08:02:02,416 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 08:02:02,417 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 08:02:02,937 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:02:02] "POST /chat HTTP/1.1" 200 -
-2026-08-17 08:02:08,922 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 08:02:22,196 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:02:22] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 08:02:22,211 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 08:02:22,211 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 08:02:22,212 INFO config.model_engine.vector_search: Starting document search. Question length: 33, top_k=3, similarity_threshold=0.5
-2026-08-17 08:02:22,212 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 08:02:22,212 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 08:02:22,213 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 08:02:22,219 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:27:20,225 INFO config.model_engine.vector_search: Starting document search. Question length: 12, top_k=3, similarity_threshold=0.5
+2026-08-17 08:27:20,257 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:27:20,258 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:27:20,258 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:27:20,262 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:27:20,263 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 08:27:20,266 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 08:27:20,266 INFO config.model_engine.vector_search: Result 1: similarity=0.6121, distance=0.3879
+2026-08-17 08:27:20,266 INFO config.model_engine.vector_search: Result 2: similarity=0.5669, distance=0.4331
+2026-08-17 08:27:20,266 INFO config.model_engine.vector_search: Result 3: similarity=0.5599, distance=0.4401
+2026-08-17 08:27:20,267 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 08:27:20,267 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-17 08:27:20,267 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:27:20,269 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:27:20,269 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 08:27:20,823 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 08:27:20,823 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 08:27:20,858 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:27:20] "POST /chat HTTP/1.1" 200 -
+2026-08-17 08:27:21,058 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 08:27:26,418 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:27:26] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 08:27:26,437 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:27:26,438 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 08:27:26,438 INFO config.model_engine.vector_search: Starting document search. Question length: 3, top_k=3, similarity_threshold=0.5
+2026-08-17 08:27:26,438 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:27:26,439 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:27:26,439 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:27:26,443 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:27:26,443 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 08:27:26,446 INFO config.model_engine.vector_search: Document search completed. Found 2 relevant results.
+2026-08-17 08:27:26,446 INFO config.model_engine.vector_search: Result 1: similarity=0.5273, distance=0.4727
+2026-08-17 08:27:26,446 INFO config.model_engine.vector_search: Result 2: similarity=0.5027, distance=0.4973
+2026-08-17 08:27:26,447 INFO config.model_engine.model_streamer: Retrieved 2 document chunks.
+2026-08-17 08:27:26,447 INFO config.model_engine.model_streamer: Context created. Length=567 characters.
+2026-08-17 08:27:26,447 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:27:26,450 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:27:26,450 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 08:27:26,999 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 08:27:27,001 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 08:27:27,024 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:27:27] "POST /chat HTTP/1.1" 200 -
+2026-08-17 08:27:27,183 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 08:27:33,857 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:27:33] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 08:27:33,867 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:27:33,868 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 08:27:33,868 INFO config.model_engine.vector_search: Starting document search. Question length: 8, top_k=3, similarity_threshold=0.5
+2026-08-17 08:27:33,868 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:27:33,868 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:27:33,869 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:27:33,874 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:27:33,875 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 08:27:33,879 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 08:27:33,879 INFO config.model_engine.vector_search: Result 1: similarity=0.6138, distance=0.3862
+2026-08-17 08:27:33,879 INFO config.model_engine.vector_search: Result 2: similarity=0.6115, distance=0.3885
+2026-08-17 08:27:33,880 INFO config.model_engine.vector_search: Result 3: similarity=0.5991, distance=0.4009
+2026-08-17 08:27:33,880 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 08:27:33,880 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
+2026-08-17 08:27:33,880 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:27:33,883 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:27:33,884 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 08:27:34,399 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 08:27:34,400 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 08:27:34,444 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:27:34] "POST /chat HTTP/1.1" 200 -
+2026-08-17 08:27:35,018 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 08:28:42,157 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:28:42] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 08:28:42,171 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:28:42,171 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 08:28:42,172 INFO config.model_engine.vector_search: Starting document search. Question length: 18, top_k=3, similarity_threshold=0.5
+2026-08-17 08:28:42,172 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:28:42,173 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:28:42,173 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:28:42,179 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:28:42,180 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 08:28:42,183 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 08:28:42,184 INFO config.model_engine.vector_search: Result 1: similarity=0.7331, distance=0.2669
+2026-08-17 08:28:42,184 INFO config.model_engine.vector_search: Result 2: similarity=0.7221, distance=0.2779
+2026-08-17 08:28:42,184 INFO config.model_engine.vector_search: Result 3: similarity=0.7189, distance=0.2811
+2026-08-17 08:28:42,184 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 08:28:42,185 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
+2026-08-17 08:28:42,185 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:28:42,189 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:28:42,189 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 08:28:42,745 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 08:28:42,746 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 08:28:42,786 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:28:42] "POST /chat HTTP/1.1" 200 -
+2026-08-17 08:28:43,158 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 08:35:26,888 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:35:26] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 08:35:26,910 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:35:26,910 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 08:35:26,911 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
+2026-08-17 08:35:26,911 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:35:26,912 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:35:26,912 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:35:26,922 INFO config.model_engine.vector_search: Query embedding generated successfully.

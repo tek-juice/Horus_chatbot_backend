@@ -15,6 +15,7 @@ from config.speech.speech_service import speech_to_text, text_to_speech
 from config.speech.chat_service import generate_answer
 import tempfile
 import os
+from config.limit_config.limiter import limiter
 
 
 logger = logging.getLogger(__name__)
@@ -24,6 +25,8 @@ chat_bp = Blueprint("chat", __name__)
 
 speech_bp = Blueprint("speech", __name__, url_prefix="/speech")
 
+
+@limiter.limit("30 per minute")
 @chat_bp.route("/chat/start", methods=["POST"])
 @swag_from({
     "tags": ["Chatbot"],
@@ -125,6 +128,7 @@ def start_chat():
             "error": "Internal server error."
         }), 500
 
+@limiter.limit("30 per minute")
 @chat_bp.route("/chat", methods=["POST"])
 @swag_from({
     "tags": ["Chatbot"],
@@ -240,6 +244,7 @@ def chat():
         },
     )
 
+@limiter.limit("30 per minute")
 @chat_bp.route("/messages/<string:chat_id>", methods=["GET"])
 @swag_from({
     "tags": ["Chatbot"],
@@ -344,7 +349,7 @@ def get_session_messages(chat_id):
             "error": "An unexpected error occurred while fetching chat messages."
         }), 500
 
-
+@limiter.limit("30 per minute")
 @speech_bp.route("/chat-speech", methods=["POST"])
 @swag_from({
     "tags": ["Speech"],

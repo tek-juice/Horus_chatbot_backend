@@ -14,6 +14,8 @@ from itsdangerous import URLSafeTimedSerializer
 from config.helpers.email import send_password_reset_email
 from itsdangerous import (URLSafeTimedSerializer, SignatureExpired, BadSignature)
 from config.helpers.helpers import admin_required, super_admin_required, admin_or_super_admin_required
+from config.limit_config.limiter import limiter
+
 
 auth =  Blueprint("auth", __name__, url_prefix="/auth")
 chat_user_bp =  Blueprint("chat_user_bp", __name__, url_prefix="/auth")
@@ -21,6 +23,7 @@ chat_user_bp =  Blueprint("chat_user_bp", __name__, url_prefix="/auth")
 logger = logging.getLogger(__name__)
 
 # REGISTER ADMIN 
+@limiter.limit("30 per minute")
 @auth.route("/register-admin", methods=["POST"])
 @super_admin_required
 @swag_from({
@@ -193,6 +196,7 @@ def register_admin():
         }), 500
     
 # REGISTER SUPER ADMIN
+@limiter.limit("30 per minute")
 @auth.route("/register-super-admin", methods=["POST"])
 # @super_admin_required
 @swag_from({
@@ -350,6 +354,8 @@ def register_super_admin():
     
 
 # SUPER ADMIN 
+@limiter.limit("30 per minute")
+@limiter.limit("30 per minute")
 @auth.post("/super-admin/login")
 @swag_from({
     "tags": ["Super Admin Auth"],
@@ -605,6 +611,7 @@ def super_admin_login():
     
 
 # ADMIN LOGIN 
+@limiter.limit("30 per minute")
 @auth.post("/admin/login")
 @swag_from({
     "tags": ["Admin Auth"],
@@ -855,6 +862,7 @@ def admin_login():
 
 
 # SEND LINK TO SUPER ADMIN FORGOT PASSWORD 
+@limiter.limit("30 per minute")
 @auth.post("/super-admin/forgot-password")
 @swag_from({
     "tags": ["Super Admin Auth"],
@@ -1025,6 +1033,7 @@ def super_admin_forgot_password():
     
 
 # CHANGE PASSWORD FOR FORGOT PASSWORD FOR SUPER ADMIN 
+@limiter.limit("30 per minute")
 @auth.post("/super-admin/reset-password/<token>")
 @swag_from({
     "tags": ["Super Admin Auth"],
@@ -1253,6 +1262,7 @@ def reset_super_admin_password(token):
 
 
 # SEND LIINK TO  ADMIN FORGOT PASSWORD 
+@limiter.limit("30 per minute")
 @auth.post("/admin/forgot-password")
 @swag_from({
     "tags": ["Admin Auth"],
@@ -1423,6 +1433,7 @@ def admin_forgot_password():
     
 
 # CHANGE PASSWORD FOR FORGOT PASSWORD FOR ADMIN 
+@limiter.limit("30 per minute")
 @auth.post("/admin/reset-password/<token>")
 @swag_from({
     "tags": ["Admin Auth"],
@@ -1629,6 +1640,7 @@ def reset_admin_password(token):
 
 
 # SUPER ADMIN FORGOT PASSWORD 
+@limiter.limit("30 per minute")
 @auth.post("/super-admin-change-password")
 @super_admin_required
 @swag_from({
@@ -1782,6 +1794,7 @@ def super_admin_change_password():
     
 
 # ADMIN CHANGE PASSWORD 
+@limiter.limit("30 per minute")
 @auth.post("/admin-change-password")
 @swag_from({
     "tags": ["Admin Auth"],
@@ -1985,7 +1998,7 @@ def admin_change_password():
             "message": "An unexpected error occurred."
         }), 500
     
-
+@limiter.limit("30 per minute")
 @auth.get("/admins")
 @super_admin_required
 @swag_from({
@@ -2125,7 +2138,8 @@ def get_admins():
             "success": False,
             "message": "An unexpected error occurred while retrieving admins."
         }), 500
-    
+
+@limiter.limit("30 per minute")
 @auth.delete("/admins/<int:admin_id>")
 @super_admin_required
 @swag_from({
@@ -2294,7 +2308,7 @@ def delete_admin(admin_id):
             "message": "An unexpected error occurred while deleting the admin."
         }), 500
 
-
+@limiter.limit("30 per minute")
 @chat_user_bp.route("/chat_users", methods=["GET"])
 @admin_or_super_admin_required
 @swag_from({
@@ -2408,6 +2422,7 @@ def get_users():
             "message": "Failed to fetch users."
         }), 500
 
+@limiter.limit("30 per minute")
 @chat_user_bp.route("/users/<int:user_id>/sessions", methods=["GET"])
 @admin_or_super_admin_required
 @swag_from({
@@ -2498,7 +2513,7 @@ def get_user_sessions(user_id):
             "message": "Failed to fetch user sessions."
         }), 500
 
-
+@limiter.limit("30 per minute")
 @chat_user_bp.route("/dashboard/statistics", methods=["GET"])
 @admin_or_super_admin_required
 @swag_from({

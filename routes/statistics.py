@@ -6,12 +6,14 @@ from config.extensions.database_config import db
 import logging
 from flasgger import swag_from
 from models.users import User, UserStatus, UserRole, MessageRole, ChatMessage, ChatSession
+from config.limit_config.limiter import limiter
 
 
 logger = logging.getLogger(__name__)
 
 stat_bp = Blueprint("stat", __name__)
 
+@limiter.limit("30 per minute")
 @stat_bp.get("/super-admin/stats")
 @super_admin_required
 @swag_from({

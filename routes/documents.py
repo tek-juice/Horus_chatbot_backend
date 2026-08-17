@@ -9,6 +9,7 @@ from models.document import Document, DocumentChunk
 import mimetypes
 import os
 from config.extensions.database_config import db
+from config.limit_config.limiter import limiter
 
 
 UPLOAD_FOLDER = os.path.abspath("uploads/documents")
@@ -16,6 +17,8 @@ UPLOAD_FOLDER = os.path.abspath("uploads/documents")
 logger = logging.getLogger(__name__)
 
 document = Blueprint("document", __name__, url_prefix="/document")
+
+@limiter.limit("30 per minute")
 @document.post("/ingest")
 @admin_or_super_admin_required
 @swag_from({
@@ -107,6 +110,7 @@ def upload_document():
             # "message": "An unexpected error occurred while ingesting the document."
         }), 500
 
+@limiter.limit("30 per minute")
 @document.get("/view-list-documents")
 @admin_or_super_admin_required
 @swag_from({
@@ -214,6 +218,8 @@ def get_documents():
             "error": "Unable to fetch documents."
         }), 500
 
+
+@limiter.limit("30 per minute")
 @document.get("/view-document/<int:document_id>")
 @admin_or_super_admin_required
 @swag_from({
@@ -379,7 +385,7 @@ def view_document(document_id):
             "error": "An unexpected error occurred."
         }), 500
 
-
+@limiter.limit("30 per minute")
 @document.delete("/delete-document/<int:document_id>")
 @admin_or_super_admin_required
 @swag_from({

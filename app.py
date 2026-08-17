@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 from config.logs.logs import setup_logging
 from config.helpers.email import mail
 from flask_cors import CORS
+from config.limit_config.limiter import limiter
 
 
 load_dotenv()
@@ -38,6 +39,7 @@ def create_app():
     migrate.init_app(app, db)
     jwt.init_app(app)
     mail.init_app(app)
+    limiter.init_app(app)
     # CORS(app, origins=["http://localhost:5173", "http://localhost:5173"])
     CORS(
         app,
