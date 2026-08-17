@@ -1,135 +1,92 @@
-2026-08-12 09:33:25,829 ERROR routes.chat: Error fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 144, in __init__
-    self._dbapi_connection = engine.raw_connection()
-                             ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3319, in raw_connection
-    return self.pool.connect()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 448, in connect
-    return _ConnectionFairy._checkout(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
-    fairy = _ConnectionRecord.checkout(pool)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
-    rec = pool._do_get()
-          ^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
-    with util.safe_reraise():
-         ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
-    raise exc_value.with_traceback(exc_tb)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
-    return self._create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
-    return _ConnectionRecord(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
-    self.__connect()
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
-    with util.safe_reraise():
-         ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
-    raise exc_value.with_traceback(exc_tb)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
-    self.dbapi_connection = connection = pool._invoke_creator(self)
-                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 667, in connect
-    return dialect.connect(*cargs_tup, **cparams)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 630, in connect
-    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
-    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-psycopg2.OperationalError: could not translate host name "postgres" to address: Name or service not known
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/app/routes/chat.py", line 307, in get_session_messages
-    session = ChatSession.query.filter_by(chat_id=chat_id).first()
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2766, in first
-    return self.limit(1)._iter().first()  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2864, in _iter
-    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
-                                                  ^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2373, in execute
-    return self._execute_internal(
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2261, in _execute_internal
-    conn = self._connection_for_bind(bind)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2113, in _connection_for_bind
-    return trans._connection_for_bind(engine, execution_options)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 2, in _connection_for_bind
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
-    ret_value = fn(self, *arg, **kw)
-                ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1191, in _connection_for_bind
-    conn = bind.connect()
-           ^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3295, in connect
-    return self._connection_cls(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
-    Connection._handle_dbapi_exception_noconnection(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2450, in _handle_dbapi_exception_noconnection
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 144, in __init__
-    self._dbapi_connection = engine.raw_connection()
-                             ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3319, in raw_connection
-    return self.pool.connect()
-           ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 448, in connect
-    return _ConnectionFairy._checkout(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
-    fairy = _ConnectionRecord.checkout(pool)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
-    rec = pool._do_get()
-          ^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
-    with util.safe_reraise():
-         ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
-    raise exc_value.with_traceback(exc_tb)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
-    return self._create_connection()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
-    return _ConnectionRecord(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
-    self.__connect()
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
-    with util.safe_reraise():
-         ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
-    raise exc_value.with_traceback(exc_tb)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
-    self.dbapi_connection = connection = pool._invoke_creator(self)
-                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 667, in connect
-    return dialect.connect(*cargs_tup, **cparams)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 630, in connect
-    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
-    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Name or service not known
-
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
-2026-08-12 09:33:26,017 INFO werkzeug: 172.18.0.1 - - [12/Aug/2026 09:33:26] "[35m[1mGET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1[0m" 500 -
-2026-08-12 09:33:36,617 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:00:44,287 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:00:44,322 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:00:44,322 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:00:44,361 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:00:44,362 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 08:00:44,387 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 08:00:44,387 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
+2026-08-17 08:00:44,388 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
+2026-08-17 08:00:44,388 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
+2026-08-17 08:00:44,388 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 08:00:44,389 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-17 08:00:44,389 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:00:44,400 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:00:44,400 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 08:00:45,869 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 08:00:45,870 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 08:01:02,953 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:02] "POST /chat HTTP/1.1" 200 -
+2026-08-17 08:01:04,822 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 08:01:21,088 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:21] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 08:01:21,108 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:01:21,108 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 08:01:21,108 INFO config.model_engine.vector_search: Starting document search. Question length: 31, top_k=3, similarity_threshold=0.5
+2026-08-17 08:01:21,109 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:01:21,109 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:01:21,109 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:01:21,116 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:01:21,117 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 08:01:21,121 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 08:01:21,121 INFO config.model_engine.vector_search: Result 1: similarity=0.6223, distance=0.3777
+2026-08-17 08:01:21,121 INFO config.model_engine.vector_search: Result 2: similarity=0.6175, distance=0.3825
+2026-08-17 08:01:21,122 INFO config.model_engine.vector_search: Result 3: similarity=0.6143, distance=0.3857
+2026-08-17 08:01:21,122 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 08:01:21,122 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
+2026-08-17 08:01:21,123 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:01:21,125 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:01:21,126 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 08:01:21,858 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 08:01:21,859 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 08:01:22,494 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:22] "POST /chat HTTP/1.1" 200 -
+2026-08-17 08:01:39,994 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 08:01:44,954 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:44] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 08:01:44,963 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:01:44,963 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 08:01:44,964 INFO config.model_engine.vector_search: Starting document search. Question length: 10, top_k=3, similarity_threshold=0.5
+2026-08-17 08:01:44,964 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:01:44,965 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:01:44,965 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:01:44,971 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:01:44,972 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 08:01:44,975 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 08:01:44,975 INFO config.model_engine.vector_search: Result 1: similarity=0.5768, distance=0.4232
+2026-08-17 08:01:44,976 INFO config.model_engine.vector_search: Result 2: similarity=0.5580, distance=0.4420
+2026-08-17 08:01:44,976 INFO config.model_engine.vector_search: Result 3: similarity=0.5549, distance=0.4451
+2026-08-17 08:01:44,976 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 08:01:44,976 INFO config.model_engine.model_streamer: Context created. Length=1165 characters.
+2026-08-17 08:01:44,977 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:01:44,979 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:01:44,979 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 08:01:45,792 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 08:01:45,792 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 08:01:46,427 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:01:46] "POST /chat HTTP/1.1" 200 -
+2026-08-17 08:01:57,546 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 08:02:01,684 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:02:01] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 08:02:01,692 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:02:01,692 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 08:02:01,692 INFO config.model_engine.vector_search: Starting document search. Question length: 10, top_k=3, similarity_threshold=0.5
+2026-08-17 08:02:01,693 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:02:01,693 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:02:01,693 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:02:01,697 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 08:02:01,698 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 08:02:01,701 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 08:02:01,702 INFO config.model_engine.vector_search: Result 1: similarity=0.5768, distance=0.4232
+2026-08-17 08:02:01,702 INFO config.model_engine.vector_search: Result 2: similarity=0.5580, distance=0.4420
+2026-08-17 08:02:01,702 INFO config.model_engine.vector_search: Result 3: similarity=0.5549, distance=0.4451
+2026-08-17 08:02:01,702 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 08:02:01,702 INFO config.model_engine.model_streamer: Context created. Length=1165 characters.
+2026-08-17 08:02:01,703 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:02:01,705 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:02:01,705 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 08:02:02,416 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 08:02:02,417 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 08:02:02,937 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:02:02] "POST /chat HTTP/1.1" 200 -
+2026-08-17 08:02:08,922 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 08:02:22,196 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 08:02:22] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 08:02:22,211 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 08:02:22,211 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 08:02:22,212 INFO config.model_engine.vector_search: Starting document search. Question length: 33, top_k=3, similarity_threshold=0.5
+2026-08-17 08:02:22,212 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 08:02:22,212 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 08:02:22,213 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 08:02:22,219 INFO config.model_engine.vector_search: Query embedding generated successfully.

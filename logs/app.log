@@ -1,1 +1,18 @@
-2026-08-12 11:57:32,756 INFO werkzeug: 172.18.0.1 - - [12/Aug/2026 11:57:32] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
+2026-08-17 09:41:13,179 INFO config.model_engine.vector_search: Starting document search. Question length: 9, top_k=3, similarity_threshold=0.5
+2026-08-17 09:41:13,208 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 09:41:13,208 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 09:41:13,209 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 09:41:13,213 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 09:41:13,213 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 09:41:13,216 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 09:41:13,216 INFO config.model_engine.vector_search: Result 1: similarity=0.6017, distance=0.3983
+2026-08-17 09:41:13,216 INFO config.model_engine.vector_search: Result 2: similarity=0.5899, distance=0.4101
+2026-08-17 09:41:13,216 INFO config.model_engine.vector_search: Result 3: similarity=0.5831, distance=0.4169
+2026-08-17 09:41:13,217 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 09:41:13,217 INFO config.model_engine.model_streamer: Context created. Length=1106 characters.
+2026-08-17 09:41:13,217 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 09:41:13,219 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-17 09:41:13,219 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 09:41:13,954 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 09:41:13,956 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 09:41:14,057 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:41:14] "POST /chat HTTP/1.1" 200 -

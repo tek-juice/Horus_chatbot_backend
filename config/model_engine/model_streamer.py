@@ -16,7 +16,12 @@ client = OpenAI(
 
 
 # MODEL = "deepseek-ai/deepseek-v4-flash-0731"
-MODEL = "meta/llama-3.2-3b-instruct"
+MODEL = "nvidia/nemotron-3.5-lightning-30b-a3b"
+# MODEL = "meta/llama-3.2-3b-instruct"
+# MODEL = "meta/muse-glimmer-30b"
+# MODEL = "nvidia/nemotron-mini-4b-instruct"
+# MODEL = "nvidia/nemotron-3-nano-30b-a3b"
+# MODEL = "thinkingmachines/inkling"
 
 
 def stream_answer(session_id: int, question: str):
@@ -148,6 +153,10 @@ HORUS MUSIC CONTEXT:
             max_tokens=1024,
             stream=True,
             timeout=120.0,
+            extra_body={
+                "chat_template_kwargs": {
+                "enable_thinking": False
+            }}
         )
 
 
