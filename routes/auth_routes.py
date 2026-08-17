@@ -1052,7 +1052,7 @@ def super_admin_forgot_password():
         )
 
         reset_url = (
-            f"http://localhost:3000/reset-password/{token}"
+            f"http://localhost:5173/reset-password/{token}"
         )
 
         send_password_reset_email(
@@ -1452,7 +1452,7 @@ def admin_forgot_password():
         )
 
         reset_url = (
-            f"http://localhost:3000/reset-password/{token}"
+            f"http://localhost:5173/reset-password/{token}"
         )
 
         send_password_reset_email(

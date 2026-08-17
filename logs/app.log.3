@@ -1,105 +1,91 @@
-2026-08-17 11:28:26,787 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:28:39,114 INFO root: Starting Horus Backend Application
-2026-08-17 11:28:39,189 INFO root: Routes registered successfully
-2026-08-17 11:28:39,190 INFO root: Running development server
-2026-08-17 11:28:39,213 WARNING werkzeug:  * Debugger is active!
-2026-08-17 11:28:39,215 INFO werkzeug:  * Debugger PIN: 692-651-713
-2026-08-17 11:32:34,688 INFO werkzeug:  * Detected change in '/app/config/limit_config/limiter.py', reloading
-2026-08-17 11:32:35,332 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:32:44,341 INFO root: Starting Horus Backend Application
-2026-08-17 11:32:44,456 INFO root: Routes registered successfully
-2026-08-17 11:32:44,457 INFO root: Running development server
-2026-08-17 11:32:44,489 WARNING werkzeug:  * Debugger is active!
-2026-08-17 11:32:44,491 INFO werkzeug:  * Debugger PIN: 692-651-713
-2026-08-17 11:33:29,875 INFO werkzeug:  * Detected change in '/app/app.py', reloading
-2026-08-17 11:33:30,930 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:33:41,246 INFO root: Starting Horus Backend Application
-2026-08-17 11:33:41,338 INFO root: Routes registered successfully
-2026-08-17 11:33:41,339 INFO root: Running development server
-2026-08-17 11:33:41,364 WARNING werkzeug:  * Debugger is active!
-2026-08-17 11:33:41,365 INFO werkzeug:  * Debugger PIN: 692-651-713
-2026-08-17 11:33:42,366 INFO werkzeug:  * Detected change in '/app/app.py', reloading
-2026-08-17 11:33:43,168 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:44:02,612 INFO root: Starting Horus Backend Application
-2026-08-17 11:44:02,707 INFO root: Routes registered successfully
-2026-08-17 11:44:02,708 INFO root: Running development server
-2026-08-17 11:44:02,792 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-08-17 11:44:02,793 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-17 11:44:02,798 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:44:14,389 INFO root: Starting Horus Backend Application
-2026-08-17 11:44:14,481 INFO root: Routes registered successfully
-2026-08-17 11:44:14,482 INFO root: Running development server
-2026-08-17 11:44:14,511 WARNING werkzeug:  * Debugger is active!
-2026-08-17 11:44:14,520 INFO werkzeug:  * Debugger PIN: 149-751-208
-2026-08-17 11:45:16,617 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:16] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-08-17 11:45:16,630 INFO routes.chat: Starting new chat session.
-2026-08-17 11:45:16,632 INFO routes.chat: Looking up user with email: ishmael.ayebazibwe@tekjuice.co.uk
-2026-08-17 11:45:16,932 INFO routes.chat: User not found. Creating new user: ishmael.ayebazibwe@tekjuice.co.uk
-2026-08-17 11:45:16,954 INFO routes.chat: Creating chat session for user ID: 20
-2026-08-17 11:45:16,969 INFO routes.chat: Chat session created successfully. Session ID: 168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:16,971 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:16] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-08-17 11:45:22,139 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:22] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 11:45:22,173 INFO config.model_engine.model_streamer: Starting AI response generation. Session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:22,174 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 11:45:22,174 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
-2026-08-17 11:45:22,174 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 11:45:22,175 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 11:45:22,176 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 11:45:22,206 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 11:45:22,207 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 11:45:22,273 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 11:45:22,273 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
-2026-08-17 11:45:22,274 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
-2026-08-17 11:45:22,274 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
-2026-08-17 11:45:22,275 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 11:45:22,275 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
-2026-08-17 11:45:22,276 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:22,287 INFO config.model_engine.memory_service: No previous assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:22,288 INFO config.model_engine.model_streamer: No previous assistant message found for session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:22,288 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 11:45:24,224 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 11:45:24,225 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 11:45:24,284 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:24] "POST /chat HTTP/1.1" 200 -
-2026-08-17 11:45:24,442 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 11:45:44,478 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:44] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 11:45:44,526 INFO config.model_engine.model_streamer: Starting AI response generation. Session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:44,527 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 11:45:44,528 INFO config.model_engine.vector_search: Starting document search. Question length: 19, top_k=3, similarity_threshold=0.5
-2026-08-17 11:45:44,528 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 11:45:44,529 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 11:45:44,529 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 11:45:44,537 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 11:45:44,539 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 11:45:44,542 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 11:45:44,543 INFO config.model_engine.vector_search: Result 1: similarity=0.7277, distance=0.2723
-2026-08-17 11:45:44,543 INFO config.model_engine.vector_search: Result 2: similarity=0.6989, distance=0.3011
-2026-08-17 11:45:44,544 INFO config.model_engine.vector_search: Result 3: similarity=0.6822, distance=0.3178
-2026-08-17 11:45:44,544 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 11:45:44,545 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 11:45:44,545 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:44,548 INFO config.model_engine.model_streamer: Previous assistant message found for session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:44,549 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 11:45:45,308 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 11:45:45,309 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 11:45:45,393 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:45] "POST /chat HTTP/1.1" 200 -
-2026-08-17 11:45:46,724 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 11:46:04,231 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:46:04] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 11:46:04,253 INFO config.model_engine.model_streamer: Starting AI response generation. Session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:46:04,254 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 11:46:04,255 INFO config.model_engine.vector_search: Starting document search. Question length: 33, top_k=3, similarity_threshold=0.5
-2026-08-17 11:46:04,256 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 11:46:04,256 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 11:46:04,257 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 11:46:04,265 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 11:46:04,266 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 11:46:04,270 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 11:46:04,271 INFO config.model_engine.vector_search: Result 1: similarity=0.7670, distance=0.2330
-2026-08-17 11:46:04,271 INFO config.model_engine.vector_search: Result 2: similarity=0.6945, distance=0.3055
-2026-08-17 11:46:04,271 INFO config.model_engine.vector_search: Result 3: similarity=0.6840, distance=0.3160
-2026-08-17 11:46:04,272 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 11:46:04,272 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 11:46:04,272 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:46:04,276 INFO config.model_engine.model_streamer: Previous assistant message found for session=168e9542-b79d-4721-8ad0-e07aef87ab0a
+2026-08-17 11:46:04,277 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 11:46:05,155 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 11:46:05,155 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 11:46:05,254 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:46:05] "POST /chat HTTP/1.1" 200 -
+2026-08-17 11:46:06,602 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 11:47:01,117 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:47:01] "OPTIONS /chat HTTP/1.1" 200 -
+2026-08-17 11:47:01,142 INFO config.model_engine.model_streamer: Starting AI response generation. Session=168e9542-b79d-4721-8ad0-e07aef87ab0a
+2026-08-17 11:47:01,143 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-17 11:47:01,144 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
+2026-08-17 11:47:01,144 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-17 11:47:01,145 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-17 11:47:01,145 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-17 11:47:01,157 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-17 11:47:01,159 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-17 11:47:01,165 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-17 11:47:01,166 INFO config.model_engine.vector_search: Result 1: similarity=0.7661, distance=0.2339
+2026-08-17 11:47:01,167 INFO config.model_engine.vector_search: Result 2: similarity=0.7042, distance=0.2958
+2026-08-17 11:47:01,168 INFO config.model_engine.vector_search: Result 3: similarity=0.6909, distance=0.3091
+2026-08-17 11:47:01,168 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-17 11:47:01,168 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
+2026-08-17 11:47:01,169 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
+2026-08-17 11:47:01,173 INFO config.model_engine.model_streamer: Previous assistant message found for session=168e9542-b79d-4721-8ad0-e07aef87ab0a
+2026-08-17 11:47:01,174 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-17 11:47:02,014 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-17 11:47:02,017 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-17 11:47:06,828 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:47:06] "POST /chat HTTP/1.1" 200 -
+2026-08-17 11:47:08,442 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-17 11:47:30,310 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:47:30] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-08-17 11:47:30,321 INFO routes.chat: Starting new chat session.
+2026-08-17 11:47:30,323 INFO routes.chat: Looking up user with email: ishmael.ayebazibwe@tekjuice.co.uk
+2026-08-17 11:47:30,330 INFO routes.chat: Existing user found. User ID: 20
+2026-08-17 11:47:30,333 INFO routes.chat: Creating chat session for user ID: 20
+2026-08-17 11:47:30,344 INFO routes.chat: Chat session created successfully. Session ID: 5ce8ecea-f4ea-4275-99dc-792de282f1bf
+2026-08-17 11:47:30,348 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:47:30] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
+2026-08-17 11:54:30,134 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:30] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 11:54:30,161 WARNING root: Super Admin account not found: admin@example.com
+2026-08-17 11:54:30,163 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:30] "[33mPOST /auth/super-admin/login HTTP/1.1[0m" 404 -
+2026-08-17 11:54:42,137 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:42] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 11:54:43,268 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
+2026-08-17 11:54:43,270 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:43] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
+2026-08-17 11:54:50,515 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:50] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 11:54:50,971 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-08-17 11:54:50,973 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:50] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 11:54:51,206 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:51] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 11:54:51,210 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:51] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 11:54:51,326 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:51] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 11:54:51,388 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:51] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 11:54:57,062 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:57] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-17 11:54:57,064 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:57] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-17 11:54:57,079 INFO routes.auth_routes: Retrieved 4 admin account(s).
+2026-08-17 11:54:57,082 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:57] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-17 11:54:57,104 INFO routes.auth_routes: Retrieved 4 admin account(s).
+2026-08-17 11:54:57,106 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:57] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-17 11:55:14,458 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:14] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 11:55:14,461 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:14] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 11:55:14,523 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:14] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 11:55:14,582 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:14] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 11:55:38,699 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:38] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
+2026-08-17 11:55:38,713 WARNING root: Admin account not found: ishmo255super@gmail.com
+2026-08-17 11:55:38,716 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:38] "[33mPOST /auth/admin/login HTTP/1.1[0m" 404 -
+2026-08-17 11:55:47,828 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:47] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
+2026-08-17 11:55:48,073 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-17 11:55:48,074 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-17 11:55:48,096 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-17 11:55:48,099 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-17 11:55:48,165 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-17 11:55:48,189 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-17 11:55:53,174 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:53] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-17 11:55:53,176 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:53] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-17 11:55:53,184 INFO routes.documents: Fetching document metadata.
+2026-08-17 11:55:53,193 INFO routes.documents: Retrieved 3 documents.
+2026-08-17 11:55:53,195 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:53] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-17 11:55:53,203 INFO routes.documents: Fetching document metadata.
+2026-08-17 11:55:53,206 INFO routes.documents: Retrieved 3 documents.
+2026-08-17 11:55:53,209 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:53] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-17 11:55:55,375 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:55] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-17 11:55:55,379 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:55] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-17 11:55:55,394 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:55] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-17 11:55:55,407 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:55] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-17 11:56:22,818 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:56:22] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-17 11:56:22,834 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:56:22] "[31m[1mGET /auth/admins HTTP/1.1[0m" 403 -
+2026-08-17 11:56:36,399 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:56:36] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-08-17 11:56:36,424 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:56:36] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 403 -
+2026-08-17 11:57:04,610 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:04] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 11:57:04,752 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
+2026-08-17 11:57:04,753 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:04] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
+2026-08-17 11:57:12,317 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:12] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 11:57:12,516 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
+2026-08-17 11:57:12,517 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:12] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
+2026-08-17 11:57:15,003 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-08-17 11:57:15,004 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:15] "POST /auth/super-admin/login HTTP/1.1" 200 -
