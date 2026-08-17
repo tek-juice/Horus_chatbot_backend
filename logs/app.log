@@ -1,4 +1,60 @@
-2026-08-17 11:57:15,169 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:15] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:57:15,172 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:15] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:57:15,342 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:15] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:57:15,441 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:15] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 12:53:25,980 INFO werkzeug:  * Detected change in '/app/routes/auth_routes.py', reloading
+2026-08-17 12:54:39,146 INFO root: Starting Horus Backend Application
+2026-08-17 12:54:39,472 INFO root: Routes registered successfully
+2026-08-17 12:54:39,473 INFO root: Running development server
+2026-08-17 12:54:39,625 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2026-08-17 12:54:39,626 INFO werkzeug: [33mPress CTRL+C to quit[0m
+2026-08-17 12:54:39,645 INFO werkzeug:  * Restarting with stat
+2026-08-17 12:54:54,978 INFO root: Starting Horus Backend Application
+2026-08-17 12:54:55,039 INFO root: Routes registered successfully
+2026-08-17 12:54:55,040 INFO root: Running development server
+2026-08-17 12:54:55,066 WARNING werkzeug:  * Debugger is active!
+2026-08-17 12:54:55,074 INFO werkzeug:  * Debugger PIN: 140-477-781
+2026-08-17 12:57:36,597 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:36] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 12:57:37,071 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
+2026-08-17 12:57:37,073 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:37] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
+2026-08-17 12:57:42,348 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:42] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 12:57:42,499 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-08-17 12:57:42,501 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:42] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 12:57:43,004 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:43] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 12:57:43,006 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:43] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 12:57:43,133 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:43] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 12:57:43,184 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:43] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 12:57:44,304 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:44] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-17 12:57:44,308 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:44] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-17 12:57:44,318 INFO routes.auth_routes: Retrieved 6 admin account(s).
+2026-08-17 12:57:44,319 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:44] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-17 12:57:44,330 INFO routes.auth_routes: Retrieved 6 admin account(s).
+2026-08-17 12:57:44,333 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 12:57:44] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-17 13:00:26,870 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:26] "OPTIONS /chat/start HTTP/1.1" 200 -
+2026-08-17 13:00:26,885 INFO routes.chat: Starting new chat session.
+2026-08-17 13:00:26,886 INFO routes.chat: Looking up user with email: ishmael.ayebazibwe@tekjuice.co.uk
+2026-08-17 13:00:26,891 INFO routes.chat: User not found. Creating new user: ishmael.ayebazibwe@tekjuice.co.uk
+2026-08-17 13:00:26,912 INFO routes.chat: Creating chat session for user ID: 23
+2026-08-17 13:00:26,921 INFO routes.chat: Chat session created successfully. Session ID: 1c079ab8-dbb6-4636-bfdf-0693840e3f80
+2026-08-17 13:00:26,923 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:26] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
+2026-08-17 13:00:49,119 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:49] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 13:00:49,308 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
+2026-08-17 13:00:49,310 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:49] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
+2026-08-17 13:00:51,551 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
+2026-08-17 13:00:51,553 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:51] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-17 13:00:51,917 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:51] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 13:00:51,920 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:51] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 13:00:51,953 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:51] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 13:00:52,000 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:00:52] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-17 13:01:12,295 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:01:12] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-17 13:01:12,328 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:01:12] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-17 13:01:12,337 INFO routes.auth_routes: Retrieved 5 admin account(s).
+2026-08-17 13:01:12,339 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:01:12] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-17 13:01:12,353 INFO routes.auth_routes: Retrieved 5 admin account(s).
+2026-08-17 13:01:12,355 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:01:12] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-17 13:01:29,682 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:01:29] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
+2026-08-17 13:01:29,691 INFO routes.auth_routes: Admin registration attempt: ishmael.ayebazibwe@tekjuice.co.uk
+2026-08-17 13:01:29,716 INFO routes.auth_routes: User promoted to admin successfully: ishmael.ayebazibwe@tekjuice.co.uk
+2026-08-17 13:01:29,718 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:01:29] "POST /auth/register-admin HTTP/1.1" 200 -
+2026-08-17 13:01:29,730 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:01:29] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-17 13:01:29,740 INFO routes.auth_routes: Retrieved 6 admin account(s).
+2026-08-17 13:01:29,742 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 13:01:29] "GET /auth/admins HTTP/1.1" 200 -

@@ -108,6 +108,7 @@ def register_admin():
     try:
         data = request.get_json()
 
+        # Check request body
         if not data:
             logger.warning(
                 "Admin registration failed: Empty request body"
@@ -117,29 +118,42 @@ def register_admin():
                 "error": "Request body is required"
             }), 400
 
-
+        # Get fields safely
         name = data.get("name")
-        email = data.get("email").strip().lower()
+        email = data.get("email")
         password = data.get("password")
+
+        # Check required fields before using them
+        if not name or not email or not password:
+            logger.warning(
+                "Admin registration failed: Missing required fields"
+            )
+
+            return jsonify({
+                "error": "Name, email and password are required"
+            }), 400
+
+        # Normalize email
+        email = email.strip().lower()
+
         logger.info(
             f"Admin registration attempt: {email}"
         )
 
-
         # Validate name
         if not validate_name(name):
             logger.warning(
-                "Admin registration failed: Invalid name"
+                f"Admin registration failed: Invalid name - {email}"
             )
+
             return jsonify({
                 "error": "Name must be at least 4 characters"
             }), 400
 
-
         # Validate email
         if not validate_email(email):
             logger.warning(
-                f"Invalid email format: {email}"
+                f"Admin registration failed: Invalid email format - {email}"
             )
 
             return jsonify({
@@ -149,27 +163,62 @@ def register_admin():
         # Validate password
         if not validate_password(password):
             logger.warning(
-                f"Weak password attempt: {email}"
+                f"Admin registration failed: Weak password - {email}"
             )
+
             return jsonify({
-                "error": "Password must contain 8+ characters, letters, numbers and special characters"
+                "error": (
+                    "Password must contain 8+ characters, "
+                    "letters, numbers and special characters"
+                )
             }), 400
         
-        # Check existing user
         existing_user = User.query.filter_by(
             email=email
         ).first()
 
         if existing_user:
-            logger.warning(
-                f"Email already exists: {email}"
-            )
-            return jsonify({
-                "error": "Email already exists"
-            }), 409
+            if existing_user.role == UserRole.USER:
 
-        # Create admin
-        admin = User(name=name, email=email, password_hash=generate_password_hash(password),
+                existing_user.role = UserRole.ADMIN
+                existing_user.status = UserStatus.ACTIVE
+                existing_user.is_registered = True
+                db.session.commit()
+
+                logger.info(
+                    f"User promoted to admin successfully: {email}"
+                )
+
+                return jsonify({
+                    "message": "User promoted to admin successfully"
+                }), 200
+
+            elif existing_user.role == UserRole.ADMIN:
+
+                logger.warning(
+                    f"Admin registration failed: "
+                    f"User is already an admin - {email}"
+                )
+
+                return jsonify({
+                    "error": "User is already an admin"
+                }), 409
+
+            elif existing_user.role == UserRole.SUPER_ADMIN:
+
+                logger.warning(
+                    f"Admin registration failed: "
+                    f"User is already a super admin - {email}"
+                )
+
+                return jsonify({
+                    "error": "User is already a super admin"
+                }), 409
+
+        admin = User(
+            name=name,
+            email=email,
+            password_hash=generate_password_hash(password),
             role=UserRole.ADMIN,
             status=UserStatus.ACTIVE,
             is_registered=True
@@ -177,20 +226,22 @@ def register_admin():
 
         db.session.add(admin)
         db.session.commit()
+
         logger.info(
             f"Admin created successfully: {email}"
         )
+
         return jsonify({
             "message": "Admin created successfully"
         }), 201
 
-
-
     except Exception as e:
         db.session.rollback()
+
         logger.exception(
-            f"Unexpected error creating admin: {str(e)}"
+            f"Unexpected error creating/promoting admin: {str(e)}"
         )
+
         return jsonify({
             "error": "Internal server error"
         }), 500
