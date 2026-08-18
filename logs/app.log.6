@@ -1,91 +1,164 @@
-2026-08-17 09:40:13,331 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:40:13] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 09:40:13,405 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:13,405 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 09:40:13,406 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
-2026-08-17 09:40:13,406 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 09:40:13,406 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 09:40:13,407 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 09:40:13,420 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 09:40:13,421 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 09:40:13,431 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 09:40:13,432 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
-2026-08-17 09:40:13,432 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
-2026-08-17 09:40:13,432 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
-2026-08-17 09:40:13,433 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 09:40:13,433 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
-2026-08-17 09:40:13,433 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:13,440 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:13,440 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 09:40:14,574 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 09:40:14,575 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 09:40:14,681 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:40:14] "POST /chat HTTP/1.1" 200 -
-2026-08-17 09:40:14,811 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 09:40:27,668 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:40:27] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 09:40:27,679 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:27,679 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 09:40:27,680 INFO config.model_engine.vector_search: Starting document search. Question length: 27, top_k=3, similarity_threshold=0.5
-2026-08-17 09:40:27,680 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 09:40:27,681 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 09:40:27,681 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 09:40:27,689 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 09:40:27,690 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 09:40:27,693 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 09:40:27,694 INFO config.model_engine.vector_search: Result 1: similarity=0.6309, distance=0.3691
-2026-08-17 09:40:27,694 INFO config.model_engine.vector_search: Result 2: similarity=0.6192, distance=0.3808
-2026-08-17 09:40:27,694 INFO config.model_engine.vector_search: Result 3: similarity=0.6171, distance=0.3829
-2026-08-17 09:40:27,694 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 09:40:27,695 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 09:40:27,695 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:27,697 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:27,698 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 09:40:28,444 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 09:40:28,445 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 09:40:28,531 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:40:28] "POST /chat HTTP/1.1" 200 -
-2026-08-17 09:40:30,605 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 09:40:37,845 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:40:37] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 09:40:37,867 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:37,868 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 09:40:37,868 INFO config.model_engine.vector_search: Starting document search. Question length: 33, top_k=3, similarity_threshold=0.5
-2026-08-17 09:40:37,869 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 09:40:37,869 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 09:40:37,869 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 09:40:37,874 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 09:40:37,875 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 09:40:37,879 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 09:40:37,879 INFO config.model_engine.vector_search: Result 1: similarity=0.7670, distance=0.2330
-2026-08-17 09:40:37,879 INFO config.model_engine.vector_search: Result 2: similarity=0.6945, distance=0.3055
-2026-08-17 09:40:37,879 INFO config.model_engine.vector_search: Result 3: similarity=0.6840, distance=0.3160
-2026-08-17 09:40:37,880 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 09:40:37,880 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 09:40:37,880 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:37,882 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:37,883 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 09:40:38,671 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 09:40:38,672 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 09:40:38,782 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:40:38] "POST /chat HTTP/1.1" 200 -
-2026-08-17 09:40:43,975 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 09:40:49,511 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:40:49] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 09:40:49,520 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:49,521 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 09:40:49,521 INFO config.model_engine.vector_search: Starting document search. Question length: 18, top_k=3, similarity_threshold=0.5
-2026-08-17 09:40:49,522 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 09:40:49,522 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 09:40:49,522 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 09:40:49,526 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 09:40:49,527 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 09:40:49,529 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 09:40:49,530 INFO config.model_engine.vector_search: Result 1: similarity=0.7331, distance=0.2669
-2026-08-17 09:40:49,530 INFO config.model_engine.vector_search: Result 2: similarity=0.7221, distance=0.2779
-2026-08-17 09:40:49,531 INFO config.model_engine.vector_search: Result 3: similarity=0.7189, distance=0.2811
-2026-08-17 09:40:49,531 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 09:40:49,531 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 09:40:49,531 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:49,534 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:40:49,534 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 09:40:50,330 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 09:40:50,330 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 09:40:50,420 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:40:50] "POST /chat HTTP/1.1" 200 -
-2026-08-17 09:40:54,637 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 09:41:13,162 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 09:41:13] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 09:41:13,178 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-17 09:41:13,179 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-18 07:39:20,509 ERROR routes.auth_routes: Error deleting admin 2: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
+DETAIL:  Key (id)=(2) is still referenced from table "documents".
+
+[SQL: DELETE FROM users WHERE users.id = %(id)s]
+[parameters: {'id': 2}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
+DETAIL:  Key (id)=(2) is still referenced from table "documents".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/routes/auth_routes.py", line 2339, in delete_admin
+    db.session.commit()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1316, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 678, in execute
+    util.preloaded.orm_persistence.delete_obj(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 194, in delete_obj
+    _emit_delete_statements(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1472, in _emit_delete_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
+DETAIL:  Key (id)=(2) is still referenced from table "documents".
+
+[SQL: DELETE FROM users WHERE users.id = %(id)s]
+[parameters: {'id': 2}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-08-18 07:39:20,550 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:20] "[35m[1mDELETE /auth/admins/2 HTTP/1.1[0m" 500 -
+2026-08-18 07:39:20,720 ERROR routes.auth_routes: Error deleting admin 2: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
+DETAIL:  Key (id)=(2) is still referenced from table "documents".
+
+[SQL: DELETE FROM users WHERE users.id = %(id)s]
+[parameters: {'id': 2}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
+DETAIL:  Key (id)=(2) is still referenced from table "documents".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/routes/auth_routes.py", line 2339, in delete_admin
+    db.session.commit()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 596, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2035, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1316, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1290, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 465, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 678, in execute
+    util.preloaded.orm_persistence.delete_obj(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 194, in delete_obj
+    _emit_delete_statements(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1472, in _emit_delete_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
+DETAIL:  Key (id)=(2) is still referenced from table "documents".
+
+[SQL: DELETE FROM users WHERE users.id = %(id)s]
+[parameters: {'id': 2}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-08-18 07:39:20,724 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:20] "[35m[1mDELETE /auth/admins/2 HTTP/1.1[0m" 500 -

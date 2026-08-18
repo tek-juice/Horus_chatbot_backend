@@ -13,6 +13,7 @@ from config.logs.logs import setup_logging
 from config.helpers.email import mail
 from flask_cors import CORS
 from config.limit_config.limiter import limiter
+from datetime import timedelta
 
 
 load_dotenv()
@@ -22,6 +23,7 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
+    app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(days=2)
 
     # email 
     app.config["MAIL_SERVER"] = "smtp.gmail.com"

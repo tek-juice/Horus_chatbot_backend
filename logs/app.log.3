@@ -1,91 +1,94 @@
-2026-08-17 11:46:04,277 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 11:46:05,155 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 11:46:05,155 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 11:46:05,254 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:46:05] "POST /chat HTTP/1.1" 200 -
-2026-08-17 11:46:06,602 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 11:47:01,117 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:47:01] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 11:47:01,142 INFO config.model_engine.model_streamer: Starting AI response generation. Session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:47:01,143 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 11:47:01,144 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
-2026-08-17 11:47:01,144 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 11:47:01,145 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 11:47:01,145 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 11:47:01,157 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 11:47:01,159 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 11:47:01,165 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 11:47:01,166 INFO config.model_engine.vector_search: Result 1: similarity=0.7661, distance=0.2339
-2026-08-17 11:47:01,167 INFO config.model_engine.vector_search: Result 2: similarity=0.7042, distance=0.2958
-2026-08-17 11:47:01,168 INFO config.model_engine.vector_search: Result 3: similarity=0.6909, distance=0.3091
-2026-08-17 11:47:01,168 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 11:47:01,168 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 11:47:01,169 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:47:01,173 INFO config.model_engine.model_streamer: Previous assistant message found for session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:47:01,174 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 11:47:02,014 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 11:47:02,017 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 11:47:06,828 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:47:06] "POST /chat HTTP/1.1" 200 -
-2026-08-17 11:47:08,442 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 11:47:30,310 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:47:30] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-08-17 11:47:30,321 INFO routes.chat: Starting new chat session.
-2026-08-17 11:47:30,323 INFO routes.chat: Looking up user with email: ishmael.ayebazibwe@tekjuice.co.uk
-2026-08-17 11:47:30,330 INFO routes.chat: Existing user found. User ID: 20
-2026-08-17 11:47:30,333 INFO routes.chat: Creating chat session for user ID: 20
-2026-08-17 11:47:30,344 INFO routes.chat: Chat session created successfully. Session ID: 5ce8ecea-f4ea-4275-99dc-792de282f1bf
-2026-08-17 11:47:30,348 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:47:30] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-08-17 11:54:30,134 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:30] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-17 11:54:30,161 WARNING root: Super Admin account not found: admin@example.com
-2026-08-17 11:54:30,163 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:30] "[33mPOST /auth/super-admin/login HTTP/1.1[0m" 404 -
-2026-08-17 11:54:42,137 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:42] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-17 11:54:43,268 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
-2026-08-17 11:54:43,270 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:43] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
-2026-08-17 11:54:50,515 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:50] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-17 11:54:50,971 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
-2026-08-17 11:54:50,973 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:50] "POST /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-17 11:54:51,206 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:51] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:54:51,210 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:51] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:54:51,326 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:51] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:54:51,388 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:51] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:54:57,062 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:57] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-08-17 11:54:57,064 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:57] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-08-17 11:54:57,079 INFO routes.auth_routes: Retrieved 4 admin account(s).
-2026-08-17 11:54:57,082 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:57] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-17 11:54:57,104 INFO routes.auth_routes: Retrieved 4 admin account(s).
-2026-08-17 11:54:57,106 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:54:57] "GET /auth/admins HTTP/1.1" 200 -
-2026-08-17 11:55:14,458 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:14] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:55:14,461 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:14] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:55:14,523 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:14] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:55:14,582 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:14] "GET /super-admin/stats HTTP/1.1" 200 -
-2026-08-17 11:55:38,699 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:38] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-17 11:55:38,713 WARNING root: Admin account not found: ishmo255super@gmail.com
-2026-08-17 11:55:38,716 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:38] "[33mPOST /auth/admin/login HTTP/1.1[0m" 404 -
-2026-08-17 11:55:47,828 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:47] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-17 11:55:48,073 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-17 11:55:48,074 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-17 11:55:48,096 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-17 11:55:48,099 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-17 11:55:48,165 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-17 11:55:48,189 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:48] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-17 11:55:53,174 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:53] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-17 11:55:53,176 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:53] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-17 11:55:53,184 INFO routes.documents: Fetching document metadata.
-2026-08-17 11:55:53,193 INFO routes.documents: Retrieved 3 documents.
-2026-08-17 11:55:53,195 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:53] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-17 11:55:53,203 INFO routes.documents: Fetching document metadata.
-2026-08-17 11:55:53,206 INFO routes.documents: Retrieved 3 documents.
-2026-08-17 11:55:53,209 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:53] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-17 11:55:55,375 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:55] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-17 11:55:55,379 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:55] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
-2026-08-17 11:55:55,394 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:55] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-17 11:55:55,407 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:55:55] "GET /auth/chat_users HTTP/1.1" 200 -
-2026-08-17 11:56:22,818 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:56:22] "OPTIONS /auth/admins HTTP/1.1" 200 -
-2026-08-17 11:56:22,834 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:56:22] "[31m[1mGET /auth/admins HTTP/1.1[0m" 403 -
-2026-08-17 11:56:36,399 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:56:36] "OPTIONS /auth/register-admin HTTP/1.1" 200 -
-2026-08-17 11:56:36,424 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:56:36] "[31m[1mPOST /auth/register-admin HTTP/1.1[0m" 403 -
-2026-08-17 11:57:04,610 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:04] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-17 11:57:04,752 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
-2026-08-17 11:57:04,753 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:04] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
-2026-08-17 11:57:12,317 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:12] "OPTIONS /auth/super-admin/login HTTP/1.1" 200 -
-2026-08-17 11:57:12,516 WARNING root: Incorrect password for Super Admin: ishmo255super@gmail.com
-2026-08-17 11:57:12,517 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:12] "[31m[1mPOST /auth/super-admin/login HTTP/1.1[0m" 401 -
-2026-08-17 11:57:15,003 INFO root: Super Admin 'ishmo255super@gmail.com' logged in successfully.
-2026-08-17 11:57:15,004 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:57:15] "POST /auth/super-admin/login HTTP/1.1" 200 -
+2026-08-18 08:14:32,055 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:32] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:14:32,206 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-18 08:14:32,207 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:32] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:14:32,217 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:32] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:32,218 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:32] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:32,242 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:32] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:32,262 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:32] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:35,851 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:35] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:14:35,853 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:35] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:14:35,859 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:14:35,861 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:14:35,861 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:35] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:14:35,866 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:14:35,868 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:14:35,870 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:35] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:14:39,053 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:39] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:14:39,055 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:39] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:14:39,062 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:39] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:14:39,069 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:39] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:14:41,814 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:41] "OPTIONS /auth/users/19/sessions HTTP/1.1" 200 -
+2026-08-18 08:14:41,825 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:41] "GET /auth/users/19/sessions HTTP/1.1" 200 -
+2026-08-18 08:14:45,781 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:45] "OPTIONS /auth/users/3/sessions HTTP/1.1" 200 -
+2026-08-18 08:14:45,795 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:45] "GET /auth/users/3/sessions HTTP/1.1" 200 -
+2026-08-18 08:14:52,358 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:52] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:14:52,359 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:52] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:14:52,365 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:14:52,367 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:14:52,368 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:52] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:14:52,371 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:14:52,373 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:14:52,374 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:52] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:14:53,526 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:53] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:53,527 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:53] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:53,541 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:53] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:53,558 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:53] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:30:16,546 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:16] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:30:16,656 WARNING root: Incorrect password for Admin: admin@example.com
+2026-08-18 08:30:16,657 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:16] "[31m[1mPOST /auth/admin/login HTTP/1.1[0m" 401 -
+2026-08-18 08:30:18,958 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-18 08:30:18,959 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:18] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:30:18,970 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:18] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:30:18,971 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:18] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:30:18,992 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:18] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:30:19,012 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:19] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:30:21,137 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:21] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:30:21,139 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:21] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:30:21,143 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:30:21,145 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:30:21,147 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:21] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:30:21,151 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:30:21,152 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:30:21,153 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:21] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:30:25,485 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:25] "OPTIONS /document/delete-document/9 HTTP/1.1" 200 -
+2026-08-18 08:30:25,491 INFO routes.documents: Delete document request received. ID=9
+2026-08-18 08:30:25,494 INFO routes.documents: Document found: Horus_Label_Services.pdf
+2026-08-18 08:30:25,515 INFO routes.documents: Found 31 chunk(s) associated with document 9.
+2026-08-18 08:30:25,525 INFO routes.documents: Deleted file: /app/uploads/documents/Horus_Label_Services.pdf
+2026-08-18 08:30:25,539 INFO routes.documents: Deleted 31 document chunk(s).
+2026-08-18 08:30:25,550 INFO routes.documents: Document 9 deleted successfully.
+2026-08-18 08:30:25,551 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:25] "DELETE /document/delete-document/9 HTTP/1.1" 200 -
+2026-08-18 08:30:25,558 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:30:25,559 INFO routes.documents: Retrieved 2 documents.
+2026-08-18 08:30:25,560 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:25] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:30:45,830 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:45] "OPTIONS /document/ingest HTTP/1.1" 200 -
+2026-08-18 08:30:45,843 INFO routes.documents: Document upload request received.
+2026-08-18 08:30:45,854 INFO config.document_services.allowed_files: File extension validation successful for 'Horus_Label_Services.pdf'.
+2026-08-18 08:30:45,855 INFO config.document_services.allowed_files: MIME validation successful: application/pdf
+2026-08-18 08:30:45,855 INFO config.document_services.ingest_document: Starting document ingestion: Horus_Label_Services.pdf
+2026-08-18 08:30:45,867 INFO config.document_services.ingest_document: Document saved successfully: uploads/documents/Horus_Label_Services.pdf
+2026-08-18 08:30:45,882 INFO config.document_services.save_document: Document saved: 10
+2026-08-18 08:30:45,882 INFO config.document_services.ingest_document: Document record created with ID: 10
+2026-08-18 08:30:45,882 INFO config.document_services.ingest_document: Extracting text from document 10.
+2026-08-18 08:30:45,883 INFO config.document_services.code_extractor.pdf_extractor: Extracting text from PDF: uploads/documents/Horus_Label_Services.pdf
+2026-08-18 08:30:46,119 INFO config.document_services.code_extractor.pdf_extractor: PDF text extraction completed.
+2026-08-18 08:30:46,120 INFO config.document_services.ingest_document: Text extraction completed.
+2026-08-18 08:30:46,120 INFO config.document_services.ingest_document: Creating document chunks.
+2026-08-18 08:30:46,120 INFO config.document_services.create_chunks: Created 31 chunks.
+2026-08-18 08:30:46,120 INFO config.document_services.ingest_document: 31 chunks created.
+2026-08-18 08:30:46,121 INFO config.document_services.ingest_document: Generating embeddings.
+2026-08-18 08:30:46,121 INFO config.document_services.embedding_services: Generating embeddings for 31 chunks.
+2026-08-18 08:30:47,425 INFO config.document_services.embedding_services: Successfully generated 31 embeddings.
+2026-08-18 08:30:47,425 INFO config.document_services.ingest_document: 31 embeddings generated.
+2026-08-18 08:30:47,426 INFO config.document_services.ingest_document: Saving document chunks.
+2026-08-18 08:30:47,426 INFO config.document_services.save_chunks: Saving 31 chunks for document 10.
+2026-08-18 08:30:47,464 INFO config.document_services.save_chunks: Successfully saved 31 chunks for document 10.
+2026-08-18 08:30:47,464 INFO config.document_services.ingest_document: Document chunks saved successfully.
+2026-08-18 08:30:47,465 INFO config.document_services.ingest_document: Document ingestion completed successfully: Horus_Label_Services.pdf
+2026-08-18 08:30:47,467 INFO routes.documents: Document 'Horus_Label_Services.pdf' ingested successfully.
+2026-08-18 08:30:47,468 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:47] "[35m[1mPOST /document/ingest HTTP/1.1[0m" 201 -
+2026-08-18 08:30:47,475 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:47] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:30:47,479 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:30:47,482 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:30:47,483 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:47] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:30:56,403 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:56] "OPTIONS /auth/chat_users HTTP/1.1" 200 -

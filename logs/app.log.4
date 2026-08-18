@@ -1,105 +1,90 @@
-2026-08-17 11:28:26,787 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:28:39,114 INFO root: Starting Horus Backend Application
-2026-08-17 11:28:39,189 INFO root: Routes registered successfully
-2026-08-17 11:28:39,190 INFO root: Running development server
-2026-08-17 11:28:39,213 WARNING werkzeug:  * Debugger is active!
-2026-08-17 11:28:39,215 INFO werkzeug:  * Debugger PIN: 692-651-713
-2026-08-17 11:32:34,688 INFO werkzeug:  * Detected change in '/app/config/limit_config/limiter.py', reloading
-2026-08-17 11:32:35,332 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:32:44,341 INFO root: Starting Horus Backend Application
-2026-08-17 11:32:44,456 INFO root: Routes registered successfully
-2026-08-17 11:32:44,457 INFO root: Running development server
-2026-08-17 11:32:44,489 WARNING werkzeug:  * Debugger is active!
-2026-08-17 11:32:44,491 INFO werkzeug:  * Debugger PIN: 692-651-713
-2026-08-17 11:33:29,875 INFO werkzeug:  * Detected change in '/app/app.py', reloading
-2026-08-17 11:33:30,930 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:33:41,246 INFO root: Starting Horus Backend Application
-2026-08-17 11:33:41,338 INFO root: Routes registered successfully
-2026-08-17 11:33:41,339 INFO root: Running development server
-2026-08-17 11:33:41,364 WARNING werkzeug:  * Debugger is active!
-2026-08-17 11:33:41,365 INFO werkzeug:  * Debugger PIN: 692-651-713
-2026-08-17 11:33:42,366 INFO werkzeug:  * Detected change in '/app/app.py', reloading
-2026-08-17 11:33:43,168 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:44:02,612 INFO root: Starting Horus Backend Application
-2026-08-17 11:44:02,707 INFO root: Routes registered successfully
-2026-08-17 11:44:02,708 INFO root: Running development server
-2026-08-17 11:44:02,792 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-08-17 11:44:02,793 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-17 11:44:02,798 INFO werkzeug:  * Restarting with stat
-2026-08-17 11:44:14,389 INFO root: Starting Horus Backend Application
-2026-08-17 11:44:14,481 INFO root: Routes registered successfully
-2026-08-17 11:44:14,482 INFO root: Running development server
-2026-08-17 11:44:14,511 WARNING werkzeug:  * Debugger is active!
-2026-08-17 11:44:14,520 INFO werkzeug:  * Debugger PIN: 149-751-208
-2026-08-17 11:45:16,617 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:16] "OPTIONS /chat/start HTTP/1.1" 200 -
-2026-08-17 11:45:16,630 INFO routes.chat: Starting new chat session.
-2026-08-17 11:45:16,632 INFO routes.chat: Looking up user with email: ishmael.ayebazibwe@tekjuice.co.uk
-2026-08-17 11:45:16,932 INFO routes.chat: User not found. Creating new user: ishmael.ayebazibwe@tekjuice.co.uk
-2026-08-17 11:45:16,954 INFO routes.chat: Creating chat session for user ID: 20
-2026-08-17 11:45:16,969 INFO routes.chat: Chat session created successfully. Session ID: 168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:16,971 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:16] "[35m[1mPOST /chat/start HTTP/1.1[0m" 201 -
-2026-08-17 11:45:22,139 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:22] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 11:45:22,173 INFO config.model_engine.model_streamer: Starting AI response generation. Session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:22,174 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 11:45:22,174 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
-2026-08-17 11:45:22,174 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 11:45:22,175 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 11:45:22,176 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 11:45:22,206 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 11:45:22,207 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 11:45:22,273 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 11:45:22,273 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
-2026-08-17 11:45:22,274 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
-2026-08-17 11:45:22,274 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
-2026-08-17 11:45:22,275 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 11:45:22,275 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
-2026-08-17 11:45:22,276 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:22,287 INFO config.model_engine.memory_service: No previous assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:22,288 INFO config.model_engine.model_streamer: No previous assistant message found for session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:22,288 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 11:45:24,224 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 11:45:24,225 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 11:45:24,284 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:24] "POST /chat HTTP/1.1" 200 -
-2026-08-17 11:45:24,442 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 11:45:44,478 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:44] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 11:45:44,526 INFO config.model_engine.model_streamer: Starting AI response generation. Session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:44,527 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 11:45:44,528 INFO config.model_engine.vector_search: Starting document search. Question length: 19, top_k=3, similarity_threshold=0.5
-2026-08-17 11:45:44,528 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 11:45:44,529 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 11:45:44,529 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 11:45:44,537 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 11:45:44,539 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 11:45:44,542 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 11:45:44,543 INFO config.model_engine.vector_search: Result 1: similarity=0.7277, distance=0.2723
-2026-08-17 11:45:44,543 INFO config.model_engine.vector_search: Result 2: similarity=0.6989, distance=0.3011
-2026-08-17 11:45:44,544 INFO config.model_engine.vector_search: Result 3: similarity=0.6822, distance=0.3178
-2026-08-17 11:45:44,544 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 11:45:44,545 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 11:45:44,545 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:44,548 INFO config.model_engine.model_streamer: Previous assistant message found for session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:45:44,549 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-17 11:45:45,308 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-17 11:45:45,309 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-17 11:45:45,393 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:45:45] "POST /chat HTTP/1.1" 200 -
-2026-08-17 11:45:46,724 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-17 11:46:04,231 INFO werkzeug: 172.18.0.1 - - [17/Aug/2026 11:46:04] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-17 11:46:04,253 INFO config.model_engine.model_streamer: Starting AI response generation. Session=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:46:04,254 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-17 11:46:04,255 INFO config.model_engine.vector_search: Starting document search. Question length: 33, top_k=3, similarity_threshold=0.5
-2026-08-17 11:46:04,256 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-17 11:46:04,256 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-17 11:46:04,257 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-17 11:46:04,265 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-17 11:46:04,266 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-17 11:46:04,270 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-17 11:46:04,271 INFO config.model_engine.vector_search: Result 1: similarity=0.7670, distance=0.2330
-2026-08-17 11:46:04,271 INFO config.model_engine.vector_search: Result 2: similarity=0.6945, distance=0.3055
-2026-08-17 11:46:04,271 INFO config.model_engine.vector_search: Result 3: similarity=0.6840, distance=0.3160
-2026-08-17 11:46:04,272 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-17 11:46:04,272 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-17 11:46:04,272 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=168e9542-b79d-4721-8ad0-e07aef87ab0a
-2026-08-17 11:46:04,276 INFO config.model_engine.model_streamer: Previous assistant message found for session=168e9542-b79d-4721-8ad0-e07aef87ab0a
+2026-08-18 07:39:25,762 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:25] "[35m[1mDELETE /auth/admins/2 HTTP/1.1[0m" 500 -
+2026-08-18 07:39:43,199 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:43] "OPTIONS /auth/admins/21 HTTP/1.1" 200 -
+2026-08-18 07:39:43,208 INFO routes.auth_routes: Admin 'corn@gmail.com' (ID: 21) deleted successfully.
+2026-08-18 07:39:43,209 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:43] "DELETE /auth/admins/21 HTTP/1.1" 200 -
+2026-08-18 07:39:43,214 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:43] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-18 07:39:43,218 INFO routes.auth_routes: Retrieved 6 admin account(s).
+2026-08-18 07:39:43,220 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:43] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-18 07:39:45,568 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:45] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-18 07:39:45,571 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:45] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-18 07:39:45,609 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:45] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-18 07:39:45,652 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:45] "GET /super-admin/stats HTTP/1.1" 200 -
+2026-08-18 07:39:47,081 INFO routes.auth_routes: Retrieved 6 admin account(s).
+2026-08-18 07:39:47,083 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:47] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-18 07:39:47,089 INFO routes.auth_routes: Retrieved 6 admin account(s).
+2026-08-18 07:39:47,090 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:47] "GET /auth/admins HTTP/1.1" 200 -
+2026-08-18 07:44:09,388 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:44:09] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:44:09,390 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:44:09] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:44:09,413 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:44:09] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:44:09,434 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:44:09] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:45:08,834 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:08] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:45:08,836 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:08] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:45:08,840 INFO routes.documents: Fetching document metadata.
+2026-08-18 07:45:08,842 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 07:45:08,843 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:08] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:45:08,846 INFO routes.documents: Fetching document metadata.
+2026-08-18 07:45:08,848 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 07:45:08,851 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:08] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:45:15,703 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:15] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:45:15,706 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:15] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:45:15,714 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:15] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:45:15,720 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:15] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:45:20,769 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:20] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:45:20,771 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:20] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:45:20,777 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:20] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:45:20,784 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:45:20] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:48:40,670 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:48:40] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:48:40,671 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:48:40] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:48:40,685 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:48:40] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:48:40,701 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:48:40] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:49:01,006 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:49:01] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:49:01,009 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:49:01] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:49:01,012 INFO routes.documents: Fetching document metadata.
+2026-08-18 07:49:01,013 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 07:49:01,014 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:49:01] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:49:01,018 INFO routes.documents: Fetching document metadata.
+2026-08-18 07:49:01,026 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 07:49:01,028 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:49:01] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:50:14,342 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:50:14] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:50:14,345 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:50:14] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:50:14,359 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:50:14] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:50:14,374 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:50:14] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:50:19,618 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:50:19] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:50:19,620 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:50:19] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:50:19,625 INFO routes.documents: Fetching document metadata.
+2026-08-18 07:50:19,627 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 07:50:19,628 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:50:19] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:50:19,642 INFO routes.documents: Fetching document metadata.
+2026-08-18 07:50:19,643 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 07:50:19,644 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:50:19] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 07:51:14,765 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:14] "OPTIONS /document/view-document/5?download=false HTTP/1.1" 200 -
+2026-08-18 07:51:14,773 INFO routes.documents: Document request received. ID=5
+2026-08-18 07:51:14,803 INFO routes.documents: Previewing document 'horus_Video_Distribution.pdf'
+2026-08-18 07:51:14,863 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:14] "GET /document/view-document/5?download=false HTTP/1.1" 200 -
+2026-08-18 07:51:23,589 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:23] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:51:23,590 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:23] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:51:23,598 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:23] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:51:23,605 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:23] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 07:51:29,421 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:29] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:51:29,423 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:29] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:51:29,438 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:29] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 07:51:29,453 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:51:29] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:06:27,347 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:06:27] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:06:27,353 WARNING root: Expired JWT token used
+2026-08-18 08:06:27,354 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:06:27] "[31m[1mGET /auth/dashboard/statistics HTTP/1.1[0m" 401 -
+2026-08-18 08:07:09,109 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:07:09] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:07:09,216 WARNING root: Incorrect password for Admin: admin@example.com
+2026-08-18 08:07:09,218 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:07:09] "[31m[1mPOST /auth/admin/login HTTP/1.1[0m" 401 -
+2026-08-18 08:07:11,063 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-18 08:07:11,064 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:07:11] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:07:11,076 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:07:11] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:07:11,078 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:07:11] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:07:11,108 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:07:11] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:07:11,132 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:07:11] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:08:52,142 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:08:52] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:08:52,159 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:08:52] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:06,983 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:06] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:06,985 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:06] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:07,009 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:07] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:07,052 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:07] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:14:08,239 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:14:08] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
