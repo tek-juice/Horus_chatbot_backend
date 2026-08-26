@@ -1,12 +1,6 @@
-from models.users import (
-    ChatSession,
-    ChatMessage,
-    MessageRole
-)
-
+from models.users import ChatSession, ChatMessage, MessageRole
 from config.extensions.database_config import db
 from config.model_engine.model_streamer import stream_answer
-
 
 def get_chat_session(session_uuid):
 
@@ -14,52 +8,42 @@ def get_chat_session(session_uuid):
         chat_id=session_uuid
     ).first()
 
-
 def generate_answer(session_uuid, question):
-
     session = get_chat_session(session_uuid)
 
     if session is None:
-        raise Exception(
-            "Invalid session"
-        )
+        raise Exception("Invalid session")
 
-
-    # Save user message
-
-    db.session.add(
-        ChatMessage(
+    try:
+        user_message = ChatMessage(
             session_id=session.id,
             role=MessageRole.USER,
             message=question
         )
-    )
 
-    db.session.commit()
+        db.session.add(user_message)
+        db.session.commit()
 
+        answer = ""
 
-    # Generate AI response
+        for token in stream_answer(
+            session_uuid,
+            question
+        ):
+            answer += token
 
-    answer = ""
-
-    for token in stream_answer(
-        session_uuid,
-        question
-    ):
-        answer += token
-
-
-    # Save assistant response
-
-    db.session.add(
-        ChatMessage(
-            session_id=session.id,
-            role=MessageRole.ASSISTANT,
-            message=answer
-        )
-    )
-
-    db.session.commit()
+        if answer.strip():
+            assistant_message = ChatMessage(
+                session_id=session.id,
+                role=MessageRole.ASSISTANT,
+                message=answer
+            )
+            db.session.add(assistant_message)
+            db.session.commit()
 
 
-    return answer
+        return answer
+
+    except Exception:
+        db.session.rollback()
+        raise

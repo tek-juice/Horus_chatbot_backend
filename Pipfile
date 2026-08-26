@@ -23,6 +23,7 @@ faster-whisper = "*"
 piper-tts = "*"
 gtts = "*"
 flask-limiter = "*"
+soundfile = "*"
 
 [dev-packages]
 

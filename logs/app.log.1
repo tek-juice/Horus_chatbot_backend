@@ -1,90 +1,29 @@
-2026-08-18 08:42:45,612 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:42:45] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-18 08:42:45,640 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:42:45] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-18 08:42:45,674 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:42:45] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-18 09:07:00,737 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:00] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-18 09:07:00,779 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:07:00,780 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-18 09:07:00,781 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
-2026-08-18 09:07:00,782 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-18 09:07:00,784 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-18 09:07:00,785 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-18 09:07:01,044 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-18 09:07:01,049 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-18 09:07:01,062 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-18 09:07:01,063 INFO config.model_engine.vector_search: Result 1: similarity=0.7661, distance=0.2339
-2026-08-18 09:07:01,063 INFO config.model_engine.vector_search: Result 2: similarity=0.7042, distance=0.2958
-2026-08-18 09:07:01,063 INFO config.model_engine.vector_search: Result 3: similarity=0.6909, distance=0.3091
-2026-08-18 09:07:01,064 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-18 09:07:01,064 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-18 09:07:01,065 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:07:01,071 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:07:01,071 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-18 09:07:02,087 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-18 09:07:02,090 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-18 09:07:02,522 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:02] "POST /chat HTTP/1.1" 200 -
-2026-08-18 09:07:07,037 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-18 09:07:29,271 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:29] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-18 09:07:29,324 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:07:29,324 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-18 09:07:29,325 INFO config.model_engine.vector_search: Starting document search. Question length: 27, top_k=3, similarity_threshold=0.5
-2026-08-18 09:07:29,325 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-18 09:07:29,326 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-18 09:07:29,326 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-18 09:07:29,381 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-18 09:07:29,383 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-18 09:07:29,389 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-18 09:07:29,389 INFO config.model_engine.vector_search: Result 1: similarity=0.6309, distance=0.3691
-2026-08-18 09:07:29,390 INFO config.model_engine.vector_search: Result 2: similarity=0.6192, distance=0.3808
-2026-08-18 09:07:29,390 INFO config.model_engine.vector_search: Result 3: similarity=0.6171, distance=0.3829
-2026-08-18 09:07:29,391 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-18 09:07:29,392 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-18 09:07:29,393 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:07:29,399 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:07:29,400 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-18 09:07:30,179 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-18 09:07:30,181 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-18 09:07:30,330 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:30] "POST /chat HTTP/1.1" 200 -
-2026-08-18 09:07:36,044 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-18 09:07:52,319 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:52] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
-2026-08-18 09:07:52,464 INFO root: Admin 'admin@example.com' logged in successfully.
-2026-08-18 09:07:52,466 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:52] "POST /auth/admin/login HTTP/1.1" 200 -
-2026-08-18 09:07:52,483 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:52] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-18 09:07:52,486 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:52] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-18 09:07:52,523 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:52] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-18 09:07:52,565 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:07:52] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
-2026-08-18 09:08:02,826 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:08:02] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-18 09:08:02,828 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:08:02] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
-2026-08-18 09:08:02,838 INFO routes.documents: Fetching document metadata.
-2026-08-18 09:08:02,841 INFO routes.documents: Retrieved 3 documents.
-2026-08-18 09:08:02,843 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:08:02] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-18 09:08:02,849 INFO routes.documents: Fetching document metadata.
-2026-08-18 09:08:02,852 INFO routes.documents: Retrieved 3 documents.
-2026-08-18 09:08:02,854 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:08:02] "GET /document/view-list-documents HTTP/1.1" 200 -
-2026-08-18 09:41:03,817 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:41:03,872 INFO routes.chat: Retrieved 344 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:41:03,884 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:41:03] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
-2026-08-18 09:42:14,391 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:42:14,396 INFO routes.chat: Retrieved 344 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:42:14,401 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:42:14] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
-2026-08-18 09:42:28,883 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:42:28,890 INFO routes.chat: Retrieved 344 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:42:28,896 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:42:28] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
-2026-08-18 09:47:18,854 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:47:18,861 INFO routes.chat: Retrieved 344 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:47:18,865 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:47:18] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
-2026-08-18 09:47:38,475 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 09:47:38] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-18 09:47:38,524 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-18 09:47:38,524 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-18 09:47:38,525 INFO config.model_engine.vector_search: Starting document search. Question length: 11, top_k=3, similarity_threshold=0.5
-2026-08-18 09:47:38,526 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-18 09:47:38,527 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-18 09:47:38,527 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-18 09:47:38,649 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-18 09:47:38,653 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-18 09:47:38,660 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-18 09:47:38,661 INFO config.model_engine.vector_search: Result 1: similarity=0.7661, distance=0.2339
-2026-08-18 09:47:38,661 INFO config.model_engine.vector_search: Result 2: similarity=0.7042, distance=0.2958
-2026-08-18 09:47:38,661 INFO config.model_engine.vector_search: Result 3: similarity=0.6909, distance=0.3091
-2026-08-18 09:47:38,662 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-18 09:47:38,662 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-18 09:47:38,662 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-26 09:01:19,812 INFO faster_whisper: Detected language 'en' with probability 0.84
+2026-08-26 09:01:33,805 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-26 09:01:33,807 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-26 09:01:33,807 INFO config.model_engine.vector_search: Starting document search. Question length: 16, top_k=3, similarity_threshold=0.5
+2026-08-26 09:01:33,808 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-26 09:01:33,809 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-26 09:01:33,810 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-26 09:01:33,958 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-26 09:01:33,959 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-26 09:01:34,027 INFO config.model_engine.vector_search: No document chunks passed the similarity threshold.
+2026-08-26 09:01:34,028 WARNING config.model_engine.model_streamer: No relevant documents found.
+2026-08-26 09:01:34,028 INFO config.model_engine.model_streamer: Retrieved 0 document chunks.
+2026-08-26 09:01:34,029 INFO config.model_engine.model_streamer: Context created. Length=0 characters.
+2026-08-26 09:01:34,029 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-26 09:01:34,038 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-26 09:01:34,039 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-26 09:01:35,882 INFO httpx2: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-26 09:01:35,883 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-26 09:01:40,670 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-26 09:02:03,178 WARNING phonemizer: words count mismatch on 100.0% of the lines (1/1)
+2026-08-26 09:02:16,460 WARNING phonemizer: words count mismatch on 100.0% of the lines (1/1)
+2026-08-26 09:02:26,398 INFO werkzeug: 172.18.0.1 - - [26/Aug/2026 09:02:26] "POST /speech/chat HTTP/1.1" 200 -
+2026-08-26 09:33:15,341 INFO werkzeug:  * Detected change in '/app/config/speech/text_clean.py', reloading
+2026-08-26 09:33:45,768 INFO root: Starting Horus Backend Application
+2026-08-26 09:33:45,817 INFO root: Routes registered successfully
+2026-08-26 09:33:45,817 INFO root: Running development server
+2026-08-26 09:33:45,831 WARNING werkzeug:  * Debugger is active!
+2026-08-26 09:33:45,832 INFO werkzeug:  * Debugger PIN: 930-617-283
+2026-08-26 09:34:30,003 INFO werkzeug:  * Detected change in '/app/config/speech/speech_service.py', reloading

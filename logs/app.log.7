@@ -1,164 +1,87 @@
-2026-08-18 07:39:20,149 ERROR routes.auth_routes: Error deleting admin 2: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
-DETAIL:  Key (id)=(2) is still referenced from table "documents".
-
-[SQL: DELETE FROM users WHERE users.id = %(id)s]
-[parameters: {'id': 2}]
-(Background on this error at: https://sqlalche.me/e/20/gkpj)
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.errors.ForeignKeyViolation: update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
-DETAIL:  Key (id)=(2) is still referenced from table "documents".
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/app/routes/auth_routes.py", line 2339, in delete_admin
-    db.session.commit()
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 596, in commit
-    return self._proxied.commit()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2035, in commit
-    trans.commit(_to_root=True)
-  File "<string>", line 2, in commit
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
-    ret_value = fn(self, *arg, **kw)
-                ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1316, in commit
-    self._prepare_impl()
-  File "<string>", line 2, in _prepare_impl
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
-    ret_value = fn(self, *arg, **kw)
-                ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1290, in _prepare_impl
-    self.session.flush()
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
-    self._flush(objects)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
-    with util.safe_reraise():
-         ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
-    raise exc_value.with_traceback(exc_tb)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
-    flush_context.execute()
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 465, in execute
-    rec.execute(self)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 678, in execute
-    util.preloaded.orm_persistence.delete_obj(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 194, in delete_obj
-    _emit_delete_statements(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1472, in _emit_delete_statements
-    c = connection.execute(
-        ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
-    return meth(
-           ^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
-    return connection._execute_clauseelement(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
-    ret = self._execute_context(
-          ^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
-    return self._exec_single_context(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
-    self._handle_dbapi_exception(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
-DETAIL:  Key (id)=(2) is still referenced from table "documents".
-
-[SQL: DELETE FROM users WHERE users.id = %(id)s]
-[parameters: {'id': 2}]
-(Background on this error at: https://sqlalche.me/e/20/gkpj)
-2026-08-18 07:39:20,206 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:20] "[35m[1mDELETE /auth/admins/2 HTTP/1.1[0m" 500 -
-2026-08-18 07:39:20,315 ERROR routes.auth_routes: Error deleting admin 2: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
-DETAIL:  Key (id)=(2) is still referenced from table "documents".
-
-[SQL: DELETE FROM users WHERE users.id = %(id)s]
-[parameters: {'id': 2}]
-(Background on this error at: https://sqlalche.me/e/20/gkpj)
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-psycopg2.errors.ForeignKeyViolation: update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
-DETAIL:  Key (id)=(2) is still referenced from table "documents".
-
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/app/routes/auth_routes.py", line 2339, in delete_admin
-    db.session.commit()
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/scoping.py", line 596, in commit
-    return self._proxied.commit()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2035, in commit
-    trans.commit(_to_root=True)
-  File "<string>", line 2, in commit
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
-    ret_value = fn(self, *arg, **kw)
-                ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1316, in commit
-    self._prepare_impl()
-  File "<string>", line 2, in _prepare_impl
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
-    ret_value = fn(self, *arg, **kw)
-                ^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1290, in _prepare_impl
-    self.session.flush()
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4353, in flush
-    self._flush(objects)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
-    with util.safe_reraise():
-         ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
-    raise exc_value.with_traceback(exc_tb)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4449, in _flush
-    flush_context.execute()
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 465, in execute
-    rec.execute(self)
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 678, in execute
-    util.preloaded.orm_persistence.delete_obj(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 194, in delete_obj
-    _emit_delete_statements(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1472, in _emit_delete_statements
-    c = connection.execute(
-        ^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
-    return meth(
-           ^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
-    return connection._execute_clauseelement(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
-    ret = self._execute_context(
-          ^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
-    return self._exec_single_context(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
-    self._handle_dbapi_exception(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
-DETAIL:  Key (id)=(2) is still referenced from table "documents".
-
-[SQL: DELETE FROM users WHERE users.id = %(id)s]
-[parameters: {'id': 2}]
-(Background on this error at: https://sqlalche.me/e/20/gkpj)
-2026-08-18 07:39:20,319 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:20] "[35m[1mDELETE /auth/admins/2 HTTP/1.1[0m" 500 -
+2026-08-18 08:30:56,405 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:56] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:30:56,421 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:56] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:30:56,483 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:30:56] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:31:05,069 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:05] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:31:05,071 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:05] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:31:05,083 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:05] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:31:05,111 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:05] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:31:25,864 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:25] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:31:25,866 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:25] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:31:25,870 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:31:25,871 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:31:25,872 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:25] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:31:25,876 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:31:25,877 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:31:25,878 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:25] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:31:26,783 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:26] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:31:26,785 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:26] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:31:26,794 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:26] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:31:26,800 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:31:26] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:33:14,740 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:33:14] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:33:14,750 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:33:14] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:25,755 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:25] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:25,757 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:25] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:25,766 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:25] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:25,776 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:25] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:42,090 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:42] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:34:42,245 WARNING root: Incorrect password for Admin: admin@example.com
+2026-08-18 08:34:42,246 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:42] "[31m[1mPOST /auth/admin/login HTTP/1.1[0m" 401 -
+2026-08-18 08:34:44,300 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-18 08:34:44,301 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:44] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:34:44,312 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:44] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:34:44,314 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:44] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:34:44,335 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:44] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:34:44,351 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:44] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:34:45,863 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:45] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:34:45,864 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:45] "OPTIONS /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:34:45,868 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:34:45,870 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:34:45,871 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:45] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:34:45,875 INFO routes.documents: Fetching document metadata.
+2026-08-18 08:34:45,876 INFO routes.documents: Retrieved 3 documents.
+2026-08-18 08:34:45,877 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:45] "GET /document/view-list-documents HTTP/1.1" 200 -
+2026-08-18 08:34:46,533 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:46] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:46,538 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:46] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:46,540 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:46] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:46,543 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:46] "OPTIONS /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:46,549 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:46] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:46,559 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:46] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:46,567 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:46] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:46,577 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:46] "GET /auth/chat_users HTTP/1.1" 200 -
+2026-08-18 08:34:47,915 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:47] "OPTIONS /auth/users/19/sessions HTTP/1.1" 200 -
+2026-08-18 08:34:47,924 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:47] "GET /auth/users/19/sessions HTTP/1.1" 200 -
+2026-08-18 08:34:51,165 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:51] "OPTIONS /auth/users/16/sessions HTTP/1.1" 200 -
+2026-08-18 08:34:51,173 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:51] "GET /auth/users/16/sessions HTTP/1.1" 200 -
+2026-08-18 08:34:56,185 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:56] "OPTIONS /auth/users/5/sessions HTTP/1.1" 200 -
+2026-08-18 08:34:56,194 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:34:56] "GET /auth/users/5/sessions HTTP/1.1" 200 -
+2026-08-18 08:35:01,131 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:35:01] "OPTIONS /auth/users/4/sessions HTTP/1.1" 200 -
+2026-08-18 08:35:01,141 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:35:01] "GET /auth/users/4/sessions HTTP/1.1" 200 -
+2026-08-18 08:35:03,437 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:35:03] "OPTIONS /auth/users/9/sessions HTTP/1.1" 200 -
+2026-08-18 08:35:03,448 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:35:03] "GET /auth/users/9/sessions HTTP/1.1" 200 -
+2026-08-18 08:35:05,293 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:35:05] "OPTIONS /auth/users/6/sessions HTTP/1.1" 200 -
+2026-08-18 08:35:05,300 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:35:05] "GET /auth/users/6/sessions HTTP/1.1" 200 -
+2026-08-18 08:36:39,549 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:36:39] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:36:39,550 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:36:39] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:36:39,564 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:36:39] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:36:39,580 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:36:39] "GET /auth/dashboard/statistics HTTP/1.1" 200 -
+2026-08-18 08:37:51,680 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:51] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-18 08:37:51,681 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:51] "OPTIONS /super-admin/stats HTTP/1.1" 200 -
+2026-08-18 08:37:51,686 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:51] "[31m[1mGET /super-admin/stats HTTP/1.1[0m" 403 -
+2026-08-18 08:37:51,691 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:51] "[31m[1mGET /super-admin/stats HTTP/1.1[0m" 403 -
+2026-08-18 08:37:52,571 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:52] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-18 08:37:52,573 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:52] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-18 08:37:52,577 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:52] "[31m[1mGET /auth/admins HTTP/1.1[0m" 403 -
+2026-08-18 08:37:52,581 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:52] "[31m[1mGET /auth/admins HTTP/1.1[0m" 403 -
+2026-08-18 08:37:54,646 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:54] "[31m[1mGET /super-admin/stats HTTP/1.1[0m" 403 -
+2026-08-18 08:37:54,652 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:54] "[31m[1mGET /super-admin/stats HTTP/1.1[0m" 403 -
+2026-08-18 08:37:58,362 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:58] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-18 08:37:58,364 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:58] "OPTIONS /auth/admins HTTP/1.1" 200 -
+2026-08-18 08:37:58,370 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:58] "[31m[1mGET /auth/admins HTTP/1.1[0m" 403 -
+2026-08-18 08:37:58,374 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:37:58] "[31m[1mGET /auth/admins HTTP/1.1[0m" 403 -
+2026-08-18 08:40:36,399 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-18 08:40:36,406 INFO routes.chat: Retrieved 340 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-18 08:40:36,410 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:40:36] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
+2026-08-18 08:42:45,504 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:42:45] "OPTIONS /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:42:45,599 INFO root: Admin 'admin@example.com' logged in successfully.
+2026-08-18 08:42:45,601 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:42:45] "POST /auth/admin/login HTTP/1.1" 200 -
+2026-08-18 08:42:45,610 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 08:42:45] "OPTIONS /auth/dashboard/statistics HTTP/1.1" 200 -

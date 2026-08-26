@@ -1,4 +1,5 @@
-2026-08-18 07:39:19,069 ERROR routes.auth_routes: Error deleting admin 2: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
+2026-08-18 07:39:23,178 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:23] "OPTIONS /auth/admins/2 HTTP/1.1" 200 -
+2026-08-18 07:39:23,227 ERROR routes.auth_routes: Error deleting admin 2: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
 DETAIL:  Key (id)=(2) is still referenced from table "documents".
 
 [SQL: DELETE FROM users WHERE users.id = %(id)s]
@@ -79,8 +80,8 @@ DETAIL:  Key (id)=(2) is still referenced from table "documents".
 [SQL: DELETE FROM users WHERE users.id = %(id)s]
 [parameters: {'id': 2}]
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
-2026-08-18 07:39:19,111 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:19] "[35m[1mDELETE /auth/admins/2 HTTP/1.1[0m" 500 -
-2026-08-18 07:39:19,243 ERROR routes.auth_routes: Error deleting admin 2: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
+2026-08-18 07:39:23,231 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:23] "[35m[1mDELETE /auth/admins/2 HTTP/1.1[0m" 500 -
+2026-08-18 07:39:25,757 ERROR routes.auth_routes: Error deleting admin 2: (psycopg2.errors.ForeignKeyViolation) update or delete on table "users" violates foreign key constraint "documents_created_by_fkey" on table "documents"
 DETAIL:  Key (id)=(2) is still referenced from table "documents".
 
 [SQL: DELETE FROM users WHERE users.id = %(id)s]
@@ -161,4 +162,3 @@ DETAIL:  Key (id)=(2) is still referenced from table "documents".
 [SQL: DELETE FROM users WHERE users.id = %(id)s]
 [parameters: {'id': 2}]
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
-2026-08-18 07:39:19,247 INFO werkzeug: 172.18.0.1 - - [18/Aug/2026 07:39:19] "[35m[1mDELETE /auth/admins/2 HTTP/1.1[0m" 500 -

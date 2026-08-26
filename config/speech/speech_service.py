@@ -1,7 +1,8 @@
 from faster_whisper import WhisperModel
-from gtts import gTTS
+from kokoro import KPipeline
 import tempfile
-
+import soundfile as sf
+from config.speech.text_clean import clean_text_for_speech  
 
 whisper_model = WhisperModel(
     "small",
@@ -25,22 +26,38 @@ def speech_to_text(audio_path):
     return text.strip()
 
 
+kokoro_pipeline = KPipeline(
+    lang_code="a"
+)
+
+KOKORO_VOICE = "af_heart"
+
+
 def text_to_speech(text):
+
+    text = clean_text_for_speech(text)
 
     output = tempfile.NamedTemporaryFile(
         delete=False,
-        suffix=".mp3"
+        suffix=".wav"
     )
 
     output.close()
 
-    tts = gTTS(
-        text=text,
-        lang="en",
-        tld="co.uk",
-        slow=False
+    generator = kokoro_pipeline(
+        text,
+        voice=KOKORO_VOICE
     )
 
-    tts.save(output.name)
+    with sf.SoundFile(
+        output.name,
+        mode="w",
+        samplerate=24000,
+        channels=1,
+        subtype="PCM_16"
+    ) as wav_file:
+
+        for _, _, audio in generator:
+            wav_file.write(audio)
 
     return output.name
