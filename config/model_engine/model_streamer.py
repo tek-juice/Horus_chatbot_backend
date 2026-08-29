@@ -186,3 +186,5 @@ HORUS MUSIC CONTEXT:
     except Exception as e:
         logger.exception(f"Unexpected error generating response: {str(e)}")
         yield "An unexpected error occurred while generating a response."
+
+

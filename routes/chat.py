@@ -8,11 +8,13 @@ from models.users import MessageRole
 from config.chat_services.create_user import create_user
 from config.chat_services.get_user_by_email import get_user_by_email
 import logging
+import time
+
 from models.users import ChatSession
 from config.helpers.validators import validate_email, validate_name
 
-from config.speech.speech_service import speech_to_text, text_to_speech
-from config.speech.chat_service import generate_answer
+from config.speech.speech_service import speech_to_text
+from config.speech.voice_streamer import generate_voice_answer
 import tempfile
 import os
 from config.limit_config.limiter import limiter
@@ -395,7 +397,14 @@ def get_session_messages(chat_id):
         }
     }
 })
+
 def speech_chat():
+    request_start = time.perf_counter()
+
+    logger.info("[VOICE] ===============================")
+    logger.info("[VOICE] New voice request")
+    logger.info("[VOICE] ===============================")
+
     audio_file = request.files.get("audio")
     session_uuid = request.form.get("session_id")
 
@@ -412,47 +421,81 @@ def speech_chat():
         }), 400
 
     audio_path = None
-    output_path = None
 
     try:
+        start = time.perf_counter()
+
         audio_temp = tempfile.NamedTemporaryFile(
             delete=False,
             suffix=".webm"
         )
 
         audio_file.save(audio_temp.name)
+
         audio_path = audio_temp.name
+
         audio_temp.close()
+
+        logger.info(
+            "[VOICE] Audio save: %.2fs",
+            time.perf_counter() - start
+        )
+
         question = speech_to_text(audio_path)
+
+        logger.info(
+            "[VOICE] STT total from route: %.2fs",
+            time.perf_counter() - start
+        )
 
         if not question:
             return jsonify({
                 "success": False,
                 "error": "Could not understand the audio."
             }), 400
+
+        session = get_chat_session(session_uuid)
+
+        if session is None:
+
+            logger.error(
+                "[VOICE] Invalid session: %s",
+                session_uuid
+            )
+
+            return jsonify({
+                "success": False,
+                "error": "Invalid chat session."
+            }), 400
         
-        answer = generate_answer(
+        logger.info(
+            "[VOICE] Starting streaming voice response"
+        )
+
+        audio_generator = generate_voice_answer(
             session_uuid,
             question
         )
 
-        if not answer:
-            return jsonify({
-                "success": False,
-                "error": "Failed to generate an answer."
-            }), 500
-
-        output_path = text_to_speech(answer)
-
-        return send_file(
-            output_path,
-            mimetype="audio/wav",
-            as_attachment=False,
-            download_name="horus_response.wav"
+        response = Response(
+            stream_with_context(audio_generator),
+            mimetype="application/octet-stream"
         )
 
+        response.headers["Cache-Control"] = "no-cache"
+
+        response.headers["X-Accel-Buffering"] = "no"
+
+        return response
+
     except Exception as e:
+
+        logger.exception(
+            "[VOICE] Voice request failed"
+        )
+
         db.session.rollback()
+
         return jsonify({
             "success": False,
             "error": str(e)
@@ -460,4 +503,24 @@ def speech_chat():
 
     finally:
         if audio_path and os.path.exists(audio_path):
-            os.remove(audio_path)
+
+            try:
+
+                os.remove(audio_path)
+
+                logger.info(
+                    "[VOICE] Temporary audio file removed"
+                )
+
+            except Exception:
+
+                logger.exception(
+                    "[VOICE] Failed to remove temporary audio"
+                )
+
+        logger.info(
+            "[VOICE] Request handler finished: %.2fs",
+            time.perf_counter() - request_start
+        )
+
+    
