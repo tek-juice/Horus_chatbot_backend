@@ -47,7 +47,7 @@ def create_app():
         app,
         resources={
             r"/*": {
-                "origins": "http://localhost:5173",
+                "origins": "http://chatbot.horusmusic.global", #"http://localhost:5173",
                 "allow_headers": [
                 "Content-Type",
                 "Authorization"
