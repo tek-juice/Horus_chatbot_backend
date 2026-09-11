@@ -1,106 +1,100 @@
-2026-08-27 16:31:28,052 INFO routes.chat: Fetching chat messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-27 16:31:28,673 INFO routes.chat: Retrieved 386 messages for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-27 16:31:28,696 INFO werkzeug: 172.18.0.1 - - [27/Aug/2026 16:31:28] "GET /messages/1c982353-f829-4fc4-9851-64936d969fe3 HTTP/1.1" 200 -
-2026-08-28 10:35:48,505 INFO root: Starting Horus Backend Application
-2026-08-28 10:35:48,613 INFO root: Routes registered successfully
-2026-08-28 10:35:48,614 INFO root: Running development server
-2026-08-28 10:35:48,656 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-08-28 10:35:48,657 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-28 10:35:48,661 INFO werkzeug:  * Restarting with stat
-2026-08-28 10:36:12,714 INFO root: Starting Horus Backend Application
-2026-08-28 10:36:12,756 INFO root: Routes registered successfully
-2026-08-28 10:36:12,757 INFO root: Running development server
-2026-08-28 10:36:12,770 WARNING werkzeug:  * Debugger is active!
-2026-08-28 10:36:12,819 INFO werkzeug:  * Debugger PIN: 144-364-329
-2026-08-28 10:36:36,793 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:36:36] "[32mGET /apidocs HTTP/1.1[0m" 308 -
-2026-08-28 10:36:36,851 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:36:36] "GET /apidocs/ HTTP/1.1" 200 -
-2026-08-28 10:36:36,905 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:36:36] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
-2026-08-28 10:36:36,907 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:36:36] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
-2026-08-28 10:36:36,908 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:36:36] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
-2026-08-28 10:36:36,909 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:36:36] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
-2026-08-28 10:36:37,118 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:36:37] "GET /apispec.json HTTP/1.1" 200 -
-2026-08-28 10:36:37,122 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:36:37] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
-2026-08-28 10:37:14,248 INFO routes.chat: [VOICE] ===============================
-2026-08-28 10:37:14,257 INFO routes.chat: [VOICE] New voice request
-2026-08-28 10:37:14,258 INFO routes.chat: [VOICE] ===============================
-2026-08-28 10:37:14,280 INFO routes.chat: [VOICE] Audio save: 0.01s
-2026-08-28 10:37:14,281 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
-2026-08-28 10:37:15,139 INFO faster_whisper: Processing audio with duration 00:03.060
-2026-08-28 10:37:18,847 INFO faster_whisper: Detected language 'en' with probability 0.30
-2026-08-28 10:37:22,331 INFO config.speech.speech_service: [VOICE] STT time: 8.05s
-2026-08-28 10:37:22,332 INFO config.speech.speech_service: [VOICE] Transcription: Test. Testing. Test.
-2026-08-28 10:37:22,332 INFO routes.chat: [VOICE] STT total from route: 8.07s
-2026-08-28 10:37:22,333 INFO routes.chat: [VOICE] Starting streaming voice response
-2026-08-28 10:37:22,335 INFO routes.chat: [VOICE] Request handler finished: 8.09s
-2026-08-28 10:37:22,336 INFO config.speech.voice_streamer: [VOICE] Starting streaming voice answer. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-28 10:37:22,374 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:37:22] "POST /speech/chat HTTP/1.1" 200 -
-2026-08-28 10:37:32,373 INFO routes.chat: [VOICE] ===============================
-2026-08-28 10:37:32,374 INFO routes.chat: [VOICE] New voice request
-2026-08-28 10:37:32,375 INFO routes.chat: [VOICE] ===============================
-2026-08-28 10:37:32,379 INFO routes.chat: [VOICE] Audio save: 0.00s
-2026-08-28 10:37:32,380 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
-2026-08-28 10:37:32,751 INFO faster_whisper: Processing audio with duration 00:02.340
-2026-08-28 10:37:35,678 INFO faster_whisper: Detected language 'en' with probability 0.52
-2026-08-28 10:37:38,623 INFO config.speech.speech_service: [VOICE] STT time: 6.25s
-2026-08-28 10:37:38,624 INFO config.speech.speech_service: [VOICE] Transcription: Testing test
-2026-08-28 10:37:38,625 INFO routes.chat: [VOICE] STT total from route: 6.25s
-2026-08-28 10:37:38,625 INFO routes.chat: [VOICE] Starting streaming voice response
-2026-08-28 10:37:38,626 INFO routes.chat: [VOICE] Request handler finished: 6.26s
-2026-08-28 10:37:38,627 INFO config.speech.voice_streamer: [VOICE] Starting streaming voice answer. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-28 10:37:38,640 INFO werkzeug: 172.18.0.1 - - [28/Aug/2026 10:37:38] "POST /speech/chat HTTP/1.1" 200 -
-2026-08-29 19:36:32,454 INFO root: Starting Horus Backend Application
-2026-08-29 19:36:32,505 INFO root: Routes registered successfully
-2026-08-29 19:36:32,505 INFO root: Running development server
-2026-08-29 19:36:32,538 INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.18.0.3:5000
-2026-08-29 19:36:32,539 INFO werkzeug: [33mPress CTRL+C to quit[0m
-2026-08-29 19:36:32,542 INFO werkzeug:  * Restarting with stat
-2026-08-29 19:36:55,717 INFO root: Starting Horus Backend Application
-2026-08-29 19:36:56,003 INFO root: Routes registered successfully
-2026-08-29 19:36:56,004 INFO root: Running development server
-2026-08-29 19:36:56,017 WARNING werkzeug:  * Debugger is active!
-2026-08-29 19:36:56,023 INFO werkzeug:  * Debugger PIN: 525-723-621
-2026-08-29 19:50:12,916 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:12] "GET /apidocs/ HTTP/1.1" 200 -
-2026-08-29 19:50:12,945 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:12] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
-2026-08-29 19:50:12,945 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:12] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
-2026-08-29 19:50:12,947 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:12] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
-2026-08-29 19:50:12,948 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:12] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
-2026-08-29 19:50:13,028 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:13] "GET /apispec.json HTTP/1.1" 200 -
-2026-08-29 19:50:13,031 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:13] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
-2026-08-29 19:50:30,940 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:30] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-29 19:50:31,164 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 19:50:31,165 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-29 19:50:31,165 INFO config.model_engine.vector_search: Starting document search. Question length: 5, top_k=3, similarity_threshold=0.5
-2026-08-29 19:50:31,165 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-29 19:50:31,165 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-29 19:50:31,166 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-29 19:50:31,395 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-29 19:50:31,397 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-29 19:50:31,421 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-29 19:50:31,421 INFO config.model_engine.vector_search: Result 1: similarity=0.5825, distance=0.4175
-2026-08-29 19:50:31,422 INFO config.model_engine.vector_search: Result 2: similarity=0.5441, distance=0.4559
-2026-08-29 19:50:31,422 INFO config.model_engine.vector_search: Result 3: similarity=0.5429, distance=0.4571
-2026-08-29 19:50:31,422 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-29 19:50:31,422 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
-2026-08-29 19:50:31,423 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 19:50:31,432 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 19:50:31,432 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-29 19:50:33,102 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-29 19:50:33,105 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-29 19:50:33,344 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:33] "POST /chat HTTP/1.1" 200 -
-2026-08-29 19:50:35,184 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-29 19:50:44,592 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 19:50:44] "OPTIONS /chat HTTP/1.1" 200 -
-2026-08-29 19:50:44,614 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 19:50:44,614 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-29 19:50:44,615 INFO config.model_engine.vector_search: Starting document search. Question length: 10, top_k=3, similarity_threshold=0.5
-2026-08-29 19:50:44,615 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-29 19:50:44,616 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-29 19:50:44,616 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-29 19:50:44,623 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-29 19:50:44,624 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-29 20:08:10,158 INFO werkzeug:  * Restarting with stat
+2026-08-29 20:37:19,784 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-29 20:37:19,824 INFO config.model_engine.vector_search: Result 1: similarity=0.6334, distance=0.3666
+2026-08-29 20:37:19,824 INFO config.model_engine.vector_search: Result 2: similarity=0.5598, distance=0.4402
+2026-08-29 20:37:19,824 INFO config.model_engine.vector_search: Result 3: similarity=0.5318, distance=0.4682
+2026-08-29 20:37:19,824 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-29 20:37:19,825 INFO config.model_engine.model_streamer: Context created. Length=1034 characters.
+2026-08-29 20:37:19,825 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 20:37:19,828 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 20:37:19,828 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-29 20:37:21,574 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-29 20:37:21,574 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-29 20:37:21,873 INFO config.speech.voice_streamer: [VOICE] LLM first token: 2.10s
+2026-08-29 20:37:22,126 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=51
+2026-08-29 20:37:22,126 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=51
+2026-08-29 20:37:22,127 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=50
+2026-08-29 20:37:23,930 INFO config.speech.voice_streamer: [VOICE] FIRST AUDIO: 4.16s
+2026-08-29 20:37:23,930 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 20:37:23] "POST /speech/chat HTTP/1.1" 200 -
+2026-08-29 20:37:23,933 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.81s
+2026-08-29 20:37:23,936 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=65
+2026-08-29 20:37:23,936 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=65
+2026-08-29 20:37:23,937 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=65
+2026-08-29 20:37:25,607 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.67s
+2026-08-29 20:37:25,610 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-29 20:37:25,611 INFO config.speech.voice_streamer: [VOICE] LLM complete: 5.84s
+2026-08-29 20:37:25,611 INFO config.speech.voice_streamer: [VOICE] Complete answer length: 117 characters
+2026-08-29 20:37:25,615 INFO config.speech.voice_streamer: [VOICE] Assistant DB save: 0.00s
+2026-08-29 20:37:25,616 INFO config.speech.voice_streamer: [VOICE] Streaming voice answer complete: 5.85s
+2026-08-29 20:37:25,616 INFO config.speech.voice_streamer: [VOICE] Time to first audio: 4.16s
+2026-08-29 20:37:35,829 INFO routes.chat: [VOICE] ===============================
+2026-08-29 20:37:35,830 INFO routes.chat: [VOICE] New voice request
+2026-08-29 20:37:35,830 INFO routes.chat: [VOICE] ===============================
+2026-08-29 20:37:35,834 INFO routes.chat: [VOICE] Audio save: 0.00s
+2026-08-29 20:37:35,835 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
+2026-08-29 20:37:36,059 INFO faster_whisper: Processing audio with duration 00:02.700
+2026-08-29 20:37:37,458 INFO faster_whisper: Detected language 'en' with probability 0.52
+2026-08-29 20:37:38,800 INFO config.speech.speech_service: [VOICE] STT time: 2.97s
+2026-08-29 20:37:38,801 INFO config.speech.speech_service: [VOICE] Transcription: Time you about music distribution
+2026-08-29 20:37:38,801 INFO routes.chat: [VOICE] STT total from route: 2.97s
+2026-08-29 20:37:38,803 INFO routes.chat: [VOICE] Starting streaming voice response
+2026-08-29 20:37:38,804 INFO routes.chat: [VOICE] Temporary audio file removed
+2026-08-29 20:37:38,804 INFO routes.chat: [VOICE] Request handler finished: 2.97s
+2026-08-29 20:37:38,805 INFO config.speech.voice_streamer: [VOICE] Starting streaming voice answer. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 20:37:38,818 INFO config.speech.voice_streamer: [VOICE] User DB save: 0.01s
+2026-08-29 20:37:38,819 INFO config.speech.voice_streamer: [VOICE] Starting LLM stream
+2026-08-29 20:37:38,819 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 20:37:38,819 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-29 20:37:38,819 INFO config.model_engine.vector_search: Starting document search. Question length: 33, top_k=3, similarity_threshold=0.5
+2026-08-29 20:37:38,819 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-29 20:37:38,820 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-29 20:37:38,820 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-29 20:37:38,824 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-29 20:37:38,825 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-29 20:37:38,828 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-29 20:37:38,828 INFO config.model_engine.vector_search: Result 1: similarity=0.7391, distance=0.2609
+2026-08-29 20:37:38,828 INFO config.model_engine.vector_search: Result 2: similarity=0.7273, distance=0.2727
+2026-08-29 20:37:38,828 INFO config.model_engine.vector_search: Result 3: similarity=0.7226, distance=0.2774
+2026-08-29 20:37:38,829 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-29 20:37:38,829 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
+2026-08-29 20:37:38,829 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 20:37:38,831 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 20:37:38,831 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-29 20:37:42,524 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-29 20:37:42,525 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-29 20:37:42,628 INFO config.speech.voice_streamer: [VOICE] LLM first token: 3.81s
+2026-08-29 20:37:42,745 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=42
+2026-08-29 20:37:42,745 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=42
+2026-08-29 20:37:42,746 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=42
+2026-08-29 20:37:44,542 INFO config.speech.voice_streamer: [VOICE] FIRST AUDIO: 5.74s
+2026-08-29 20:37:44,542 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 20:37:44] "POST /speech/chat HTTP/1.1" 200 -
+2026-08-29 20:37:44,544 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.80s
+2026-08-29 20:37:44,548 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=44
+2026-08-29 20:37:44,548 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=44
+2026-08-29 20:37:44,549 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=43
+2026-08-29 20:37:44,555 WARNING phonemizer: words count mismatch on 100.0% of the lines (1/1)
+2026-08-29 20:37:46,253 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.70s
+2026-08-29 20:37:46,260 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=180
+2026-08-29 20:37:46,260 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=180
+2026-08-29 20:37:46,261 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=173
+2026-08-29 20:37:51,836 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=5.58s
+2026-08-29 20:37:51,842 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=112
+2026-08-29 20:37:51,842 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=112
+2026-08-29 20:37:51,843 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=107
+2026-08-29 20:37:55,230 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=3.39s
+2026-08-29 20:37:55,232 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-29 20:37:55,233 INFO config.speech.voice_streamer: [VOICE] LLM complete: 16.41s
+2026-08-29 20:37:55,234 INFO config.speech.voice_streamer: [VOICE] Complete answer length: 381 characters
+2026-08-29 20:37:55,250 INFO config.speech.voice_streamer: [VOICE] Assistant DB save: 0.02s
+2026-08-29 20:37:55,251 INFO config.speech.voice_streamer: [VOICE] Streaming voice answer complete: 16.45s
+2026-08-29 20:37:55,252 INFO config.speech.voice_streamer: [VOICE] Time to first audio: 5.74s
+2026-08-29 20:38:26,415 INFO routes.chat: [VOICE] ===============================
+2026-08-29 20:38:26,415 INFO routes.chat: [VOICE] New voice request
+2026-08-29 20:38:26,416 INFO routes.chat: [VOICE] ===============================
+2026-08-29 20:38:26,420 INFO routes.chat: [VOICE] Audio save: 0.00s
+2026-08-29 20:38:26,421 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
+2026-08-29 20:38:26,641 INFO faster_whisper: Processing audio with duration 00:05.340
+2026-08-29 20:38:28,040 INFO faster_whisper: Detected language 'en' with probability 0.93
+2026-08-29 20:38:29,400 INFO config.speech.speech_service: [VOICE] STT time: 2.98s
+2026-08-29 20:38:29,401 INFO config.speech.speech_service: [VOICE] Transcription: That's it. What services do you guys offer?
+2026-08-29 20:38:29,401 INFO routes.chat: [VOICE] STT total from route: 2.98s
+2026-08-29 20:38:29,403 INFO routes.chat: [VOICE] Starting streaming voice response

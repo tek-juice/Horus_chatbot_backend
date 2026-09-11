@@ -1,100 +1,104 @@
-2026-08-29 20:37:19,784 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-29 20:37:19,824 INFO config.model_engine.vector_search: Result 1: similarity=0.6334, distance=0.3666
-2026-08-29 20:37:19,824 INFO config.model_engine.vector_search: Result 2: similarity=0.5598, distance=0.4402
-2026-08-29 20:37:19,824 INFO config.model_engine.vector_search: Result 3: similarity=0.5318, distance=0.4682
-2026-08-29 20:37:19,824 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-29 20:37:19,825 INFO config.model_engine.model_streamer: Context created. Length=1034 characters.
-2026-08-29 20:37:19,825 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 20:37:19,828 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 20:37:19,828 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-29 20:37:21,574 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-29 20:37:21,574 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-29 20:37:21,873 INFO config.speech.voice_streamer: [VOICE] LLM first token: 2.10s
-2026-08-29 20:37:22,126 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=51
-2026-08-29 20:37:22,126 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=51
-2026-08-29 20:37:22,127 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=50
-2026-08-29 20:37:23,930 INFO config.speech.voice_streamer: [VOICE] FIRST AUDIO: 4.16s
-2026-08-29 20:37:23,930 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 20:37:23] "POST /speech/chat HTTP/1.1" 200 -
-2026-08-29 20:37:23,933 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.81s
-2026-08-29 20:37:23,936 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=65
-2026-08-29 20:37:23,936 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=65
-2026-08-29 20:37:23,937 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=65
-2026-08-29 20:37:25,607 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.67s
-2026-08-29 20:37:25,610 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-29 20:37:25,611 INFO config.speech.voice_streamer: [VOICE] LLM complete: 5.84s
-2026-08-29 20:37:25,611 INFO config.speech.voice_streamer: [VOICE] Complete answer length: 117 characters
-2026-08-29 20:37:25,615 INFO config.speech.voice_streamer: [VOICE] Assistant DB save: 0.00s
-2026-08-29 20:37:25,616 INFO config.speech.voice_streamer: [VOICE] Streaming voice answer complete: 5.85s
-2026-08-29 20:37:25,616 INFO config.speech.voice_streamer: [VOICE] Time to first audio: 4.16s
-2026-08-29 20:37:35,829 INFO routes.chat: [VOICE] ===============================
-2026-08-29 20:37:35,830 INFO routes.chat: [VOICE] New voice request
-2026-08-29 20:37:35,830 INFO routes.chat: [VOICE] ===============================
-2026-08-29 20:37:35,834 INFO routes.chat: [VOICE] Audio save: 0.00s
-2026-08-29 20:37:35,835 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
-2026-08-29 20:37:36,059 INFO faster_whisper: Processing audio with duration 00:02.700
-2026-08-29 20:37:37,458 INFO faster_whisper: Detected language 'en' with probability 0.52
-2026-08-29 20:37:38,800 INFO config.speech.speech_service: [VOICE] STT time: 2.97s
-2026-08-29 20:37:38,801 INFO config.speech.speech_service: [VOICE] Transcription: Time you about music distribution
-2026-08-29 20:37:38,801 INFO routes.chat: [VOICE] STT total from route: 2.97s
-2026-08-29 20:37:38,803 INFO routes.chat: [VOICE] Starting streaming voice response
-2026-08-29 20:37:38,804 INFO routes.chat: [VOICE] Temporary audio file removed
-2026-08-29 20:37:38,804 INFO routes.chat: [VOICE] Request handler finished: 2.97s
-2026-08-29 20:37:38,805 INFO config.speech.voice_streamer: [VOICE] Starting streaming voice answer. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 20:37:38,818 INFO config.speech.voice_streamer: [VOICE] User DB save: 0.01s
-2026-08-29 20:37:38,819 INFO config.speech.voice_streamer: [VOICE] Starting LLM stream
-2026-08-29 20:37:38,819 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 20:37:38,819 INFO config.model_engine.model_streamer: Searching documents.
-2026-08-29 20:37:38,819 INFO config.model_engine.vector_search: Starting document search. Question length: 33, top_k=3, similarity_threshold=0.5
-2026-08-29 20:37:38,819 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
-2026-08-29 20:37:38,820 INFO config.model_engine.vector_search: Generating query embedding.
-2026-08-29 20:37:38,820 INFO config.document_services.embedding_services: Generating query embedding.
-2026-08-29 20:37:38,824 INFO config.model_engine.vector_search: Query embedding generated successfully.
-2026-08-29 20:37:38,825 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
-2026-08-29 20:37:38,828 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
-2026-08-29 20:37:38,828 INFO config.model_engine.vector_search: Result 1: similarity=0.7391, distance=0.2609
-2026-08-29 20:37:38,828 INFO config.model_engine.vector_search: Result 2: similarity=0.7273, distance=0.2727
-2026-08-29 20:37:38,828 INFO config.model_engine.vector_search: Result 3: similarity=0.7226, distance=0.2774
-2026-08-29 20:37:38,829 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
-2026-08-29 20:37:38,829 INFO config.model_engine.model_streamer: Context created. Length=1552 characters.
-2026-08-29 20:37:38,829 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 20:37:38,831 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
-2026-08-29 20:37:38,831 INFO config.model_engine.model_streamer: Sending request to LLM.
-2026-08-29 20:37:42,524 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
-2026-08-29 20:37:42,525 INFO config.model_engine.model_streamer: LLM stream started.
-2026-08-29 20:37:42,628 INFO config.speech.voice_streamer: [VOICE] LLM first token: 3.81s
-2026-08-29 20:37:42,745 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=42
-2026-08-29 20:37:42,745 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=42
-2026-08-29 20:37:42,746 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=42
-2026-08-29 20:37:44,542 INFO config.speech.voice_streamer: [VOICE] FIRST AUDIO: 5.74s
-2026-08-29 20:37:44,542 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 20:37:44] "POST /speech/chat HTTP/1.1" 200 -
-2026-08-29 20:37:44,544 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.80s
-2026-08-29 20:37:44,548 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=44
-2026-08-29 20:37:44,548 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=44
-2026-08-29 20:37:44,549 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=43
-2026-08-29 20:37:44,555 WARNING phonemizer: words count mismatch on 100.0% of the lines (1/1)
-2026-08-29 20:37:46,253 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.70s
-2026-08-29 20:37:46,260 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=180
-2026-08-29 20:37:46,260 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=180
-2026-08-29 20:37:46,261 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=173
-2026-08-29 20:37:51,836 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=5.58s
-2026-08-29 20:37:51,842 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=112
-2026-08-29 20:37:51,842 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=112
-2026-08-29 20:37:51,843 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=107
-2026-08-29 20:37:55,230 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=3.39s
-2026-08-29 20:37:55,232 INFO config.model_engine.model_streamer: LLM stream completed successfully.
-2026-08-29 20:37:55,233 INFO config.speech.voice_streamer: [VOICE] LLM complete: 16.41s
-2026-08-29 20:37:55,234 INFO config.speech.voice_streamer: [VOICE] Complete answer length: 381 characters
-2026-08-29 20:37:55,250 INFO config.speech.voice_streamer: [VOICE] Assistant DB save: 0.02s
-2026-08-29 20:37:55,251 INFO config.speech.voice_streamer: [VOICE] Streaming voice answer complete: 16.45s
-2026-08-29 20:37:55,252 INFO config.speech.voice_streamer: [VOICE] Time to first audio: 5.74s
-2026-08-29 20:38:26,415 INFO routes.chat: [VOICE] ===============================
-2026-08-29 20:38:26,415 INFO routes.chat: [VOICE] New voice request
-2026-08-29 20:38:26,416 INFO routes.chat: [VOICE] ===============================
-2026-08-29 20:38:26,420 INFO routes.chat: [VOICE] Audio save: 0.00s
-2026-08-29 20:38:26,421 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
-2026-08-29 20:38:26,641 INFO faster_whisper: Processing audio with duration 00:05.340
-2026-08-29 20:38:28,040 INFO faster_whisper: Detected language 'en' with probability 0.93
-2026-08-29 20:38:29,400 INFO config.speech.speech_service: [VOICE] STT time: 2.98s
-2026-08-29 20:38:29,401 INFO config.speech.speech_service: [VOICE] Transcription: That's it. What services do you guys offer?
-2026-08-29 20:38:29,401 INFO routes.chat: [VOICE] STT total from route: 2.98s
-2026-08-29 20:38:29,403 INFO routes.chat: [VOICE] Starting streaming voice response
+2026-08-29 21:22:56,780 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=121
+2026-08-29 21:22:56,820 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=121
+2026-08-29 21:23:00,007 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=3.23s
+2026-08-29 21:23:00,018 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=114
+2026-08-29 21:23:00,018 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=114
+2026-08-29 21:23:00,019 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=114
+2026-08-29 21:23:03,085 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=3.07s
+2026-08-29 21:23:03,088 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-29 21:23:03,089 INFO config.speech.voice_streamer: [VOICE] LLM complete: 14.26s
+2026-08-29 21:23:03,089 INFO config.speech.voice_streamer: [VOICE] Complete answer length: 354 characters
+2026-08-29 21:23:03,092 INFO config.speech.voice_streamer: [VOICE] Assistant DB save: 0.00s
+2026-08-29 21:23:03,093 INFO config.speech.voice_streamer: [VOICE] Streaming voice answer complete: 14.27s
+2026-08-29 21:23:03,093 INFO config.speech.voice_streamer: [VOICE] Time to first audio: 4.60s
+2026-08-29 21:23:27,156 INFO routes.chat: [VOICE] ===============================
+2026-08-29 21:23:27,156 INFO routes.chat: [VOICE] New voice request
+2026-08-29 21:23:27,157 INFO routes.chat: [VOICE] ===============================
+2026-08-29 21:23:27,163 INFO routes.chat: [VOICE] Audio save: 0.00s
+2026-08-29 21:23:27,164 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
+2026-08-29 21:23:27,424 INFO faster_whisper: Processing audio with duration 00:04.560
+2026-08-29 21:23:28,827 INFO faster_whisper: Detected language 'en' with probability 0.70
+2026-08-29 21:23:30,161 INFO config.speech.speech_service: [VOICE] STT time: 3.00s
+2026-08-29 21:23:30,161 INFO config.speech.speech_service: [VOICE] Transcription: Yeah, I would like to know.
+2026-08-29 21:23:30,162 INFO routes.chat: [VOICE] STT total from route: 3.00s
+2026-08-29 21:23:30,163 INFO routes.chat: [VOICE] Starting streaming voice response
+2026-08-29 21:23:30,164 INFO routes.chat: [VOICE] Temporary audio file removed
+2026-08-29 21:23:30,164 INFO routes.chat: [VOICE] Request handler finished: 3.01s
+2026-08-29 21:23:30,165 INFO config.speech.voice_streamer: [VOICE] Starting streaming voice answer. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 21:23:30,170 INFO config.speech.voice_streamer: [VOICE] User DB save: 0.00s
+2026-08-29 21:23:30,170 INFO config.speech.voice_streamer: [VOICE] Starting LLM stream
+2026-08-29 21:23:30,170 INFO config.model_engine.model_streamer: Starting AI response generation. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 21:23:30,170 INFO config.model_engine.model_streamer: Searching documents.
+2026-08-29 21:23:30,171 INFO config.model_engine.vector_search: Starting document search. Question length: 27, top_k=3, similarity_threshold=0.5
+2026-08-29 21:23:30,171 INFO config.model_engine.vector_search: Using cosine distance threshold: 0.5
+2026-08-29 21:23:30,171 INFO config.model_engine.vector_search: Generating query embedding.
+2026-08-29 21:23:30,171 INFO config.document_services.embedding_services: Generating query embedding.
+2026-08-29 21:23:30,180 INFO config.model_engine.vector_search: Query embedding generated successfully.
+2026-08-29 21:23:30,181 INFO config.model_engine.vector_search: Executing vector search. top_k=3, distance_threshold=0.5
+2026-08-29 21:23:30,183 INFO config.model_engine.vector_search: Document search completed. Found 3 relevant results.
+2026-08-29 21:23:30,184 INFO config.model_engine.vector_search: Result 1: similarity=0.5597, distance=0.4403
+2026-08-29 21:23:30,184 INFO config.model_engine.vector_search: Result 2: similarity=0.5432, distance=0.4568
+2026-08-29 21:23:30,184 INFO config.model_engine.vector_search: Result 3: similarity=0.5233, distance=0.4767
+2026-08-29 21:23:30,184 INFO config.model_engine.model_streamer: Retrieved 3 document chunks.
+2026-08-29 21:23:30,185 INFO config.model_engine.model_streamer: Context created. Length=1093 characters.
+2026-08-29 21:23:30,185 INFO config.model_engine.memory_service: Fetching last assistant message for chat_id=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 21:23:30,187 INFO config.model_engine.model_streamer: Previous assistant message found for session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 21:23:30,187 INFO config.model_engine.model_streamer: Sending request to LLM.
+2026-08-29 21:23:35,705 INFO httpx: HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-29 21:23:35,706 INFO config.model_engine.model_streamer: LLM stream started.
+2026-08-29 21:23:35,809 INFO config.speech.voice_streamer: [VOICE] LLM first token: 5.64s
+2026-08-29 21:23:36,109 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=71
+2026-08-29 21:23:36,109 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=71
+2026-08-29 21:23:36,110 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=71
+2026-08-29 21:23:38,272 INFO config.speech.voice_streamer: [VOICE] FIRST AUDIO: 8.11s
+2026-08-29 21:23:38,272 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 21:23:38] "POST /speech/chat HTTP/1.1" 200 -
+2026-08-29 21:23:38,274 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=2.16s
+2026-08-29 21:23:38,280 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=110
+2026-08-29 21:23:38,281 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=110
+2026-08-29 21:23:38,281 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=103
+2026-08-29 21:23:38,299 WARNING phonemizer: words count mismatch on 100.0% of the lines (1/1)
+2026-08-29 21:23:41,340 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=3.06s
+2026-08-29 21:23:41,360 INFO config.speech.voice_streamer: [VOICE] Sending text chunk to TTS. Characters=156
+2026-08-29 21:23:41,361 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=156
+2026-08-29 21:23:41,365 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=128
+2026-08-29 21:23:41,440 WARNING phonemizer: words count mismatch on 100.0% of the lines (1/1)
+2026-08-29 21:23:45,463 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=4.10s
+2026-08-29 21:23:45,471 INFO config.model_engine.model_streamer: LLM stream completed successfully.
+2026-08-29 21:23:45,472 INFO config.speech.voice_streamer: [VOICE] Processing final TTS buffer. Characters=36
+2026-08-29 21:23:45,472 INFO config.speech.speech_service: [VOICE] Starting streaming TTS. Characters=36
+2026-08-29 21:23:45,473 INFO config.speech.speech_service: [VOICE] Streaming TTS text after cleaning. Characters=32
+2026-08-29 21:23:46,893 INFO config.speech.speech_service: [VOICE] Streaming TTS complete. Chunks=1 Time=1.42s
+2026-08-29 21:23:46,894 INFO config.speech.voice_streamer: [VOICE] LLM complete: 16.72s
+2026-08-29 21:23:46,894 INFO config.speech.voice_streamer: [VOICE] Complete answer length: 375 characters
+2026-08-29 21:23:46,900 INFO config.speech.voice_streamer: [VOICE] Assistant DB save: 0.00s
+2026-08-29 21:23:46,900 INFO config.speech.voice_streamer: [VOICE] Streaming voice answer complete: 16.74s
+2026-08-29 21:23:46,901 INFO config.speech.voice_streamer: [VOICE] Time to first audio: 8.11s
+2026-08-29 21:36:34,405 INFO routes.chat: [VOICE] ===============================
+2026-08-29 21:36:34,407 INFO routes.chat: [VOICE] New voice request
+2026-08-29 21:36:34,407 INFO routes.chat: [VOICE] ===============================
+2026-08-29 21:36:34,416 INFO routes.chat: [VOICE] Audio save: 0.01s
+2026-08-29 21:36:34,416 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
+2026-08-29 21:36:34,832 INFO faster_whisper: Processing audio with duration 00:01.440
+2026-08-29 21:36:36,539 INFO faster_whisper: Detected language 'en' with probability 0.39
+2026-08-29 21:36:37,853 INFO config.speech.speech_service: [VOICE] STT time: 3.44s
+2026-08-29 21:36:37,853 INFO config.speech.speech_service: [VOICE] Transcription: 
+2026-08-29 21:36:37,854 INFO routes.chat: [VOICE] STT total from route: 3.44s
+2026-08-29 21:36:37,855 INFO routes.chat: [VOICE] Temporary audio file removed
+2026-08-29 21:36:37,855 INFO routes.chat: [VOICE] Request handler finished: 3.45s
+2026-08-29 21:36:37,856 INFO werkzeug: 172.18.0.1 - - [29/Aug/2026 21:36:37] "[31m[1mPOST /speech/chat HTTP/1.1[0m" 400 -
+2026-08-29 21:39:03,836 INFO routes.chat: [VOICE] ===============================
+2026-08-29 21:39:03,836 INFO routes.chat: [VOICE] New voice request
+2026-08-29 21:39:03,837 INFO routes.chat: [VOICE] ===============================
+2026-08-29 21:39:03,845 INFO routes.chat: [VOICE] Audio save: 0.00s
+2026-08-29 21:39:03,845 INFO config.speech.speech_service: [VOICE] Starting speech-to-text
+2026-08-29 21:39:04,058 INFO faster_whisper: Processing audio with duration 00:02.820
+2026-08-29 21:39:05,427 INFO faster_whisper: Detected language 'en' with probability 0.94
+2026-08-29 21:39:06,789 INFO config.speech.speech_service: [VOICE] STT time: 2.94s
+2026-08-29 21:39:06,789 INFO config.speech.speech_service: [VOICE] Transcription: How are you doing?
+2026-08-29 21:39:06,790 INFO routes.chat: [VOICE] STT total from route: 2.95s
+2026-08-29 21:39:06,793 INFO routes.chat: [VOICE] Starting streaming voice response
+2026-08-29 21:39:06,794 INFO routes.chat: [VOICE] Temporary audio file removed
+2026-08-29 21:39:06,794 INFO routes.chat: [VOICE] Request handler finished: 2.96s
+2026-08-29 21:39:06,795 INFO config.speech.voice_streamer: [VOICE] Starting streaming voice answer. Session=1c982353-f829-4fc4-9851-64936d969fe3
+2026-08-29 21:39:06,800 INFO config.speech.voice_streamer: [VOICE] User DB save: 0.00s
+2026-08-29 21:39:06,801 INFO config.speech.voice_streamer: [VOICE] Starting LLM stream
